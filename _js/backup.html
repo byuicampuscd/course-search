@@ -1,0 +1,916 @@
+<html lang="en-us" class="gr__byui_brightspace_com" style="overflow: hidden;"><head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>Manage Files - Sandbox Courses - Template - R--- - Eric Julander - Brigham Young University - Idaho</title>
+		<link rel="stylesheet" type="text/css" href="https://s.brightspace.com/lib/bsi/10.6.2-4/bsi.min.css">
+		<link rel="stylesheet" type="text/css" href="/d2l/common/css/D2L.LP.Web.Core.default.css?v=10.6.5.3893-10">
+		<link rel="stylesheet" type="text/css" href="/d2l/common/css/D2L.LP.Web.Core.DaylightOff.default.css?v=10.6.5.3893-10">
+		<link rel="stylesheet" type="text/css" href="/d2l/common/css/D2L.LP.Web.Controls.SplitLayout.default.css?v=10.6.5.3893-10">
+		<link rel="stylesheet" type="text/css" href="/d2l/common/css/D2L.LP.Web.Controls.Tree.default.css?v=10.6.5.3893-10">
+		<link rel="stylesheet" type="text/css" href="/d2l/common/css/YAHOO.YUI.Paginator.default.css?v=10.6.5.3893-10">
+		<link rel="stylesheet" type="text/css" href="/d2l/common/css/D2L.LP.Web.Controls.Paging.default.css?v=10.6.5.3893-10">
+		<link rel="stylesheet" type="text/css" href="/d2l/common/css/D2L.LP.Web.Controls.EditInPlace.default.css?v=10.6.5.3893-10">
+		<link rel="stylesheet" type="text/css" href="/d2l/common/css/D2L.LP.Web.Controls.DataGrid.default.css?v=10.6.5.3893-10">
+		<style type="text/css">
+		/*<![CDATA[*/
+			.vui-typography{ font-family:arial, helvetica, sans-serif; font-size:13px; }
+		/*]]>*/
+		</style>
+		<link rel="stylesheet" type="text/css" href="/d2l/lp/navbars/55363/themestyle/5007?navbarHtmlId=d2l_navbar&amp;version=28&amp;isrtl=0&amp;v=10.6.5.3893-10">
+		<style type="text/css">
+		/*<![CDATA[*/
+			.cDark { background-color:#326ba9;}
+			.cDark a, .cDark a:link, .cDark a:visited, .cDark a:hover {color:#ffffff;font-weight:normal;}
+			.cLight { background-color:#147ea0;}
+			.cLight a, .cLight a:link, .cLight a:visited, .cLight a:hover {color:#ffffff;font-weight:normal;}
+			.cSoft { background-color:#e7e7e2;}
+			.cSoft a, .cSoft a:link, .cSoft a:visited, .cSoft a:hover {color:#666666;font-weight:normal;}
+			.d2l_1_5_242 {background-color:#000000;}
+			.d2l_1_6_911 {table-layout: Inherit;}
+			.d2l_1_7_191 {vertical-align:middle;}
+			.d2l_1_8_411 {background-image:url('https://s.brightspace.com/lib/ilp/d2l/img/0/sprites/D2L.LP.Main.018146DBA2CCE7B7AD06AA64E846FA9D.png');background-position:-9px -738px;background-repeat:no-repeat;width:9px;height:18px;}
+			.d2l_1_10_150 {background-image:url('https://s.brightspace.com/lib/ilp/d2l/img/0/sprites/D2L.LP.Main.018146DBA2CCE7B7AD06AA64E846FA9D.png');background-position:-10px -355px;background-repeat:no-repeat;width:10px;height:10px;}
+			.d2l_1_11_703 {max-width:375px;}
+			.d2l_1_12_381 {min-width:375px;}
+			.d2l_1_14_591 {background-image:url('https://s.brightspace.com/lib/ilp/d2l/img/0/sprites/D2L.LP.Main.018146DBA2CCE7B7AD06AA64E846FA9D.png');background-position:0 -80px;background-repeat:no-repeat;width:16px;height:16px;}
+			.d2l_1_15_58 {background-image:url('https://s.brightspace.com/lib/ilp/d2l/img/0/sprites/D2L.LP.Main.018146DBA2CCE7B7AD06AA64E846FA9D.png');background-position:0 -96px;background-repeat:no-repeat;width:16px;height:16px;}
+			.d2l_1_16_88 {max-width:350px;}
+			.d2l_1_17_860 {min-width:350px;}
+			.d2l_1_19_765 {padding:0px 10px;}
+			.d2l_1_20_636 {margin:5px;}
+			.d2l_1_21_427 {background-image:url('/d2l/img/0/Email.Main.actNavBarLinkEmail.png?v=10.6.5.3893-10');background-position:0 0;background-repeat:no-repeat;width:16px;height:16px;}
+			.d2l_1_22_620 {background-image:url('/d2l/img/0/Pager.Main.iconPager.gif?v=10.6.5.3893-10');background-position:0 0;background-repeat:no-repeat;width:16px;height:16px;}
+			.d2l_1_23_400 {background-image:url('https://s.brightspace.com/lib/ilp/d2l/img/0/sprites/D2L.LP.Main.018146DBA2CCE7B7AD06AA64E846FA9D.png');background-position:0 -48px;background-repeat:no-repeat;width:16px;height:16px;}
+			.d2l_1_24_285 {background-image:url('https://s.brightspace.com/lib/ilp/d2l/img/0/sprites/D2L.LP.Main.018146DBA2CCE7B7AD06AA64E846FA9D.png');background-position:0 -64px;background-repeat:no-repeat;width:16px;height:16px;}
+			.d2l_1_26_179 {background-image:url('https://s.brightspace.com/lib/ilp/d2l/img/0/sprites/D2L.LP.Main.018146DBA2CCE7B7AD06AA64E846FA9D.png');background-position:0 -16px;background-repeat:no-repeat;width:16px;height:16px;}
+			.d2l_1_27_364 {background-image:url('https://s.brightspace.com/lib/ilp/d2l/img/0/sprites/D2L.LP.Main.018146DBA2CCE7B7AD06AA64E846FA9D.png');background-position:0 -32px;background-repeat:no-repeat;width:16px;height:16px;}
+			.d2l_1_29_234 {background-image:url('https://s.brightspace.com/lib/ilp/d2l/img/0/sprites/D2L.LP.Main.018146DBA2CCE7B7AD06AA64E846FA9D.png');background-position:0 -492px;background-repeat:no-repeat;width:22px;height:22px;}
+			.d2l_1_30_974 {background-image:url('https://s.brightspace.com/lib/ilp/d2l/img/0/sprites/D2L.LP.Main.018146DBA2CCE7B7AD06AA64E846FA9D.png');background-position:0 -355px;background-repeat:no-repeat;width:10px;height:10px;}
+			.d2l_1_32_732 {margin:10px;}
+			.d2l_1_33_513 {min-width:200px;}
+			.d2l_1_34_652 {font-size:0.8em;}
+			.d2l_1_35_242 {background-image:url('/d2l/img/0/Impersonate.RoleSwitch.progress.gif?v=10.6.5.3893-10');background-position:0 0;background-repeat:no-repeat;width:20px;height:20px;}
+			.d2l_1_36_387 {max-height:300px;}
+			.d2l_1_37_639 {overflow:auto;}
+			.d2l_1_38_484 {background-color:#fcfcfc;}
+			.d2l_1_39_902 {border-top:1px dotted #ccc;}
+			.d2l_1_40_791 {margin:0px 0px 5px 30px;}
+			.d2l_1_41_326 {margin:5px 0px 0px 0px;}
+			.d2l_1_42_957 {background-image:url('https://s.brightspace.com/lib/ilp/d2l/img/0/sprites/D2L.LP.Main.018146DBA2CCE7B7AD06AA64E846FA9D.png');background-position:0 -706px;background-repeat:no-repeat;width:16px;height:16px;}
+			.d2l_1_43_206 {background-image:url('https://s.brightspace.com/lib/ilp/d2l/img/0/sprites/D2L.LP.Main.018146DBA2CCE7B7AD06AA64E846FA9D.png');background-position:0 -722px;background-repeat:no-repeat;width:16px;height:16px;}
+			.d2l_1_45_945 {padding:10px;}
+			.d2l_1_46_89 {width:200px;}
+			.d2l_1_47_393 {padding:5px 0px 3px 0px;}
+			.d2l_1_48_977 {margin-bottom:8px;}
+			.d2l_1_49_192 {background-image:url('https://s.brightspace.com/lib/ilp/d2l/img/0/sprites/D2L.LP.Main.018146DBA2CCE7B7AD06AA64E846FA9D.png');background-position:0 -824px;background-repeat:no-repeat;width:16px;height:16px;}
+			.d2l_1_50_706 {background-image:url('/d2l/img/0/NavBars.Navbar.actEditDisabled.png?v=10.6.5.3893-10');background-position:0 0;background-repeat:no-repeat;width:16px;height:16px;}
+			.d2l_1_51_966 {vertical-align:top;}
+			.d2l_1_53_691 {width:1%;}
+			.d2l_1_57_187 {width:500px;}
+			.d2l_1_58_814 {background-position:left top;}
+			.d2l_1_59_266 {padding:1em;}
+			.d2l_1_60_62 {background-image:url('/d2l/img/0/Auth.SessionExpiry.actAlert.png?v=10.6.5.3893-10');}
+			.d2l_1_61_546 {background-position:right top;}
+			.d2l_1_62_935 {padding-right:75px;}
+			.d2l_1_63_176 {min-height:115px;}
+			.d2l_1_64_744 {background-image:url('/d2l/img/0/Auth.SessionExpiry.actCheck.png?v=10.6.5.3893-10');}
+			.d2l_1_65_936 {padding:3.4em;}
+		/*]]>*/
+		</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+</style></head>
+	<body id="d2l_body" onunload="d2l_Onunload();" onload="d2l_Onload();" class="vui-typography" data-gr-c-s-loaded="true" style="overflow: hidden;">
+<div id="hack">
+<script type="text/javascript">// <![CDATA[
+var Global = {OrgUnitId:55363,OrgId:6606,OrgName:'Brigham Young University - Idaho',OrgUnitName:'Sandbox Courses - Template - R--- - Eric Julander',OrgUnitCode:'Campus.Reference.Sandbox Courses - Template',OrgUnitTypeId:3,OrgDefinedId:'',OrgUnitPath:'\/content\/enforced\/55363-Campus.Reference.SandboxCourses-Template\/',FirstName:'CCT - Eric',LastName:'Julander',UserName:'cct_eljulander',UserId:58877,RoleId:119,RoleCode:'',ImageSetId:0,ImageVersion:'10.6.5.3893-10',AssemblyVersion:'10.6.5.3893-10',Language:{LanguageId:1,LanguageVersion:'10.6.5.3893-10'},Culture:{IsRightToLeft:0},Preferences:{UseNonModalDialogs:0}}; 			var BrowserInfo = {browserType:'Chrome',Type:10,MajorVersion:53,MinorVersion:0};
+// ]]></script>
+<script type="text/javascript" src="https://s.brightspace.com/lib/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://s.brightspace.com/lib/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://s.brightspace.com/lib/bsi/10.6.2-4/bsi.min.js"></script>
+<script type="text/javascript" src="/d2l/common/assets/tock/tock.min.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/assets/ifvisiblejs/ifvisible.min.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/D2L.LP.Web.Core.default.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/D2L.LP.Web.Controls.ActionBar.default.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/YAHOO.YUI.DragDrop.default.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/D2L.LP.Web.Controls.DragDrop.default.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/D2L.LP.Web.Controls.SplitLayout.default.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/D2L.LP.Web.Controls.Tree.default.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/D2L.LP.Web.Controls.Actions.default.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/YAHOO.YUI.DataSource.default.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/YAHOO.YUI.Element.default.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/YAHOO.YUI.DataTable.default.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/YAHOO.YUI.Paginator.default.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/D2L.LP.Web.Controls.Paging.default.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/D2L.LP.Web.Controls.EditInPlace.default.js?v=10.6.5.3893-10"></script>
+<script type="text/javascript" src="/d2l/common/js/D2L.LP.Web.Controls.DataGrid.default.js?v=10.6.5.3893-10"></script>
+<script src="/d2l/integration/lor_pt/manageFiles/static/retrieve_from_lor.js?v=10.6.5.3893-10" type="text/javascript"></script>
+<script src="/d2l/integration/le_pt/manageFiles/static/create_topics_from_files.js?v=10.6.5.3893-10" type="text/javascript"></script>
+<script src="/d2l/integration/le_pt/manageFiles/static/create_topics_from_file.js?v=10.6.5.3893-10" type="text/javascript"></script>
+<script src="/d2l/integration/lor_pt/manageFiles/static/publish_item_to_lor.js?v=10.6.5.3893-10" type="text/javascript"></script>
+<script src="/d2l/lp/manageFiles/static/manageFiles_display.js?v=10.6.5.3893-10" type="text/javascript"></script>
+<script src="/d2l/lp/manageFiles/static/manageFiles_clipboard.js?v=10.6.5.3893-10" type="text/javascript"></script>
+<script src="/d2l/lp/manageFiles/static/manageFiles_contextmenu.js?v=10.6.5.3893-10" type="text/javascript"></script>
+<script src="/d2l/lp/manageFiles/static/manageFiles_actions.js?v=10.6.5.3893-10" type="text/javascript"></script>
+<script type="text/javascript">// <![CDATA[
+D2L.Serialization.JsonDeserializerMin.Deserialize(['f44617e492674129ada591827b96260b',45,0,[{}],[[]],[[]],[[],0],['^([\\(-]*(([01234567890123456789]?[01234567890123456789]?([01234567890123456789](,[01234567890123456789][01234567890123456789][01234567890123456789])*)))(\\.[01234567890123456789]+)?[\\)-]*)$|^([\\(-]*[01234567890123456789]*\\.?[01234567890123456789]+[\\)-]*)$','^([\\(-]*(([01234567890123456789]?[01234567890123456789]?([01234567890123456789](,[01234567890123456789][01234567890123456789][01234567890123456789])*)?))[\\)-]*)$|^([\\(-]*[01234567890123456789]+[\\)-]*)$',0,'.',1,'-',',',['0','1','2','3','4','5','6','7','8','9'],'%',0,0,0,[3]],[],0,{'ClassName':'D2L.Util.DateTime','Year':2016,'Month':10,'Day':13,'Hour':7,'Minute':52,'Second':27,'Millisecond':260}],D2L.UI); 			D2L.Language.InitLang({'standard.buttons':{'btnadd':'Add','btnreset':'Reset','btnreplace':'Replace','btnrename':'Rename','btnremoveselected':'Remove Selected','btnremove':'Remove','btnrefresh':'Refresh','btnrecord':'Record','btnresetprocessing':'Resetting...','btnpublish':'Publish to LOR','btnprint':'Print','btnprevious':'Previous ','btnpreview':'Preview','btnoverwrite':'Overwrite','btnokay':'OK','btnok':'OK','btnno':'No','btnproceed':'Proceed','btnreturn':'Return','btnrevert':'Undo Unsaved Changes','btnrun':'Run','btnview':'View','btnupload':'Upload','btnupdateprocessing':'Updating...','btnupdate':'Update','btnsubmit':'Submit','btnstart':'Start','btnskip':'Skip','btnshowall':'Show All','btnset':'Set','btnsend':'Send','btnselectcurrentfolder':'Select Current Folder','btnsearch':'Search','btnsaveprocessing':'Saving...','btnsaveandnew':'Save and New','btnsaveandcopy':'Save and Copy','btnsaveandclose':'Save and Close','btnsave':'Save','btnnext':'Next','btnnew':'New','btnlistall':'List All','btninsert':'Insert','btnclearlist':'Clear List','btnclearchanges':'Clear Changes','btnclearall':'Clear All','btnclear':'Clear','btnchangepassword':'Change Password','btnchange':'Change','btncancelprocessing':'Canceling...','btncancel':'Cancel','btnbrowse':'Browse','btnback':'Back','btnapplyprocessing':'Applying...','btnapply':'Apply','btnadmin':'Admin','btnaddselected':'Add Selected','btnaddprocessing':'Adding...','btnaddanother':'Add Another','btnaddandnew':'Add and New','btnclose':'Close','btnyes':'Yes','btnconfirm':'Confirm','btncopy':'Copy','btnimport':'Import','btnhome':'Home','btnhistory':'History','btngoback':'Go Back','btngo':'Go','btnfinish':'Finish','btnexport':'Export','btnedit':'Edit','btndownload':'Download','btndontsave':'Don\u0027t Save','btndone':'Done','btndeleteselected':'Delete Selected','btndeleteprocessing':'Deleting...','btndelete':'Delete','btncustomize':'Customize','btncreateprocessing':'Creating...','btncreate':'Create','btncontinue':'Continue','btnchangelanguage':'Change Language'},'framework.dialog':{'altclosedialog':'Close this Dialog','altjumpbottom':'Jump to bottom of [0] dialog','altjumptop':'Jump to top of [0] dialog','altresizedialog':'Resize this Dialog','lblsaveconfirmationprimary':'This page has been edited.','lblsaveconfirmationsecondary':'Do you want to save the changes?','titconfirmation':'Confirmation','titerror':'Error','titinformation':'Information','titinputrequested':'Choose a Value','titprocessing':'Processing...','titsavechanges':'Save Changes','titwarning':'Warning'},'framework.messagearea':{'hdrerrors':'Errors','lblerrors':'There were [0] error(s) found in the information you submitted:','lblstatus1':'Saved successfully','lblstatus10':'Removed successfully','lblstatus11':'Enrolled successfully','lblstatus12':'Unenrolled successfully','lblstatus13':'Sent successfully','lblstatus2':'Deleted successfully','lblstatus3':'Created successfully','lblstatus4':'Reordered successfully','lblstatus5':'Copied successfully','lblstatus6':'Imported successfully','lblstatus7':'Exported successfully','lblstatus8':'Moved successfully','lblstatus9':'Added successfully'},'framework.contextmenu':{'altdefaulttitle':'View Actions','altdefaulttitlesubject':'Actions for {{subject}}','altdefaulttitlewithreplace':'Actions for \u0027[0]\u0027','altsubmenu':'sub menu','altunavailable':'Unavailable'},'managefiles.main':{'altbreadcrumb':'Select [0] as current folder','lblinvalidpathconfiguration':'The Content Path configuration is invalid','lblinvalidorgunitpath':'The org unit path is invalid.','lblhidetree':'Hide Tree','lblgridsummary':'A sortable listing of Folders and Files.','lblgridemptytext':'This folder is empty.','lblfoldertreepane':'Folder Tree Pane','lblfilesgrid':'List of contents of the selected folder','lbleditfile':'Edit File','lbldownloadingfiles':'Downloading Files','jserrselectitemsecondary':'Select one or more files or folders to use the multi-action functions.','jserrselectitemprimary':'Action could not be completed.','jserrpathtoolong':'The complete folder path of at least one of the included folders or files is too long.','jserroperationnotvalid':'The operation cannot be performed.','jserrfolderpathtoolong':'The complete folder path is too long.','jserrfoldernameinvalid':'Folder name is invalid.','lbllastmodified':'Last Modified Date','lbllocation':'Location','lblname':'Name','lblnewfile':'New File','msgunzipfilesuccessfulprimary':'Manage Files Unzip','jstitunzippingfile':'Unzip File','jsmsgunzippingfilesecondary':'The file is unzipping in the background. This may take a few minutes. You will receive a notification when this is complete.','jsmsgunzippingfileprimary':'Unzipping \"[0]\"','errunzipfilecorruptedsecondary':'The file \"[0]\" is either corrupted or contains a file named \"[0]\". Try renaming the file.','errunzipfilecorruptedprimary':'The unzip operation has failed.','lbluploadfiles':'Upload','jserrfilecorruptedsecondary':'The file [0] is either corrupted or contains a file named [0]. Try renaming the file.','lblunzippingfile':'Unzipping file...','lblsize':'Size','lblshowtree':'Show Tree','lblpastewithclipboardstatus':'Paste ([0])','lblpaste':'Paste','lblorganizationsharedfiles':'Organization Shared Files','lblnopathassociatedwithorgunit':'This org unit has no path associated.','lblnewfolder':'New Folder','lbltype':'Type','msgunzipfilesuccessfulsecondary':'File \"[0]\" has been unzipped','jserrfilecorruptedprimary':'The unzip operation has failed.','jserrconfigprimary':'Configuration Error','altzip':'Zip','altuploadfiles':'Upload files to this folder','altshowtree':'Show the Folder Tree','altpasteempty':'Empty clipboard','altpaste':'Paste [0] item(s) here','altopenfile':'Open {{subject}} in new window','altnewfolder':'Create new folder','altnewfile':'Create new HTML file','altnavigatetofolder':'Navigate to','althidetree':'Hide the Folder Tree to increase performance','altedit':'Edit','altdownload':'Download','altdelete':'Delete','altcut':'Cut','altcopy':'Copy','errdeletepatherrorprimary':'Could not delete file or folder','errdeletepatherrorsecondary':'The total path name of one or more of the file and folder names is likely too long. Rename the file or folder before deleting.','errpasteisancestorsecondary':'The destination folder is a sub-folder of at least one of the folders that is being pasted.','errpastenotallowedprimary':'The paste operation cannot be performed.','jserrcantrenamesecondary':'Make sure the children are accessible and the path is not too long.','jserrcantrenameprimary':'Cannot rename folder. Access is denied.','jserrcantaccesscontentssecondary':'Make sure the total length of the folder path is valid.','jserrcantaccesscontentsprimary':'The contents of the folder are not accessible.','jsconfirmunzipsecondary':'Do you want to perform an overwrite in that case?','jsconfirmunzipprimary':'Some of the files contained in this archive file may already exist in the current folder.','jsconfirmdeletesecondary':'This action cannot be undone.','jserrconfigsecondary':'Make sure the Content Path settings are correct.','jsconfirmdeleteprimary':'Are you sure you want to delete the selected objects?','jsconfirmdeletefileprimary':'Are you sure you want to delete the file [0]?','errrenameprimary':'The rename operation cannot be performed.','errpastesourcenotfoundsecondary':'One or more objects cannot be found. They may have been deleted or moved to another location.','errpastesamesourceanddestinationsecondary':'The destination folder is one of the folders that is being pasted.','errpastepathtoolongsecondary':'The path is too long.','errpastenotcompletedsecondary':'Some of the contents being copied generate paths too long.','errpastenotcompletedprimary':'The paste operation was not completely performed.','jsconfirmdeletefolderprimary':'Are you sure you want to delete the folder [0]?','txttoolname':'Manage Files'},'managefiles.main:statusbar':{'lblfile':'file','lblfiles':'files','lblfilesfolders':'[0] [1], [2] [3]','lblfilesfoldersselected':'[0] [1], [2] [3] selected','lblfolder':'folder','lblfolders':'folders'},'managefiles.shared':{'lblfilename':'File Name','lblfolder':'Folder','lblfoldername':'Folder Name','lblmanagefiles':'Manage Files','lblnewfolder':'New Folder','lblpleasewait':'Please wait','lblroot':'Root','txttoollinkadminorganizationfiles':'Organization Files','txttoollinkadminsharedfiles':'Shared Files'},'framework.list':{'lblless':'less...','lblmore':'more([0])...','lblmorenonumber':'more...'},'framework.tree':{'altcollapsenode':'Collapse Node {{subject}}','altexpandnode':'Expand Node {{subject}}','altselect':'Select [0]','lblselected':'Selected -'},'framework.datagrid':{'altapplyingsort':'Applying sort...','altdrag':'Drag \"{{subject}}\"','altloadedsuccessfully':'Loaded successfully.','altselectallrows':'Select all items','altselectrow':'Select \"{{subject}}\"','altsortappliedsuccessfully':'Sort applied successfully.','altsortascending':'Sort Ascending','altsortdescending':'Sort Descending','lblemptytext':'No items found.','lblerrorretrievingdataprimary':'A data retrieval error occurred.','lblerrorretrievingdatasecondary':'Retry or contact your system administrator if the problem persists.','lblloading':'Loading...','lblloadnextpage':'Load Next Page'},'framework.validation':{'dateinvalid':'{{subject}} is an invalid date.','listempty':'[0] list cannot be empty.','notnull':'The value supplied for [0] cannot be null.','numberbetweenbothinclusive':'{{subject}} must be greater than or equal to [0] and less than or equal to [1].','numberbetweenmaxinclusive':'{{subject}} must be greater than [0] and less than or equal to [1].','numberbetweenmininclusive':'{{subject}} must be greater than or equal to [0] and less than [1].','numberbetweennoneinclusive':'{{subject}} must be greater than [0] and less than [1].','numberhigher':'{{subject}} must be a number greater than [0].','numberhigherinclusive':'{{subject}} must be a number greater than or equal to [0].','numberlower':'{{subject}} must be a number less than [0].','numberlowerinclusive':'{{subject}} must be a number less than or equal to [0].','paddinginvalid':'The value supplied for [0] cannot contain leading or trailing whitespace.','pathcontainsbadchars':'[0] cannot contain the following characters: <, >, :, \", \\, |, ?, *, %, &, #, \u0027, spaces, or newlines','pathdirendsindot':'[0] cannot contain a directory name that ends in a dot','pathdirendsinspace':'[0] cannot contain a directory name that ends in a space','pathempty':'[0] cannot be empty','pathmustendwithslash':'[0] must end with a slash','pathmuststartwithslash':'[0] must start with a slash','pathnull':'[0] cannot be null','pathtoolong':'[0] cannot be more than 255 characters long','rangemaxinvalid':'[0] was greater than the maximum value allowed.','rangemininvalid':'[0] was less than the minimum value allowed.','regexinvalid':'[0] did not pass the regular expression used for validation.','required':'{{subject}} is required.','requiredfield':'[0] is required.','roleinvalid':'The role provided does not exist.','stringmaxcharacters':'{{subject}} cannot have more than [0] characters.','stringmaxcharactersnew':'[0] cannot have more than [1] characters.','lessthaninvalid':'The value supplied for [0] is greater than the minimum value allowed.','invalidurlfield':'Invalid URL','invalidintegerrangelessfield':'Invalid integer: [0]. Number must be less than or equal to [1].','invalidintegerrangegreaterfield':'Invalid integer: [0]. Number must be greater or equal to [1].','daterangeendinvalid':'{{subject}} has an invalid end date.','daterangeinvalid':'{{subject}} is an invalid date range. Start date must be before end date.','daterangemaxinvalid':'[0] is after the maximum date allowed. Maximum date allowed: [1].','daterangemininvalid':'[0] is before the minimum date allowed. Minimum date allowed: [1].','daterangestartinvalid':'{{subject}} has an invalid start date.','decimalinvalid':'{{subject}} must be a valid number.','decimalinvalidrange':'{{subject}} must be a valid number between [0] and [1].','defaultsubject':'Field','emailinvalid':'{{subject}} is not a valid email address.','equalsinvalid':'The value supplied for [0] does not match the expected value.','filenameinvalid':'{{subject}} may not end with a \u0027.\u0027 character and may not contain: [0]','filenamereserved':'{{subject}} is a reserved file name.','filesetfilenametoolong':'{{subject}}\u0027s file name cannot exceed [0] characters.','stringmincharacters':'[0] cannot have less than [1] characters.','filesetfilenametoolong1':'The length of a file name cannot exceed [0] characters.','filesetinvalidextension':'{{subject}} does not have a valid extension. It must be one of: [0].','filesetmaxtotalfilesizeexceeded':'{{subject}} is nearing the maximum file capacity. You have [0] of storage left. Remove one or more files and retry.','filesetrestrictedextension':'{{subject}} has a restricted extension.','foldernameinvalid':'{{subject}} may not end with a \u0027.\u0027 character, and may not contain: [0]','foldernamereserved':'{{subject}} is a reserved folder name.','genericinvalid':'{{subject}} is invalid.','greaterthaninvalid':'The value supplied for [0] is less than the minimum value allowed.','integerinvalid':'{{subject}} must be a valid integer.','integerinvalid32':'{{subject}} must be a valid integer between [0] and [1].','integerinvalid64':'{{subject}} must be a valid integer between [0] and [1].','invalidemailfield':'Invalid email address','invalidintegerfield':'Invalid integer: [0]','invalidintegerrangebetweenfield':'Invalid integer: [0]. Number must be between [1] and [2], inclusive.','filesetfilenametoolong2':'Would you like to truncate file names that exceed this limit?','stringnullvalue':'[0] cannot be a null value.'}},{'standard.misc.txtloading':'Loading...','standard.misc.txtcopyright':'Powered by D2L Incorporated'}); 			D2L.Language.InitImg({'framework.messagearea':{'actstatus11':['0\/Framework.MessageArea.actStatus11.gif'],'actstatus12':['0\/Framework.MessageArea.actStatus12.gif'],'actstatus13':['0\/Framework.MessageArea.actStatus13.gif'],'actstatus3':['0\/Framework.MessageArea.actStatus3.gif'],'actstatus6':['0\/Framework.MessageArea.actStatus6.gif'],'actstatus7':['0\/Framework.MessageArea.actStatus7.gif']},'framework.contextmenu':{'droparrow':['0\/Framework.ContextMenu.dropArrow.png',10],'droparrowlight':['0\/Framework.ContextMenu.dropArrowLight.png',10],'droparrowmvc':['0\/Framework.ContextMenu.dropArrowMvc.png',7,10]},'managefiles.shared':{},'framework.treeview2':{'actcollapse':['0\/Framework.TreeView2.actCollapse.gif'],'actcollapsedisabled':['0\/Framework.TreeView2.actCollapseDisabled.gif'],'actexpand':['0\/Framework.TreeView2.actExpand.gif'],'actexpanddisabled':['0\/Framework.TreeView2.actExpandDisabled.gif'],'actfoldercollapsed':['0\/Framework.TreeView2.actFolderCollapsed.gif'],'actfolderdisabledcollapsed':['0\/Framework.TreeView2.actFolderDisabledCollapsed.gif'],'actfolderdisabledexpanded':['0\/Framework.TreeView2.actFolderDisabledExpanded.gif'],'actfolderexpanded':['0\/Framework.TreeView2.actFolderExpanded.gif'],'actloading':['0\/Framework.TreeView2.actLoading.gif']},'framework.datagrid':{'actdrag':['0\/Framework.DataGrid.actDrag.jpg',14],'infdragmultighost':['0\/Framework.DataGrid.infDragMultiGhost.gif']}},{}); 			D2L.Files.RestrictedExtensions = ['asp','aspx','exe','bat','dll','com','asa','asax','ascx','ashx','asmx','axd','cdx','cer','config','idc','cs','csproj','jsl','licx','rem','resources','resx','shtm','shtml','soap','stm','vb','vbproj','vjsproj','vsdisco','webinfo','ini','msi','msp','scr','sct','wsf','wsc','vbs','vbe']; 			function d2l_Onload() { 				UI.OnPageLoad().Trigger(); 				OnPageLoad( 'Content','\/content\/enforced\/55363-Campus.Reference.SandboxCourses-Template\/' ); 			} 			function d2l_Onunload() { 				UI.OnPageUnload().Trigger(); 				D2L.GarbageCollection.Dispose(); 			}
+// ]]></script>
+<script type="text/x-mathjax-config;executed=true">// <![CDATA[
+MathJax.Hub.Config({"delayStartupUntil":"onload","showProcessingMessages":false,"messageStyle":"none","menuSettings":{"context":"MathJax","zoom":"None"},"NativeMML":{"showMathMenuMSIE":false,"scale":140},"HTML-CSS":{"linebreaks":{"automatic":true,"width":"container"},"imageFont":null,"scale":130}});
+// ]]></script>
+<script type="text/javascript" src="https://s.brightspace.com/lib/mathjax/2.6.1/MathJax.js?config=MML_HTMLorMML"></script>
+<script type="text/javascript">// <![CDATA[
+(function(){ var hpn=function(){ if(window == window.parent) {return false;} var win = window.parent; try {while(true) { if(win.document === undefined) {return false;} var n= win.document.getElementById('d2l_navbar'); var m = win.document.getElementById('d2l_minibar'); if(n !== null || m !== null) {return true;} if(win == win.parent) {return false;} win = win.parent; }} catch(e) {} return false;}; if(!hpn()) {return;} var rm=function(n) {if(n&&n.parentNode){n.parentNode.removeChild(n);}}; var d=document; rm(d.getElementById('d2l_navbar')); rm(d.getElementById('d2l_minibar')); rm(d.getElementById('d2l_minibar_placeholder')); rm(d.getElementById('d2l_skipnav')); })();
+// ]]></script>
+<script type="text/javascript">// <![CDATA[
+UI.Init(); 	D2L.OR["__gctl_1"] = {}; 	D2L.OR["__gctl_1"]["0"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.Authentication.Xsrf.Init\",\"P\":[\"d2l_referrer\",\"Ci80j6KeUBOopkS0g0J9EdXEvFqwcTY2\",-674132007]}"; 	D2L.O("__gctl_1",0)() 	D2L.OR["__gctl_1"]["1"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Common.Controls.MessageArea.Init\",\"P\":[\"d2l_messagearea\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/validation\/errors\"}]}"; 	D2L.O("__gctl_1",1)() 	D2L.OR["__gctl_1"]["2"]="{\"_type\":\"func\",\"N\":\"D2L.PT.Auth.SessionTimeout.Init\",\"P\":[\"58877\",180,5,{\"_type\":\"id\",\"Value\":\"d2l_sessionExpiryWarning\"},\"d2l_sessionExpiryAlert\",\"d2l_sessionExpiryCheck\",{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/auth\/session\/extend\"}],\"D\":true},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Desktop.MasterPages.Dialog.OpenHelper\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Html.Dom.GetActiveElement\"},{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/auth\/session\/Expired?isUsernamePasswordLogin=1&isLogout=0\"}],\"D\":true},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Desktop.MasterPages.Dialog.OpenHelper\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Html.Dom.GetActiveElement\"},{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/auth\/session\/Expired?isUsernamePasswordLogin=1&isLogout=1\"}],\"D\":true},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Desktop.MasterPages.Dialog.InlineDialog\",\"P\":[null,{\"_type\":\"id\",\"Value\":\"d2l_1_0_531\"},\"Warning\",\"New User Session\",\"The current user session has changed, so the links and content on this page may not behave as expected.\",\"OK\",\"\",\"Close this Dialog\",\"d2l-dialog-inline-body-warning\",true,false,false],\"D\":true},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Desktop.MasterPages.Dialog.Inline.Abort\",\"P\":[{\"_type\":\"id\",\"Value\":\"d2l_1_0_531\"}]}]}"; 	D2L.O("__gctl_1",2)() 	D2L.OR["__gctl_1"]["3"]="{\"_type\":\"func\",\"N\":\"D2LMathML.DesktopInit\",\"P\":[\"https:\/\/s.brightspace.com\/lib\/mathjax\/2.6.1\/MathJax.js?config=MML_HTMLorMML\",\"https:\/\/s.brightspace.com\/lib\/mathjax\/2.6.1\/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2cSafe\"]}"; 	D2L.O("__gctl_1",3)() 	D2L.OR["__gctl_1"]["4"]="{\"_type\":\"func\",\"N\":\"D2L.LP.ActivityBar.Init\",\"P\":[{\"_type\":\"url\",\"Url\":\"\/d2l\/activityFeed\/checkForNewAlerts\"},120,\"alert_bucket_{{0}}\",\"ab_status_{{0}}\"]}"; 	D2L.O("__gctl_1",4)() 	D2L.OR["__gctl_1"]["5"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Rpc.Initialize\",\"P\":[{\"_type\":\"url\",\"Url\":\"\/d2l\/login?target=%2fd2l%2flp%2fmanageFiles%2fmain.d2l%3fou%3d55363&sessionExpired=1\"},\"Error: unable to complete your request.\",{\"_type\":\"D2L.LP.Util.Dictionary\"},{\"_type\":\"D2L.LP.Util.Dictionary\",\"session\":{\"_type\":\"func\",\"N\":\"D2L.PT.Auth.SessionTimeout.RpcReceivePayloadProvider\"},\"flash\":{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.FlashMessages.RpcReceivePayloadProvider\"},\"messageArea\":{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Common.Controls.MessageArea.RpcReceivePayloadProvider\"},\"OR\":{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.ObjectRepository.RpcReceivePayloadProvider\"},\"JS\":{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.JavaScript.RpcReceiveJsPayloadProvider\"},\"CSS\":{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.JavaScript.RpcReceiveCssPayloadProvider\"},\"ariaMessages\":{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Aria.RpcReceivePayloadProvider\"}}]}"; 	D2L.O("__gctl_1",5)() 	D2L.OR["__gctl_1"]["6"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Globalization.Locale.Init\",\"P\":[0,{\"_type\":\"anon\",\"DecimalSeparator\":\".\",\"GroupSeparator\":\",\",\"NumberNegativePattern\":1,\"PercentPositivePattern\":0,\"PercentNegativePattern\":0,\"PercentSymbol\":\"%\",\"NegativeSign\":\"-\",\"NativeDigits\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\"],\"UseNativeDigits\":false,\"GroupSizes\":[3],\"IntegerRegex\":\"^([\\\\(-]*(([01234567890123456789]?[01234567890123456789]?([01234567890123456789](,[01234567890123456789][01234567890123456789][01234567890123456789])*)?))[\\\\)-]*)$|^([\\\\(-]*[01234567890123456789]+[\\\\)-]*)$\",\"DecimalRegex\":\"^([\\\\(-]*(([01234567890123456789]?[01234567890123456789]?([01234567890123456789](,[01234567890123456789][01234567890123456789][01234567890123456789])*)))(\\\\.[01234567890123456789]+)?[\\\\)-]*)$|^([\\\\(-]*[01234567890123456789]*\\\\.?[01234567890123456789]+[\\\\)-]*)$\"},{\"_type\":\"anon\",\"InputDateFormat\":\"M\/d\/yyyy\",\"Is24HourClock\":false,\"NativeDigits\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\"],\"UseNativeDigits\":false,\"TimeFormat\":\"h:mm tt\",\"AmDesignator\":\"AM\",\"PmDesignator\":\"PM\",\"ShortMonthNames\":[\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\",\"\"],\"LongMonthNames\":[\"January\",\"February\",\"March\",\"April\",\"May\",\"June\",\"July\",\"August\",\"September\",\"October\",\"November\",\"December\",\"\"],\"ShortDayOfWeekNames\":[\"Sun\",\"Mon\",\"Tue\",\"Wed\",\"Thu\",\"Fri\",\"Sat\"]},{\"_type\":\"anon\",\"TextDirection\":1},{\"_type\":\"anon\",\"Culture\":\"en-us\"},{\"_type\":\"anon\",\"JustNow\":\"just now\",\"OneMinuteAgo\":\"1 minute ago\",\"TwoMinutesAgo\":\"2 minutes ago\",\"MinutesAgoMany\":\"[0] minutes ago\",\"OneHourAgo\":\"1 hour ago\",\"TwoHoursAgo\":\"2 hours ago\",\"ManyHoursAgo\":\"[0] hours ago\",\"YesterdayTime\":\"yesterday at [0]\",\"DayOfWeekTime\":\"[0] at [1]\",\"MonthDayTime\":\"[0] at [1]\",\"Now\":1476366747057}]}"; 	D2L.O("__gctl_1",6)() 	D2L.OR["__gctl_1"]["7"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Desktop.Controls.InlineHelp.Init\",\"P\":[{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/inlineHelp\/55363\/help\"}]}"; 	D2L.O("__gctl_1",7)() 	D2L.OR["d2l_1_9_719"] = {}; 	D2L.OR["d2l_1_9_719"]["MenuFlyout.OpenFirstFunction"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.PartialRendering.PartialRender\",\"P\":[{\"_type\":\"id\",\"Value\":\"courseSelectorId\"},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectPartial\",\"P\":[{\"_type\":\"id\",\"Value\":\"courseSelectorId\"},\"GET\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/courseSelector\/55363\/InitPartial\"},{\"_type\":\"D2L.LP.Util.Dictionary\"},{\"_type\":\"D2L.LP.Web.UI.Rpc.RpcOptions\",\"keepAlive\":true,\"includeXsrfHeader\":false}],\"D\":true},0,false],\"D\":true}"; 	D2L.OR["courseSelectorId"] = {}; 	D2L.OR["courseSelectorId"]["0"]="{\"_type\":\"D2L.LP.Web.UI.Html.PartialRendering.PartialHtmlRenderContext\",\"HeadingLevel\":2,\"ValidClassNames\":[],\"Scope\":\"\"}"; 	D2L.OR["d2l_1_1_328"] = {}; 	D2L.OR["d2l_1_1_328"]["MenuFlyout.OpenFunction"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.JavaScript.If\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Html.JavaScript.CompareBoolean\",\"P\":[1,{\"_type\":\"call\",\"N\":\"D2L.VG\",\"P\":[\"ab_status_Messages\"]},true]},{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.PartialRendering.PartialRender\",\"P\":[{\"_type\":\"id\",\"Value\":\"AB_DL_PH_Messages\"},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectPartial\",\"P\":[{\"_type\":\"id\",\"Value\":\"AB_DL_PH_Messages\"},\"GET\",{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Mvc.RouteLocation.Create\",\"P\":[\"\/d2l\/MiniBar\/55363\/ActivityFeed\/{{action}}\",{\"_type\":\"D2L.LP.Util.Dictionary\",\"Category\":2},{\"_type\":\"D2L.LP.Util.Dictionary\",\"action\":\"GetAlerts\",\"orgUnitId\":55363}]},{\"_type\":\"D2L.LP.Util.Dictionary\"},{\"_type\":\"D2L.LP.Web.UI.Rpc.RpcOptions\",\"keepAlive\":true,\"includeXsrfHeader\":false}],\"D\":true},0,false],\"D\":true}]}],\"D\":true},{\"_type\":\"func\",\"N\":\"D2L.VS\",\"P\":[\"ab_status_Messages\",false]},{\"_type\":\"func\",\"N\":\"D2L.LP.ActivityBar.OpenBucket\",\"P\":[\"alert_bucket_Messages\"]}]}"; 	D2L.OR["d2l_1_1_328"]["MenuFlyout.CloseFunction"]="{\"_type\":\"func\",\"N\":\"D2L.LP.ActivityBar.CloseBucket\",\"P\":[\"alert_bucket_Messages\"]}"; 	D2L.OR["__gctl_18"] = {}; 	D2L.OR["__gctl_18"]["0"]="{\"_type\":\"func\",\"N\":\"D2L.VS\",\"P\":[\"ab_status_Messages\",true]}"; 	D2L.O("__gctl_18",0)() 	D2L.OR["alert_bucket_Messages"] = {}; 	D2L.OR["alert_bucket_Messages"]["aria-message"]="\"You have new Messages\""; 	D2L.OR["alert_bucket_Messages"]["title"]="\"Message alerts\""; 	D2L.OR["alert_bucket_Messages"]["new-alert-title"]="\"Message alerts - You have new alerts\""; 	D2L.OR["alert_bucket_Messages"]["flyout-id"]="{\"_type\":\"id\",\"Value\":\"d2l_1_1_328\"}"; 	D2L.OR["__gctl_18"]["1"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.OpenWindow\",\"P\":[\"D2L.LE.Pager\",{\"_type\":\"url\",\"Url\":\"\/d2l\/p\/le\/pager\/55363\"},650,730,false,false]}"; 	D2L.OR["AB_DL_PH_Messages"] = {}; 	D2L.OR["AB_DL_PH_Messages"]["0"]="{\"_type\":\"D2L.LP.Web.UI.Html.PartialRendering.PartialHtmlRenderContext\",\"HeadingLevel\":2,\"ValidClassNames\":[],\"Scope\":\"\"}"; 	D2L.OR["d2l_1_2_587"] = {}; 	D2L.OR["d2l_1_2_587"]["MenuFlyout.OpenFunction"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.JavaScript.If\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Html.JavaScript.CompareBoolean\",\"P\":[1,{\"_type\":\"call\",\"N\":\"D2L.VG\",\"P\":[\"ab_status_Grades\"]},true]},{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.PartialRendering.PartialRender\",\"P\":[{\"_type\":\"id\",\"Value\":\"AB_DL_PH_Grades\"},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectPartial\",\"P\":[{\"_type\":\"id\",\"Value\":\"AB_DL_PH_Grades\"},\"GET\",{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Mvc.RouteLocation.Create\",\"P\":[\"\/d2l\/MiniBar\/55363\/ActivityFeed\/{{action}}\",{\"_type\":\"D2L.LP.Util.Dictionary\",\"Category\":1},{\"_type\":\"D2L.LP.Util.Dictionary\",\"action\":\"GetAlerts\",\"orgUnitId\":55363}]},{\"_type\":\"D2L.LP.Util.Dictionary\"},{\"_type\":\"D2L.LP.Web.UI.Rpc.RpcOptions\",\"keepAlive\":true,\"includeXsrfHeader\":false}],\"D\":true},0,false],\"D\":true}]}],\"D\":true},{\"_type\":\"func\",\"N\":\"D2L.VS\",\"P\":[\"ab_status_Grades\",false]},{\"_type\":\"func\",\"N\":\"D2L.LP.ActivityBar.OpenBucket\",\"P\":[\"alert_bucket_Grades\"]}]}"; 	D2L.OR["d2l_1_2_587"]["MenuFlyout.CloseFunction"]="{\"_type\":\"func\",\"N\":\"D2L.LP.ActivityBar.CloseBucket\",\"P\":[\"alert_bucket_Grades\"]}"; 	D2L.OR["__gctl_18"]["2"]="{\"_type\":\"func\",\"N\":\"D2L.VS\",\"P\":[\"ab_status_Grades\",true]}"; 	D2L.O("__gctl_18",2)() 	D2L.OR["alert_bucket_Grades"] = {}; 	D2L.OR["alert_bucket_Grades"]["aria-message"]="\"You have new Updates\""; 	D2L.OR["alert_bucket_Grades"]["title"]="\"Update alerts\""; 	D2L.OR["alert_bucket_Grades"]["new-alert-title"]="\"Update alerts - You have new alerts\""; 	D2L.OR["alert_bucket_Grades"]["flyout-id"]="{\"_type\":\"id\",\"Value\":\"d2l_1_2_587\"}"; 	D2L.OR["AB_DL_PH_Grades"] = {}; 	D2L.OR["AB_DL_PH_Grades"]["0"]="{\"_type\":\"D2L.LP.Web.UI.Html.PartialRendering.PartialHtmlRenderContext\",\"HeadingLevel\":2,\"ValidClassNames\":[],\"Scope\":\"\"}"; 	D2L.OR["d2l_1_3_101"] = {}; 	D2L.OR["d2l_1_3_101"]["MenuFlyout.OpenFunction"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.JavaScript.If\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Html.JavaScript.CompareBoolean\",\"P\":[1,{\"_type\":\"call\",\"N\":\"D2L.VG\",\"P\":[\"ab_status_Alerts\"]},true]},{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.PartialRendering.PartialRender\",\"P\":[{\"_type\":\"id\",\"Value\":\"AB_DL_PH_Alerts\"},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectPartial\",\"P\":[{\"_type\":\"id\",\"Value\":\"AB_DL_PH_Alerts\"},\"GET\",{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Mvc.RouteLocation.Create\",\"P\":[\"\/d2l\/MiniBar\/55363\/ActivityFeed\/{{action}}\",{\"_type\":\"D2L.LP.Util.Dictionary\",\"Category\":0},{\"_type\":\"D2L.LP.Util.Dictionary\",\"action\":\"GetAlerts\",\"orgUnitId\":55363}]},{\"_type\":\"D2L.LP.Util.Dictionary\"},{\"_type\":\"D2L.LP.Web.UI.Rpc.RpcOptions\",\"keepAlive\":true,\"includeXsrfHeader\":false}],\"D\":true},0,false],\"D\":true}]}],\"D\":true},{\"_type\":\"func\",\"N\":\"D2L.VS\",\"P\":[\"ab_status_Alerts\",false]},{\"_type\":\"func\",\"N\":\"D2L.LP.ActivityBar.OpenBucket\",\"P\":[\"alert_bucket_Alerts\"]}]}"; 	D2L.OR["d2l_1_3_101"]["MenuFlyout.CloseFunction"]="{\"_type\":\"func\",\"N\":\"D2L.LP.ActivityBar.CloseBucket\",\"P\":[\"alert_bucket_Alerts\"]}"; 	D2L.OR["__gctl_18"]["3"]="{\"_type\":\"func\",\"N\":\"D2L.VS\",\"P\":[\"ab_status_Alerts\",true]}"; 	D2L.O("__gctl_18",3)() 	D2L.OR["alert_bucket_Alerts"] = {}; 	D2L.OR["alert_bucket_Alerts"]["aria-message"]="\"You have new Subscriptions\""; 	D2L.OR["alert_bucket_Alerts"]["title"]="\"Subscription alerts\""; 	D2L.OR["alert_bucket_Alerts"]["new-alert-title"]="\"Subscription alerts - You have new alerts\""; 	D2L.OR["alert_bucket_Alerts"]["flyout-id"]="{\"_type\":\"id\",\"Value\":\"d2l_1_3_101\"}"; 	D2L.OR["AB_DL_PH_Alerts"] = {}; 	D2L.OR["AB_DL_PH_Alerts"]["0"]="{\"_type\":\"D2L.LP.Web.UI.Html.PartialRendering.PartialHtmlRenderContext\",\"HeadingLevel\":2,\"ValidClassNames\":[],\"Scope\":\"\"}"; 	D2L.OR["__gctl_18"]["4"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=114\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["5"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.ToggleVisibility\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"RoleContainer\"},true]}"; 	D2L.OR["__gctl_18"]["6"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=119\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["7"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=117\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["8"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=110\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["9"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=147\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["10"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=148\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["11"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=149\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["12"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=111\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["13"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=155\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["14"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=112\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["15"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=109\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["16"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=142\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["17"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=137\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["18"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=146\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["19"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=145\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["20"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=113\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["21"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=156\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["22"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=152\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["23"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=115\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["24"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=116\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["25"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=104\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["26"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=105\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["27"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=106\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["28"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=143\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["29"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=107\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["30"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=108\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["31"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=133\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["32"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=134\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["33"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=135\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["34"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=136\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["35"]="{\"_type\":\"pipe\",\"P\":[{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayedMultiple\",\"P\":[[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ChangeLinkId\"}],false]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.SetIsDisplayed\",\"P\":[{\"_type\":\"D2L.LP.Web.UI.Html.AbsoluteHtmlId\",\"Value\":\"ProgressImage\"},true]},{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.Navigate\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.Http.UrlLocation.Create\",\"P\":[{\"_type\":\"call\",\"N\":\"D2L.LP.Web.UI.Rpc.ConnectObject\",\"P\":[\"POST\",{\"_type\":\"url\",\"Url\":\"\/d2l\/lp\/roleSwitch\/55363\/SwitchRole?roleId=141\"}],\"D\":true},{\"_type\":\"D2L.LP.Util.Dictionary\"}]}]}]}"; 	D2L.OR["__gctl_18"]["36"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.ReturnPoints.Set\",\"P\":[\"D2L.UXP.Profile.58877\"]}"; 	D2L.OR["__gctl_18"]["37"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.ReturnPoints.Set\",\"P\":[\"D2L.LP.Notification.Settings.55363\"]}"; 	D2L.OR["__gctl_18"]["38"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.ReturnPoints.Set\",\"P\":[\"D2L.UXP.Preferences.55363\"]}"; 	D2L.OR["__gctl_18"]["39"]="{\"_type\":\"func\",\"N\":\"D2L.PT.Auth.Logout\",\"P\":[\"\/d2l\/logout\"]}"; 	D2L.OR["__gctl_18"]["40"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.OpenWindow\",\"P\":[\"NavbarLink_5002\",{\"_type\":\"url\",\"Url\":\"http:\/\/www2.byui.edu\/LearningModel\/src\/main.swf\"},775,530,true,true]}"; 	D2L.OR["__gctl_18"]["41"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.OpenWindow\",\"P\":[\"NavbarLink_5365\",{\"_type\":\"url\",\"Url\":\"http:\/\/byu-idaho.screenstepslive.com\/s\/14177\"},0,0,true,true]}"; 	D2L.OR["__gctl_18"]["42"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.OpenWindow\",\"P\":[\"NavbarLink_5366\",{\"_type\":\"url\",\"Url\":\"http:\/\/byu-idaho.screenstepslive.com\/s\/14177\/m\/54653\"},0,0,true,true]}"; 	D2L.OR["__gctl_18"]["43"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.OpenWindow\",\"P\":[\"NavbarLink_5367\",{\"_type\":\"url\",\"Url\":\"\/d2l\/common\/dialogs\/quickLink\/quickLink.d2l?ou=55363&type=lti&rcode=byui_produ-737245&srcou=6606\"},570,610,false,false]}"; 	D2L.OR["__gctl_18"]["44"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.OpenWindow\",\"P\":[\"NavbarLink_5368\",{\"_type\":\"url\",\"Url\":\"https:\/\/my.byui.edu\"},0,0,true,true]}"; 	D2L.OR["__gctl_18"]["45"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.OpenWindow\",\"P\":[\"NavbarLink_5008\",{\"_type\":\"url\",\"Url\":\"https:\/\/outlook.office365.com\/owa\/\"},0,0,true,true]}"; 	D2L.OR["__gctl_18"]["46"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.OpenWindow\",\"P\":[\"NavbarLink_5362\",{\"_type\":\"url\",\"Url\":\"https:\/\/content.byui.edu\/\"},0,0,true,true]}"; 	D2L.OR["__gctl_18"]["47"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.OpenWindow\",\"P\":[\"NavbarLink_5364\",{\"_type\":\"url\",\"Url\":\"https:\/\/video.byui.edu\/\"},0,0,true,true]}"; 	D2L.OR["__gctl_18"]["48"]="{\"_type\":\"func\",\"N\":\"D2L.LP.Web.UI.Html.Dom.OpenWindow\",\"P\":[\"NavbarLink_5363\",{\"_type\":\"url\",\"Url\":\"https:\/\/byui.qualtrics.com\/\"},0,0,true,true]}"; 	function ActionBarItem_Lor() {RetrieveFromLOR();} 	function MultiAction_Content( item ) {PluginMultiAction( item, MultiCreateTopics);} 	function ContextMenuItem_Content( item ) {PluginContextMenuItem( item, CreateTopic);} 	function ContextMenuItem_Lor( item ) {PluginContextMenuItem( item, PublishItemToLOR);}
+// ]]></script>
+<script type="text/javascript" src="/d2l/common/language/image.d2l?ou=55363&amp;isi=0&amp;iv=10.6.5.3893-10&amp;collection=managefiles"></script>
+</div>
+<div id="MathJax_Message" style="display: none;"></div>
+<div id="d_pc"><a href="#d2l_1_4_860" class="d2l-skipnav" id="d2l_skipnav">skip to <g class="gr_ gr_301 gr-alert gr_gramm gr_run_anim Grammar only-ins replaceWithoutSep" id="301" data-gr-id="301">main</g> content</a><header>
+<div class="d2l-minibar-placeholder d2l-minibar-placeholder-fixed" id="d2l_minibar_placeholder" aria-label="Minibar" style="height: 70px;">
+<div class="d2l-minibar d2l-min-width d2l-minibar-light d2l_1_5_242" id="d2l_minibar">
+<div class="d2l-max-width">
+<div class="d2l-minibar-padding">
+<div class="d2l-box-layout d2l_1_6_911">
+<div class="d2l-box d2l-box-h d2l_1_7_191"><a class="d2l-minibar-home vui-link d2l-link" href="/d2l/lp/ouHome/defaultHome.d2l"><img class="" src="/d2l/lp/navbars/minibar/icon/view/18?v=10.6.5.3893-10" alt="" /><span class="d2l-minibar-home-text">My Home</span></a><span class="d2l-minibar-breadcrumb"><span class="d2l_1_8_411"></span><span class="d2l-menuflyout-spacer">&nbsp;</span></span>
+<div class="d2l-menuflyout-link d2l-menuflyout-closed d2l-menuflyout-light d2l-left" id="d2l_1_9_719">
+<div class="d2l-menuflyout-link-hover"><a class="d2l-menuflyout-link-link" title="Sandbox Courses - Template - R--- - Eric Julander" href="/d2l/home/55363">Sandbox Courses - Template - R--- - Eric Julander</a>
+<div class="d2l-textblock d2l-offscreen" id="d2l_c_10_3">Select a course...</div>
+<a class="d2l-menuflyout-opener d2l-clickable" title="Select a course..." onclick="return false;" role="button" aria-controls="d2l_1_13_280" aria-labelledby="d2l_c_10_3" tabindex="0"><span class="d2l-menuflyout-link-arrow d2l_1_10_150"></span><span class="d2l-menuflyout-spacer">&nbsp;</span></a>
+<div class="d2l-clear"></div>
+</div>
+<div class="d2l-menuflyout-contents d2l_1_11_703 d2l_1_12_381" id="d2l_1_13_280" aria-hidden="true" aria-expanded="false" aria-live="assertive" aria-labelledby="d2l_c_10_3" style="max-height: 870px;" tabindex="0">
+<div class="d2l-menuflyout-group-container">
+<div id="courseSelectorId" class="d2l-placeholder d2l-placeholder-live">
+<div class="d2l-loading">
+<div class="d2l-textblock d2l-offscreen">Loading...</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d2l-box d2l-box-h d2l-minibar-right d2l_1_7_191">
+<div class="d2l-minibar-activity">
+<div class="d2l-menuflyout d2l-menuflyout-closed d2l-menuflyout-light d2l-left" id="d2l_1_1_328"><a class="d2l-menuflyout-opener d2l-clickable" title="Message alerts" onclick="return false;" aria-haspopup="true" role="button" aria-controls="d2l_1_18_342" aria-labelledby="d2l_c_1_474" tabindex="0"> <span class="d2l-menuflyout-text d2l-offscreen" id="d2l_c_1_474">Message alerts</span></a>
+<div class="d2l-minibar-activity-buckethandle alert_bucket_Messages">
+<div class="d2l-minibar-activity-message-new d2l-hidden"></div>
+<img src="/d2l/img/lp/pixel.gif" alt="" class="Alert d2l_1_14_591" /><img src="/d2l/img/lp/pixel.gif" alt="" class="OpenAlert d2l-hidden d2l_1_15_58" /><span class="d2l-menuflyout-spacer">&nbsp;</span></div>
+<div class="d2l-menuflyout-contents d2l-menuflyout-contents-left d2l_1_16_88 d2l_1_17_860" id="d2l_1_18_342" aria-hidden="true" aria-expanded="false" aria-live="assertive" aria-labelledby="d2l_c_1_474" style="max-height: 870px;" tabindex="0">
+<div class="d2l-menuflyout-group-container">
+<div class="d2l_1_19_765">
+<div>
+<div><a class="d2l-text-imagelink d2l-right d2l_1_20_636" href="/d2l/lms/email/frame.d2l?ou=55363"> <img class="d2l-text-imagelink-img d2l_1_21_427" src="/d2l/img/lp/pixel.gif" alt="" /><span class="d2l-text-imagelink-text">Go to Email</span> </a> <a class="d2l-text-imagelink d2l-left d2l_1_20_636" onclick="D2L.O(&quot;__gctl_18&quot;,1)();return false;" href="javascript:void(0);"> <img class="d2l-text-imagelink-img d2l_1_22_620" src="/d2l/img/lp/pixel.gif" alt="" /><span class="d2l-text-imagelink-text">Go to Instant Messages</span> </a>
+<div class="d2l-clear"></div>
+</div>
+<div id="AB_DL_PH_Messages" class="d2l-placeholder d2l-placeholder-live">
+<div class="d2l-loading">
+<div class="d2l-textblock d2l-offscreen">Loading...</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d2l-minibar-separator"></div>
+<div class="d2l-menuflyout d2l-menuflyout-closed d2l-menuflyout-light d2l-left" id="d2l_1_2_587"><a class="d2l-menuflyout-opener d2l-clickable" title="Update alerts - You have new alerts" onclick="return false;" aria-haspopup="true" role="button" aria-controls="d2l_1_25_593" aria-labelledby="d2l_c_2_295" tabindex="0"> <span class="d2l-menuflyout-text d2l-offscreen" id="d2l_c_2_295">Update alerts - You have new alerts</span></a>
+<div class="d2l-minibar-activity-buckethandle alert_bucket_Grades">
+<div class="d2l-minibar-activity-message-new"></div>
+<img src="/d2l/img/lp/pixel.gif" alt="" class="Alert d2l_1_23_400" /><img src="/d2l/img/lp/pixel.gif" alt="" class="OpenAlert d2l-hidden d2l_1_24_285" /><span class="d2l-menuflyout-spacer">&nbsp;</span></div>
+<div class="d2l-menuflyout-contents d2l-menuflyout-contents-left d2l_1_16_88 d2l_1_17_860" id="d2l_1_25_593" aria-hidden="true" aria-expanded="false" aria-live="assertive" aria-labelledby="d2l_c_2_295" style="max-height: 870px;" tabindex="0">
+<div class="d2l-menuflyout-group-container">
+<div class="d2l_1_19_765">
+<div>
+<div id="AB_DL_PH_Grades" class="d2l-placeholder d2l-placeholder-live">
+<div class="d2l-loading">
+<div class="d2l-textblock d2l-offscreen">Loading...</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d2l-minibar-separator"></div>
+<div class="d2l-menuflyout d2l-menuflyout-closed d2l-menuflyout-light d2l-left" id="d2l_1_3_101"><a class="d2l-menuflyout-opener d2l-clickable" title="Subscription alerts" onclick="return false;" aria-haspopup="true" role="button" aria-controls="d2l_1_28_254" aria-labelledby="d2l_c_3_376" tabindex="0"> <span class="d2l-menuflyout-text d2l-offscreen" id="d2l_c_3_376">Subscription alerts</span></a>
+<div class="d2l-minibar-activity-buckethandle alert_bucket_Alerts">
+<div class="d2l-minibar-activity-message-new d2l-hidden"></div>
+<img src="/d2l/img/lp/pixel.gif" alt="" class="Alert d2l_1_26_179" /><img src="/d2l/img/lp/pixel.gif" alt="" class="OpenAlert d2l-hidden d2l_1_27_364" /><span class="d2l-menuflyout-spacer">&nbsp;</span></div>
+<div class="d2l-menuflyout-contents d2l-menuflyout-contents-left d2l_1_16_88 d2l_1_17_860" id="d2l_1_28_254" aria-hidden="true" aria-expanded="false" aria-live="assertive" aria-labelledby="d2l_c_3_376" style="max-height: 870px;" tabindex="0">
+<div class="d2l-menuflyout-group-container">
+<div class="d2l_1_19_765">
+<div>
+<div id="AB_DL_PH_Alerts" class="d2l-placeholder d2l-placeholder-live">
+<div class="d2l-loading">
+<div class="d2l-textblock d2l-offscreen">Loading...</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d2l-menuflyout d2l-menuflyout-closed d2l-menuflyout-light"><a class="d2l-menuflyout-opener d2l-clickable" onclick="return false;" aria-haspopup="true" role="button" aria-controls="d2l_1_31_212" aria-labelledby="d2l_c_4_989" tabindex="0"> <img class="d2l-image d2l-menuflyout-icon d2l-menuflyout-icon-open d2l_1_29_234" src="/d2l/img/lp/pixel.gif" alt="" /> <span class="d2l-menuflyout-text" id="d2l_c_4_989">CCT - Eric Julander</span><span class="d2l-menuflyout-arrow d2l-menuflyout-arrow-open d2l_1_30_974"></span><span class="d2l-menuflyout-arrow d2l_1_10_150 d2l-menuflyout-arrow-closed"></span></a>
+<div class="d2l-clear"></div>
+<div class="d2l-menuflyout-contents d2l-menuflyout-contents-left" id="d2l_1_31_212" aria-hidden="true" aria-expanded="false" aria-live="assertive" aria-labelledby="d2l_c_4_989" style="max-height: 870px;" tabindex="0">
+<div class="d2l-menuflyout-group-container">
+<div>
+<ul class="d2l-list">
+<li>
+<div class="d2l_1_32_732 d2l_1_33_513"><a class="vui-link d2l-link" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,4)();return false;">View as Instructor (Full)</a> <a class="vui-link d2l-link d2l-right d2l_1_34_652" id="ChangeLinkId" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,5)();return false;" title="Change Role">Change</a> <img class="d2l-image d2l-right d2l-hidden d2l_1_35_242" src="/d2l/img/lp/pixel.gif" alt="Changing Role" id="ProgressImage" title="Changing Role" /></div>
+<div class="d2l-clear"></div>
+<div class="d2l-hidden d2l_1_36_387 d2l_1_37_639 d2l_1_38_484 d2l_1_39_902" id="RoleContainer">
+<ul class="d2l-list d2l_1_40_791">
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,6)();return false;">Helpdesk</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,7)();return false;">Dean / Chair</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,8)();return false;">Designer (Limited)</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,9)();return false;">Course Support Stud</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,10)();return false;">Course Support Leads</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,11)();return false;">Course Support <g class="gr_ gr_303 gr-alert gr_spell gr_run_anim ContextualSpelling ins-del multiReplace" id="303" data-gr-id="303">Mangr</g></a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,12)();return false;">Designer (Full)</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,13)();return false;">OtherDontUse</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,14)();return false;">Basic (Org Role)</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,15)();return false;">Observer</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,16)();return false;">Domain Observer</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,17)();return false;">TGL</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,18)();return false;">Course Council</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,19)();return false;">AIM</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,20)();return false;">Instructor (Online)</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,21)();return false;">Course Council -Edit</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,22)();return false;">Instructor (Guest)</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,23)();return false;">Instructor (IA)</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,24)();return false;">Teaching Assistant</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,25)();return false;">Student</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,26)();return false;">Student (Private)</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,27)();return false;">Student (Complete)</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,28)();return false;">Student (Incomplete)</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,29)();return false;">Student (Extended)</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,30)();return false;">Student (WL)</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,31)();return false;">Student - Pilot</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,32)();return false;">Student (P) - Pilot</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,33)();return false;">Student (C) - Pilot</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,34)();return false;">Student (E) - Pilot</a></li>
+<li><a class="vui-link d2l-link d2l_1_41_326" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,35)();return false;">Test Student</a></li>
+</ul>
+</div>
+<hr class="d2l-minibar-menu-separator" /></li>
+<li>
+<ul style="list-style: none; margin: 10px; padding: 0;">
+<li><span style="white-space: nowrap;"><a class="vui-link d2l-link" href="/d2l/lp/profile/profile_edit.d2l?ou=55363" onclick="D2L.O(&quot;__gctl_18&quot;,36)();">Profile</a> </span></li>
+<li><span style="white-space: nowrap;"><a class="vui-link d2l-link" href="/d2l/Notifications/Settings?ou=55363" onclick="D2L.O(&quot;__gctl_18&quot;,37)();">Notifications</a> </span></li>
+<li><span style="white-space: nowrap;"><a class="vui-link d2l-link" href="/d2l/lp/preferences/preferences_main/preferences_main.d2l?ou=55363" onclick="D2L.O(&quot;__gctl_18&quot;,38)();">Account Settings</a> </span></li>
+</ul>
+<hr class="d2l-minibar-menu-separator" /></li>
+<li><span style="white-space: nowrap;"><a class="vui-link d2l-link d2l_1_32_732" href="javascript:void(0);" onclick="D2L.O(&quot;__gctl_18&quot;,39)();return false;">Log Out</a> </span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="d2l-menuflyout d2l-menuflyout-closed d2l-menuflyout-light"><a class="d2l-menuflyout-opener d2l-clickable" title="Admin Tools" onclick="return false;" aria-haspopup="true" role="button" aria-controls="d2l_1_44_570" aria-labelledby="d2l_c_5_562" tabindex="0"> <img class="d2l-image d2l-menuflyout-icon-open d2l_1_42_957" src="/d2l/img/lp/pixel.gif" alt="" /> <img class="d2l-image d2l-menuflyout-icon d2l_1_43_206" src="/d2l/img/lp/pixel.gif" alt="" /> <span class="d2l-menuflyout-text d2l-offscreen" id="d2l_c_5_562">Admin Tools</span></a>
+<div class="d2l-menuflyout-spacer">&nbsp;</div>
+<div class="d2l-menuflyout-contents" id="d2l_1_44_570" aria-hidden="true" aria-expanded="false" aria-live="assertive" aria-labelledby="d2l_c_5_562" style="max-height: 870px;" tabindex="0">
+<div class="d2l-menuflyout-group-container">
+<div class="d2l_1_45_945 d2l_1_46_89">
+<div class="d2l-left d2l_1_46_89">
+<div class="d2l_1_47_393">
+<h2 class="d2l-heading vui-heading-4 d2l-heading-none">User Related</h2>
+</div>
+<ul class="d2l-list d2l_1_48_977">
+<li><a class="vui-link d2l-link" href="/d2l/profilecardmanagement/view">Profile Cards</a></li>
+<li><a class="vui-link d2l-link" href="/d2l/lp/manageUsers/main.d2l?ou=6606">Users</a></li>
+</ul>
+<div class="d2l_1_47_393">
+<h2 class="d2l-heading vui-heading-4 d2l-heading-none">Organization Related</h2>
+</div>
+<ul class="d2l-list d2l_1_48_977">
+<li><a class="vui-link d2l-link" href="/d2l/brokenLinks/55363">Broken Links</a></li>
+<li><a class="vui-link d2l-link" href="/d2l/lms/competencies/competency_service_jobs.d2l?ou=6606">Competency Service Jobs</a></li>
+<li><a class="vui-link d2l-link" href="/d2l/lms/faq/manage_external_faq.d2l?ext=1&amp;ou=6606">External FAQs</a></li>
+<li><a class="vui-link d2l-link" href="/d2l/lms/importExport/import_export.d2l?ou=55363">Import/Export/Copy Components</a></li>
+</ul>
+<div class="d2l_1_47_393">
+<h2 class="d2l-heading vui-heading-4 d2l-heading-none">Course Related</h2>
+</div>
+<ul class="d2l-list d2l_1_48_977">
+<li><a class="vui-link d2l-link" href="/d2l/lms/competencies/competency_list.d2l?ou=6606">Competencies</a></li>
+</ul>
+<div class="d2l_1_47_393">
+<h2 class="d2l-heading vui-heading-4 d2l-heading-none">ePortfolio</h2>
+</div>
+<ul class="d2l-list d2l_1_48_977">
+<li><a class="vui-link d2l-link" href="/d2l/eP/forms/forms_list.d2l?ou=6606">Forms</a></li>
+<li><a class="vui-link d2l-link" href="/d2l/eP/ePObjects/sharing/profiles_list.d2l?profileType=2&amp;ou=6606">Sharing Groups</a></li>
+<li><a class="vui-link d2l-link" href="/d2l/eP/themes/themes_list.d2l?ou=6606&amp;adm=1">Themes</a></li>
+</ul>
+<div class="d2l_1_47_393">
+<h2 class="d2l-heading vui-heading-4 d2l-heading-none">Learning Repository</h2>
+</div>
+<ul class="d2l-list d2l_1_48_977">
+<li><a class="vui-link d2l-link" href="/d2l/lor/admin/lors_list.d2l?ou=6606">Manage Repositories</a></li>
+<li><a class="vui-link d2l-link" href="/d2l/lor/publish/publish.d2l?ou=6606">Publish</a></li>
+<li><a class="vui-link d2l-link" href="/d2l/lor/search/search.d2l?ou=6606">Search</a></li>
+</ul>
+</div>
+<div class="d2l-clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d2l-clear"></div>
+</div>
+</div>
+</div>
+</div>
+<div id="d2l_navbar" class="d2l-navbar d2l-font-inverse d2l-min-width" role="navigation">
+<h2 class="d2l-offscreen">Navigation</h2>
+<a class="vui-outline d2l-navbar-manage" href="/d2l/lp/navbars/55363/home" style="top: 75px; left: -10000px;"><img class="d2l-image d2l_1_49_192" src="/d2l/img/lp/pixel.gif" alt="Manage Navigation &amp; Themes" title="Manage Navigation &amp; Themes" /> </a><a class="vui-outline d2l-navbar-edit" style="top: 95px; left: -10000px;"><img class="d2l-image d2l_1_50_706" src="/d2l/img/lp/pixel.gif" alt="" /> </a>
+<div class="d2l-navbar-container d_nb_cFull">
+<div class="d2l-max-width">
+<div class="d2l-navbar-container d_nb_cGlobal">
+<div class="d2l-box-layout d2l_1_6_911">
+<div class="d2l-box d2l-box-v d2l_1_51_966">
+<div class="d2l-navbar-container d_nb_cTop">
+<div class="d2l-box-layout d2l_1_6_911">
+<div class="d2l-box d2l-box-h AreaBoxTopLeft d2l_1_51_966">
+<div class="d2l-navbar-area d_nb_pTopLeft d2l-font-magnify">
+<div class="d_nb_pd">
+<div class="d_nb_i"></div>
+<div class="d2l-clear"></div>
+</div>
+</div>
+</div>
+<div class="d2l-box d2l-box-h AreaBoxTopRight d2l_1_51_966">
+<div class="d2l-navbar-area d_nb_pTopRight d2l-font-magnify">
+<div class="d_nb_pd">
+<div class="d_nb_i">
+<ul class="d2l-navbar-area-list">
+<li>
+<div class="d2l-navbar-item"><a class="d2l-navbar-link" onclick="D2L.O(&quot;__gctl_18&quot;,40)(); return false;" href="http://www2.byui.edu/LearningModel/src/main.swf"><span>Learning Model</span></a></div>
+<span class="d2l-navbar-sep"></span></li>
+<li>
+<div class="d2l-navbar-item d2l-navbar-group">
+<div class="d2l-menuflyout d2l-menuflyout-closed d2l-menuflyout-dark"><a class="d2l-menuflyout-opener d2l-clickable" onclick="return false;" aria-haspopup="true" role="button" aria-controls="d2l_1_52_318" aria-labelledby="d2l_c_6_867" tabindex="0"> <span class="d2l-menuflyout-text" id="d2l_c_6_867">I-Learn Help</span><span class="d2l-menuflyout-arrow d2l_1_30_974"></span></a>
+<div class="d2l-clear"></div>
+<div class="d2l-menuflyout-contents" id="d2l_1_52_318" aria-hidden="true" aria-expanded="false" aria-live="assertive" aria-labelledby="d2l_c_6_867" tabindex="0">
+<div class="d2l-menuflyout-group-container">
+<ul class="d2l-navbar-group-inner">
+<li><a class="vui-link d2l-link vui-outline" onclick="D2L.O(&quot;__gctl_18&quot;,41)()" tabindex="0"><span>Instructor Guides</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" onclick="D2L.O(&quot;__gctl_18&quot;,42)()" tabindex="0"><span>Student Help Guides</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" onclick="D2L.O(&quot;__gctl_18&quot;,43)()" tabindex="0"><span>Live Chat/Service Request</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<span class="d2l-navbar-sep"></span></li>
+<li class="d2l-navbar-area-list-item-last">
+<div class="d2l-navbar-item"><a class="d2l-navbar-link" onclick="D2L.O(&quot;__gctl_18&quot;,44)(); return false;" href="https://my.byui.edu"><span>My BYUI</span></a></div>
+<span class="d2l-navbar-sep"></span></li>
+</ul>
+</div>
+<div class="d2l-clear"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d2l-clear"></div>
+</div>
+</div>
+<div class="d2l-box d2l-box-v d2l_1_51_966">
+<div class="d2l-navbar-container d_nb_cMiddle">
+<div class="d2l-box-layout d2l_1_6_911">
+<div class="d2l-box d2l-box-h d2l_1_53_691 d2l_1_51_966"></div>
+<div class="d2l-box d2l-box-h d2l_1_7_191">
+<div class="d2l-navbar-title">Sandbox Courses - Template - R--- - Eric Julander</div>
+</div>
+<div class="d2l-box d2l-box-h d2l_1_53_691 d2l_1_51_966"></div>
+</div>
+<div class="d2l-clear"></div>
+</div>
+</div>
+<div class="d2l-box d2l-box-v d2l_1_51_966">
+<div class="d2l-navbar-container d_nb_cBottom">
+<div class="d2l-box-layout d2l_1_6_911">
+<div class="d2l-box d2l-box-h AreaBoxBottomLeft d2l_1_51_966">
+<div class="d2l-navbar-area d_nb_pBottomLeft d2l-font-magnify">
+<div class="d_nb_pd">
+<div class="d_nb_i"></div>
+<div class="d2l-clear"></div>
+</div>
+</div>
+</div>
+<div class="d2l-box d2l-box-h AreaBoxBottomRight d2l_1_51_966">
+<div class="d2l-navbar-area d_nb_pBottomRight d2l-font-magnify">
+<div class="d_nb_pd">
+<div class="d_nb_i">
+<ul class="d2l-navbar-area-list">
+<li>
+<div class="d2l-navbar-item"><a class="d2l-navbar-link" href="/d2l/le/content/55363/Home"><span>Content</span></a></div>
+<span class="d2l-navbar-sep"></span></li>
+<li>
+<div class="d2l-navbar-item"><a class="d2l-navbar-link" href="/d2l/le/55363/discussions/List"><span>Discussions</span></a></div>
+<span class="d2l-navbar-sep"></span></li>
+<li>
+<div class="d2l-navbar-item"><a class="d2l-navbar-link" href="/d2l/lms/quizzing/quizzing.d2l?ou=55363"><span>Quizzes</span></a></div>
+<span class="d2l-navbar-sep"></span></li>
+<li>
+<div class="d2l-navbar-item"><a class="d2l-navbar-link" href="/d2l/lms/dropbox/dropbox.d2l?ou=55363"><span>Assignments</span></a></div>
+<span class="d2l-navbar-sep"></span></li>
+<li>
+<div class="d2l-navbar-item"><a class="d2l-navbar-link" href="/d2l/le/calendar/55363"><span>Calendar</span></a></div>
+<span class="d2l-navbar-sep"></span></li>
+<li>
+<div class="d2l-navbar-item d2l-navbar-group">
+<div class="d2l-menuflyout d2l-menuflyout-closed d2l-menuflyout-dark"><a class="d2l-menuflyout-opener d2l-clickable" onclick="return false;" aria-haspopup="true" role="button" aria-controls="d2l_1_54_243" aria-labelledby="d2l_c_7_384" tabindex="0"> <span class="d2l-menuflyout-text" id="d2l_c_7_384">My Grades</span><span class="d2l-menuflyout-arrow d2l_1_30_974"></span></a>
+<div class="d2l-clear"></div>
+<div class="d2l-menuflyout-contents" id="d2l_1_54_243" aria-hidden="true" aria-expanded="false" aria-live="assertive" aria-labelledby="d2l_c_7_384" tabindex="0">
+<div class="d2l-menuflyout-group-container">
+<ul class="d2l-navbar-group-inner">
+<li><a class="vui-link d2l-link vui-outline" href="/d2l/lms/grades/index.d2l?ou=55363"><span>Grades</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" href="/d2l/le/userprogress/55363/classprogress/List?searchString=&amp;sortDescending=0&amp;sortField=LastName"><span>User Progress</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<span class="d2l-navbar-sep"></span></li>
+<li>
+<div class="d2l-navbar-item d2l-navbar-group">
+<div class="d2l-menuflyout d2l-menuflyout-closed d2l-menuflyout-dark"><a class="d2l-menuflyout-opener d2l-clickable" onclick="return false;" aria-haspopup="true" role="button" aria-controls="d2l_1_55_103" aria-labelledby="d2l_c_8_367" tabindex="0"> <span class="d2l-menuflyout-text" id="d2l_c_8_367">More Tools</span><span class="d2l-menuflyout-arrow d2l_1_30_974"></span></a>
+<div class="d2l-clear"></div>
+<div class="d2l-menuflyout-contents" id="d2l_1_55_103" aria-hidden="true" aria-expanded="false" aria-live="assertive" aria-labelledby="d2l_c_8_367" tabindex="0">
+<div class="d2l-menuflyout-group-container">
+<ul class="d2l-navbar-group-inner">
+<li><a class="vui-link d2l-link vui-outline" href="/d2l/lms/classlist/classlist.d2l?ou=55363"><span>Classlist</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" href="/d2l/lms/group/group_list.d2l?ou=55363"><span>Groups</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" href="/d2l/awards/55363/"><span>Awards</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" href="/d2l/ep/55363/dashboard/index"><span>ePortfolio</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" href="/d2l/lms/attendance/index.d2l?ou=55363"><span>Attendance</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" onclick="D2L.O(&quot;__gctl_18&quot;,45)()" tabindex="0"><span>Email</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" onclick="D2L.O(&quot;__gctl_18&quot;,46)()" tabindex="0"><span>Equella Content</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" onclick="D2L.O(&quot;__gctl_18&quot;,47)()" tabindex="0"><span>Kaltura Videos</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" onclick="D2L.O(&quot;__gctl_18&quot;,48)()" tabindex="0"><span>Qualtrics Surveys</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<span class="d2l-navbar-sep"></span></li>
+<li class="d2l-navbar-area-list-item-last">
+<div class="d2l-navbar-item d2l-navbar-group">
+<div class="d2l-menuflyout d2l-menuflyout-closed d2l-menuflyout-dark"><a class="d2l-menuflyout-opener d2l-clickable" onclick="return false;" aria-haspopup="true" role="button" aria-controls="d2l_1_56_707" aria-labelledby="d2l_c_9_861" tabindex="0"> <span class="d2l-menuflyout-text" id="d2l_c_9_861">Teaching Tools</span><span class="d2l-menuflyout-arrow d2l_1_30_974"></span></a>
+<div class="d2l-clear"></div>
+<div class="d2l-menuflyout-contents" id="d2l_1_56_707" aria-hidden="true" aria-expanded="false" aria-live="assertive" aria-labelledby="d2l_c_9_861" tabindex="0">
+<div class="d2l-menuflyout-group-container">
+<ul class="d2l-navbar-group-inner">
+<li><a class="vui-link d2l-link vui-outline" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=55363&amp;type=lti&amp;rcode=byui_produ-102081&amp;srcou=6606"><span>+/- Test Student</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=55363&amp;type=lti&amp;rcode=byui_produ-713076&amp;srcou=6606"><span>+/- Assistant</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=55363&amp;type=lti&amp;rcode=byui_produ-77140&amp;srcou=6606"><span>Edit Sections</span></a></li>
+<li><a class="vui-link d2l-link vui-outline" href="/d2l/lp/cmc/main.d2l?ou=55363"><span>Course Admin</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<span class="d2l-navbar-sep"></span></li>
+</ul>
+</div>
+<div class="d2l-clear"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d2l-clear"></div>
+</div>
+</div>
+</div>
+<div class="d2l-clear"></div>
+</div>
+</div>
+<div class="d2l-clear"></div>
+</div>
+</div>
+</header><span class="d2l-fragment"><a name="d2l_1_4_860" tabindex="-1"></a></span>
+<div class="d2l-page-message-container">
+<div class="d2l-page-message d2l_1_57_187" id="d2l_sessionExpiryWarning">
+<div style="display: none;" id="d2l_sessionExpiryAlert" role="alert">
+<div class="d2l-container-icon d2l_1_58_814 d2l_1_59_266">
+<div class="d2l-container-icon-inner d2l_1_60_62 d2l_1_61_546 d2l_1_62_935 d2l_1_63_176">
+<h2 class="d2l-heading vui-heading-2">Are You Still There?</h2>
+<div class="d2l-textblock">Your session expires after 180 minutes of inactivity, which protects your information in case you've left your device without logging out.<br /> <br /> <strong>Hit a key or click anywhere to stay logged in.</strong></div>
+</div>
+</div>
+</div>
+<div style="display: none;" id="d2l_sessionExpiryCheck" role="alert">
+<div class="d2l-container-icon d2l_1_58_814 d2l_1_59_266">
+<div class="d2l-container-icon-inner d2l_1_64_744 d2l_1_61_546 d2l_1_62_935 d2l_1_63_176">
+<div class="d2l_1_65_936">
+<h2 class="d2l-heading vui-heading-2 d2l-heading-none">Oh, There You Are!</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d2l-page-bg">
+<div></div>
+</div>
+<div class="d2l-background-global">
+<div></div>
+</div>
+<div class="d2l-background-left">
+<div>
+<div></div>
+</div>
+</div>
+<div class="d2l-background-right">
+<div>
+<div></div>
+</div>
+</div>
+<div id="d_content" class="d2l-page-main d2l-max-width d2l-min-width" role="main">
+<div id="d_content_inner" class="d2l-page-main-padding">
+<div id="d_page_header" class="d2l-page-header">
+<div class="d2l-tool-actions d2l-left">
+<h1 class="dsr">Manage Files</h1>
+<h2 class="dsr">Tool Navigation</h2>
+<div class="d2l-tool-areas">
+<ul class="d2l-tool-areas-list">
+<li class="d2l-tool-areas-item"><a class="d2l-tool-areas-link vui-outline" href="/d2l/le/content/55363/home?ou=55363">Content</a></li>
+<li class="d2l-tool-areas-item d2l-tool-areas-item-selected"><a class="d2l-tool-areas-link vui-outline" href="javascript://" onclick="var n=new D2L.NavInfo();n.navigation='\/d2l\/lp\/manageFiles\/main.d2l?ou=55363&amp;tu=mf&amp;';Nav.Go(n, false, false);return false;">Manage Files<span class="d2l-offscreen">&nbsp;selected</span> </a></li>
+<li class="d2l-tool-areas-item"><a class="d2l-tool-areas-link vui-outline" href="/d2l/lms/courseBuilder/main.d2l?ou=55363">Course Builder</a></li>
+</ul>
+<div class="d2l-clear"></div>
+<div class="d2l-tool-areas-bar" style="display: block; width: 102px; left: 86.9219px;"></div>
+</div>
+</div>
+<span class="d2l-clear"></span></div>
+<div id="z_bf" class="d_ma"></div>
+<div id="d_content_r_c1">
+<div id="d_content_r_c2">
+<div id="d_content_r">
+<div id="d_content_r_p" style="padding: 0em;"><form method="post" action="main.d2l?ou=55363" id="d2l_form" enctype="multipart/form-data" onreset="return false;">
+<div><input type="hidden" name="d2l_action" value="" /> <input type="hidden" name="d2l_actionparam" value="" /> <input type="hidden" name="d2l_hitCode" value="-674132007667490052" /> <input type="hidden" name="d2l_rf" value="" /> <input type="hidden" name="d2l_controlMapPrev" value="" /> <input type="hidden" name="z_a" value="0" id="z_a" /><input type="hidden" name="z_b" value="1" id="z_b" /><input type="hidden" name="z_c" value="/content/enforced/55363-Campus.Reference.SandboxCourses-Template/" id="z_c" /><input type="hidden" name="z_d" value="Content" id="z_d" /><input type="hidden" name="z_e" value="/content/enforced/55363-Campus.Reference.SandboxCourses-Template/" id="z_e" /><input type="hidden" name="z_f" value="0" id="z_f" /><input type="hidden" name="z_g" value="0" id="z_g" />
+<div class="dco">
+<div class="dco_c" style="padding-top: 0.2em; padding-bottom: 0.2em; padding-left: 0.9em;">
+<table class="d_FG" role="presentation">
+<tbody>
+<tr id="z_h">
+<td class="fl_n fl_left" style="padding-top: 0.3em;"><label id="ctl_3" class="vui-label"><span>Location:</span></label></td>
+<td class="fcl_w">
+<ul class="dl dl_fl" id="z_i" style="line-height: 1.5em;">
+<li><span>content</span><span>&lrm;</span></li>
+<li style="background-image: url('/d2l/img/0/ManageFiles.Main.infBreadCrumbsSeparator.gif?v=10.6.5.3893-10'); background-repeat: no-repeat; background-position: 2px 0px; padding-left: 20px;"><span>enforced</span><span>&lrm;</span></li>
+<li style="background-image: url('/d2l/img/0/ManageFiles.Main.infBreadCrumbsSeparator.gif?v=10.6.5.3893-10'); background-repeat: no-repeat; background-position: 2px 0px; padding-left: 20px;"><span><strong>55363-Campus.Reference.SandboxCourses-Template</strong></span><span style="display: none;">&lrm;</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="dco">
+<div class="dco_c">
+<div class="dab_c" id="z_j" style="display: block;">
+<div>
+<ul>
+<li class="dab_il"><span class="dab_i"><a id="ctl_4" href="javascript://" onclick="var n=new D2L.NavInfo();n.action='Custom';n.actionParam='hide';Nav.Go(n, false, false);return false;" title="Hide the Folder Tree to increase performance" class=""><img src="/d2l/img/0/ManageFiles.Main.tbHideTree.gif?v=10.6.5.3893-10" style="width: 16px; height: 16px;" alt="" /><span>Hide Tree</span></a></span></li>
+<li class="dab_il"><span class="dab_i dab_s"><a id="ctl_5" href="javascript://" onclick="NewFile();return false;" title="Create new HTML file"><img src="/d2l/img/0/ManageFiles.Main.tbNewFile.gif?v=10.6.5.3893-10" style="width: 16px; height: 16px;" alt="" /><span>New File</span></a></span></li>
+<li class="dab_il"><span class="dab_i dab_s"><a id="ctl_6" href="javascript://" onclick="NewFolder();return false;" title="Create new folder"><img src="/d2l/img/0/ManageFiles.Main.tbNewFolder.gif?v=10.6.5.3893-10" style="width: 16px; height: 16px;" alt="" /><span>New Folder</span></a></span></li>
+<li class="dab_il"><span class="dab_i dab_s" style="display: none;"><a id="action_paste" href="javascript://" onclick="DoPaste('');return false;"><img src="/d2l/img/0/ManageFiles.Main.tbPaste.gif?v=10.6.5.3893-10" style="width: 20px; height: 20px;" alt="" /><span></span></a></span></li>
+<li class="dab_il"><span class="dab_i dab_s dab_disabled"><a id="action_pasteDisabled" title="Empty clipboard"><img src="/d2l/img/0/ManageFiles.Main.tbPaste.gif?v=10.6.5.3893-10" style="width: 20px; height: 20px;" alt="" /><span>Paste</span></a></span></li>
+<li class="dab_il"><span class="dab_i dab_s"><a id="ctl_7" href="javascript://" onclick="DoUpload();return false;" title="Upload files to this folder"><img src="/d2l/img/0/ManageFiles.Main.tbUploadFiles.gif?v=10.6.5.3893-10" style="width: 16px; height: 16px;" alt="" /><span>Upload</span></a></span></li>
+<li class="dab_ir"><span class="dab_i"><a id="ctl_8" href="javascript://" onclick="ActionBarItem_Lor();return false;" title="Retrieve content from LOR"><img src="/d2l/img/0/ManageFilesLor.Main.tbRetrieve.gif?v=10.6.5.3893-10" style="width: 16px; height: 16px;" alt="" /><span>Add Learning Object</span></a></span></li>
+</ul>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<div id="z_k" class="dsl_m" style="height: 615px; width: 580px; visibility: visible;">
+<h2 class="dsr">Folder Tree Pane</h2>
+<div class="dsl_pmh" style="width: 145px;">
+<div style="float: left; height: 100%;" class="dsl_p_m_f">
+<div style="overflow: auto; width: 138px;" class="dsl_p_m">
+<div class="dsl_p_m_s" style="width: 115px; height: 592px;">
+<div class="dt_w" id="z_l">
+<ul class="dt_md">
+<li class="dt_n_lir" style="background-position: 7px 0px;">
+<div class="dt_n_cw1r" style="padding-top: 4px; background-position: 7px 13px;">
+<div style="height: 16px; width: 19px; float: left;"><a title="Collapse Node /content/enforced/55363-Campus.Reference.SandboxCourses-Template/" href="javascript://" style="display: inline;"><img src="/d2l/img/0/Framework.TreeView2.actCollapse.gif?v=10.6.5.3893-10" alt="Collapse Node /content/enforced/55363-Campus.Reference.SandboxCourses-Template/" title="Collapse Node /content/enforced/55363-Campus.Reference.SandboxCourses-Template/" /></a>
+<div class="dsr">Selected -</div>
+</div>
+<div class="dt_n_cw2" style="margin-left: 19px;">
+<div><span class="dt_tn_wn" style="padding: 2px; white-space: nowrap; background-color: #b3c8e8;"><span style="display: inline;"><a class="di_l vui-link" title="Navigate to" href="javascript://" style="display: inline;"><img class="di_i" alt="Navigate to" title="Navigate to" src="/d2l/img/0/ManageFiles.Main.infFolderExpanded.gif?v=10.6.5.3893-10" style="width: 16px; height: 16px; display: inline;" /><span class="di_t" style="display: inline;">/content/enforced/55363-Campus.Reference.SandboxCourses-Template/</span></a></span></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<ul class="dt_n_ul" style="display: block; padding-left: 17px;">
+<li class="dt_n_lif" style="background-position: 7px 0px;">
+<div class="dt_n_cw1" style="padding-top: 4px; background-position: 7px 13px;">
+<div style="height: 16px; width: 19px; float: left;"><a title="Expand Node Course Files" href="javascript://" style="display: inline;"><img src="/d2l/img/0/Framework.TreeView2.actExpand.gif?v=10.6.5.3893-10" alt="Expand Node Course Files" title="Expand Node Course Files" /></a></div>
+<div class="dt_n_cw2" style="margin-left: 19px;">
+<div><span class="dt_tn_wn" style="padding: 2px; white-space: nowrap;"><span style="display: inline;"><a class="di_l vui-link" title="Navigate to" href="javascript://" style="display: inline;"><img class="di_i" alt="Navigate to" title="Navigate to" src="/d2l/img/0/ManageFiles.Main.infFolderCollapsed.gif?v=10.6.5.3893-10" style="width: 16px; height: 16px; display: inline;" /><span class="di_t" style="display: inline;">Course Files</span></a></span></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<ul class="dt_n_ul" style="display: none; padding-left: 17px;"></ul>
+</li>
+<li class="dt_n_lil" style="background-position: 7px 0px;">
+<div class="dt_n_cw1l" style="padding-top: 4px; background-position: 7px -87px;">
+<div style="height: 16px; width: 19px; float: left;"><a title="Expand Node Web Files" href="javascript://" style="display: inline;"><img src="/d2l/img/0/Framework.TreeView2.actExpand.gif?v=10.6.5.3893-10" alt="Expand Node Web Files" title="Expand Node Web Files" /></a></div>
+<div class="dt_n_cw2" style="margin-left: 19px;">
+<div><span class="dt_tn_wn" style="padding: 2px; white-space: nowrap;"><span style="display: inline;"><a class="di_l vui-link" title="Navigate to" href="javascript://" style="display: inline;"><img class="di_i" alt="Navigate to" title="Navigate to" src="/d2l/img/0/ManageFiles.Main.infFolderCollapsed.gif?v=10.6.5.3893-10" style="width: 16px; height: 16px; display: inline;" /><span class="di_t" style="display: inline;">Web Files</span></a></span></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<ul class="dt_n_ul" style="display: none; padding-left: 17px;"></ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="dsl_p_bh" style="cursor: e-resize; display: block;">
+<div class="dsl_p_bs"></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="dsl_pmh" style="width: 435px;">
+<div style="float: left; height: 100%;" class="dsl_p_m_f">
+<div class="dsl_p_m" style="width: 435px;">
+<div class="dsl_p_m_s" style="height: 100%; width: 100%;">
+<div id="z_m" class="dsl_m" style="height: 615px; width: 435px; visibility: visible;">
+<h2 class="dsr">List of contents of the selected folder</h2>
+<div class="dsl_pmv" style="height: 583px;">
+<div style="width: 100%;" class="dsl_p_m_f">
+<div style="overflow: auto; height: 576px;" class="dsl_p_m">
+<div class="dsl_p_m_s" style="width: 412px; height: 553px;">
+<div class="d_dg" id="z_n">
+<div class="d_dg_ac" style="display: block;"><span class="d_dg_cb"><input id="d2l_cntl_f44617e492674129ada591827b96260b_1" name="d2l_cntl_f44617e492674129ada591827b96260b_1" type="checkbox" class="d_chb" value="True" title="Select all items" /></span>
+<ul class="da_a" style="float: none; display: inline;">
+<li class="da_ai float_l" style="display: inline;"><a role="button" tabindex="0"><img src="/d2l/img/0/ManageFiles.Main.actCut.gif?v=10.6.5.3893-10" alt="Cut" title="Cut" style="width: 16px; height: 16px;" /></a></li>
+<li class="da_ai float_l" style="display: inline;"><a role="button" tabindex="0"><img src="/d2l/img/0/Shared.Main.actCopy.png?v=10.6.5.3893-10" alt="Copy" title="Copy" style="width: 16px; height: 16px;" /></a></li>
+<li class="da_ai float_l" style="display: inline;"><a role="button" tabindex="0"><img src="/d2l/img/0/Shared.Main.actDelete.png?v=10.6.5.3893-10" alt="Delete" title="Delete" style="width: 16px; height: 16px;" /></a></li>
+<li class="da_ai float_l" style="display: inline;"><a role="button" tabindex="0"><img src="/d2l/img/0/ManageFiles.Main.actDownload.gif?v=10.6.5.3893-10" alt="Download" title="Download" style="width: 16px; height: 16px;" /></a></li>
+<li class="da_ai float_l" style="display: inline;"><a role="button" tabindex="0"><img src="/d2l/img/0/ManageFiles.Main.actZip.gif?v=10.6.5.3893-10" alt="Zip" title="Zip" style="width: 16px; height: 16px;" /></a></li>
+<li class="da_ai float_l" style="display: inline;"><a role="button" tabindex="0"><img src="/d2l/img/0/LE_PT_ManageFiles.Main.actAddContentTopics.gif?v=10.6.5.3893-10" alt="Add Content Topics" title="Add Content Topics" style="width: 16px; height: 16px;" /></a></li>
+</ul>
+<span class="clear"></span></div>
+<div id="z_n_c" class="yui-dt">
+<div class="yui-dt-mask" style="display: none;"></div>
+<table summary="A sortable listing of Folders and Files." role="grid" aria-live="assertive" aria-relevant="additions"><colgroup><col /><col /><col /><col /><col /></colgroup>
+<thead>
+<tr class="yui-dt-first yui-dt-last" role="row">
+<th id="yui-dt0-th-d_selection" rowspan="1" colspan="1" class="d_dg_col_d_selection yui-dt0-col-d_selection yui-dt-col-d_selection yui-dt-first" role="columnheader" style="width: 22px;">
+<div id="yui-dt0-th-d_selection-liner" class="yui-dt-liner"><span class="yui-dt-label"></span></div>
+</th>
+<th id="yui-dt0-th-Name" rowspan="1" colspan="1" class="d_dg_col_Name yui-dt0-col-Name yui-dt-col-Name yui-dt-sortable yui-dt-asc" role="columnheader" style="width: 50%;">
+<div id="yui-dt0-th-Name-liner" class="yui-dt-liner"><span class="yui-dt-label"><a href="/content/enforced/55363-Campus.Reference.SandboxCourses-Template/Course Files/../yui-dt0-href-Name" title="Sort Descending" class="yui-dt-sortable">Name</a></span></div>
+</th>
+<th id="yui-dt0-th-Size" rowspan="1" colspan="1" class="d_dg_col_Size yui-dt0-col-Size yui-dt-col-Size yui-dt-sortable" role="columnheader">
+<div id="yui-dt0-th-Size-liner" class="yui-dt-liner"><span class="yui-dt-label"><a href="/content/enforced/55363-Campus.Reference.SandboxCourses-Template/Course Files/../yui-dt0-href-Size" title="Sort Ascending" class="yui-dt-sortable">Size</a></span></div>
+</th>
+<th id="yui-dt0-th-Type" rowspan="1" colspan="1" class="d_dg_col_Type yui-dt0-col-Type yui-dt-col-Type yui-dt-sortable" role="columnheader">
+<div id="yui-dt0-th-Type-liner" class="yui-dt-liner"><span class="yui-dt-label"><a href="/content/enforced/55363-Campus.Reference.SandboxCourses-Template/Course Files/../yui-dt0-href-Type" title="Sort Ascending" class="yui-dt-sortable">Type</a></span></div>
+</th>
+<th id="yui-dt0-th-LastModified" rowspan="1" colspan="1" class="d_dg_col_LastModified yui-dt0-col-LastModified yui-dt-col-LastModified yui-dt-sortable yui-dt-last" role="columnheader">
+<div id="yui-dt0-th-LastModified-liner" class="yui-dt-liner"><span class="yui-dt-label"><a href="/content/enforced/55363-Campus.Reference.SandboxCourses-Template/Course Files/../yui-dt0-href-LastModified" title="Sort Ascending" class="yui-dt-sortable">Last Modified Date</a></span></div>
+</th>
+</tr>
+</thead>
+<tbody class="yui-dt-message" style="display: none;">
+<tr class="yui-dt-first yui-dt-last">
+<td colspan="5" class="yui-dt-empty">
+<div class="yui-dt-liner">This folder is empty.</div>
+</td>
+</tr>
+</tbody>
+<tbody class="yui-dt-data" tabindex="0">
+<tr role="row" id="yui-rec0" class="yui-dt-first yui-dt-even">
+<td headers="yui-dt0-th-d_selection  yui-rec0-rowhead" class="d_dg_col_d_selection yui-dt0-col-d_selection yui-dt-col-d_selection yui-dt-first" role="gridcell">
+<div class="yui-dt-liner"><input id="d2l_cntl_f44617e492674129ada591827b96260b_2" name="z_n_s" type="checkbox" class="d_chb" value="d_/content/enforced/55363-Campus.Reference.SandboxCourses-Template/Course Files/" title="Select &quot;Course Files&quot;" /></div>
+</td>
+<td headers="yui-dt0-th-Name " class="d_dg_col_Name yui-dt0-col-Name yui-dt-col-Name yui-dt-asc yui-dt-sortable" role="rowheader" id="yui-rec0-rowhead" scope="row">
+<div class="yui-dt-liner" style="padding: 2px;">
+<div>
+<div>
+<div class="d_dg_cm" style="padding-top: 0px; padding-bottom: 0px;">
+<div class="d_dg_cm_inner"><a class="dcm dcm_handle_hidden dcm_handle" title="Actions for Course Files" aria-haspopup="true" role="button" style="float: none;" tabindex="0"><img class="dcm_d" src="/d2l/img/0/Framework.ContextMenu.dropArrow.png?v=10.6.5.3893-10" alt="Actions for Course Files" /></a><img alt="" class="di_i" src="/d2l/img/0/ManageFiles.Main.infFolderCollapsed.gif?v=10.6.5.3893-10" style="width: 16px; height: 16px; opacity: 1;" /><a class="vui-link" title="Navigate to" href="javascript://" aria-disabled="false" style="float: none; margin: 0px;"><span>Course Files</span></a></div>
+</div>
+</div>
+</div>
+</div>
+</td>
+<td headers="yui-dt0-th-Size  yui-rec0-rowhead" class="d_dg_col_Size yui-dt0-col-Size yui-dt-col-Size yui-dt-sortable" role="gridcell">
+<div class="yui-dt-liner"></div>
+</td>
+<td headers="yui-dt0-th-Type  yui-rec0-rowhead" class="d_dg_col_Type yui-dt0-col-Type yui-dt-col-Type yui-dt-sortable" role="gridcell">
+<div class="yui-dt-liner"><span style="float: none; display: inline;">Folder</span></div>
+</td>
+<td headers="yui-dt0-th-LastModified  yui-rec0-rowhead" class="d_dg_col_LastModified yui-dt0-col-LastModified yui-dt-col-LastModified yui-dt-sortable yui-dt-last" role="gridcell">
+<div class="yui-dt-liner"><span style="float: none; display: inline;">Oct 12, 2016 2:21 PM</span></div>
+</td>
+</tr>
+<tr role="row" id="yui-rec1" class="yui-dt-last yui-dt-odd">
+<td headers="yui-dt0-th-d_selection  yui-rec1-rowhead" class="d_dg_col_d_selection yui-dt0-col-d_selection yui-dt-col-d_selection yui-dt-first" role="gridcell">
+<div class="yui-dt-liner"><input id="d2l_cntl_f44617e492674129ada591827b96260b_3" name="z_n_s" type="checkbox" class="d_chb" value="d_/content/enforced/55363-Campus.Reference.SandboxCourses-Template/Web Files/" title="Select &quot;Web Files&quot;" /></div>
+</td>
+<td headers="yui-dt0-th-Name " class="d_dg_col_Name yui-dt0-col-Name yui-dt-col-Name yui-dt-asc yui-dt-sortable" role="rowheader" id="yui-rec1-rowhead" scope="row">
+<div class="yui-dt-liner" style="padding: 2px;">
+<div>
+<div>
+<div class="d_dg_cm">
+<div class="d_dg_cm_inner"><a class="dcm dcm_handle_hidden dcm_handle" title="Actions for Web Files" aria-haspopup="true" role="button" style="float: none;" tabindex="0"><img class="dcm_d" src="/d2l/img/0/Framework.ContextMenu.dropArrow.png?v=10.6.5.3893-10" alt="Actions for Web Files" /></a><img alt="" class="di_i" src="/d2l/img/0/ManageFiles.Main.infFolderCollapsed.gif?v=10.6.5.3893-10" style="width: 16px; height: 16px; opacity: 1;" /><a class="vui-link" title="Navigate to" href="javascript://" aria-disabled="false" style="float: none; margin: 0px;"><span>Web Files</span></a></div>
+</div>
+</div>
+</div>
+</div>
+</td>
+<td headers="yui-dt0-th-Size  yui-rec1-rowhead" class="d_dg_col_Size yui-dt0-col-Size yui-dt-col-Size yui-dt-sortable" role="gridcell">
+<div class="yui-dt-liner"></div>
+</td>
+<td headers="yui-dt0-th-Type  yui-rec1-rowhead" class="d_dg_col_Type yui-dt0-col-Type yui-dt-col-Type yui-dt-sortable" role="gridcell">
+<div class="yui-dt-liner"><span style="float: none; display: inline;">Folder</span></div>
+</td>
+<td headers="yui-dt0-th-LastModified  yui-rec1-rowhead" class="d_dg_col_LastModified yui-dt0-col-LastModified yui-dt-col-LastModified yui-dt-sortable yui-dt-last" role="gridcell">
+<div class="yui-dt-liner"><span style="float: none; display: inline;">Sep 7, 2016 8:06 AM</span></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="d_dg_ps" style="display: none;"><a class="vui-link" href="javascript://" aria-disabled="false" style="float: none; margin: 0px;"><span>Load Next Page</span></a><span style="float: none; display: none;">Loading...</span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="dsl_p_bv" style="display: block;"></div>
+</div>
+<div style="background-color: #eeeeee; height: 32px;" class="dsl_pmv">
+<div style="width: 100%;" class="dsl_p_m_f">
+<div class="dsl_p_m" style="height: 32px;">
+<div class="dsl_p_m_s" style="width: 100%; height: 100%;">
+<table cellspacing="0" cellpadding="0" style="width: 100%;" summary="">
+<tbody>
+<tr>
+<td class="dlay_l" style="padding: 0.5em;"><label id="z_p" style="margin-right: 0em; margin-left: 0.5em;"></label></td>
+<td class="dlay_m" style="padding: 0.5em;"></td>
+<td class="dlay_r" style="padding: 0.5em;"><label id="z_q" style="margin-right: 0.5em; margin-left: 0em;">0 files, 2 folders</label></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="display: none;" class="dsl_p_bh"></div>
+<div class="clear"></div>
+</div>
+<div class="clear"></div>
+</div>
+<input type="hidden" name="d2l_controlMap" value="[{'hdn_orgfiles':['z_a','Hidden',[],{},0,1],'hdn_istreeshown':['z_b','Hidden',[],{},0,1],'hdn_orgunitpath':['z_c','Hidden',[],{},0,1],'hdn_currnodetype':['z_d','Hidden',[],{},0,1],'hdn_currdir':['z_e','Hidden',[],{},0,1],'hdn_fatalerror':['z_f','Hidden',[],{},0,1],'hdn_isshared':['z_g','Hidden',[],{},0,1],'ctl_2':['z_h','Field',[],,1,1],'lst_breadcrumbs':['z_i','List',[2,'','',-1,'',0,0,-1,'',1,'',''],{},0,1],'ab_actions':['z_j','ActionBar',[[['ctl_4','Hide Tree',1,1],['ctl_5','New File',1,1],['ctl_6','New Folder',1,1],['action_paste','',0,1],['action_pasteDisabled','Paste',1,0],['ctl_7','Upload',1,1],['ctl_8','Add Learning Object',1,1]]],{},0,0],'sptl_main':['z_k','SplitLayout',['','',1,1,[[0,'',1,1,1,{'ClassName':D2L.LP.Text.IText,'IsTrusted':false,'Value':'Folder Tree Pane'},'25%',''],[0,'',0,1,0,{'ClassName':D2L.LP.Text.IText,'IsTrusted':false},'75%','']],0],{},0,0],'tv_folders':['z_l','Tree',[0,{'IsShared':'0','DirectoryId':'\/content\/enforced\/55363-Campus.Reference.SandboxCourses-Template\/'},'GetTreeNodes','\/d2l\/lp\/manageFiles\/rpc\/rpc_functions.d2l',1,1,D2L.Control.Tree.TextTreeNode,{'ClassName':D2L.Control.Tree.TextTreeNode,'IsExpanded':true,'IsActiveNode':true,'Key':'Content|\/content\/enforced\/55363-Campus.Reference.SandboxCourses-Template\/','Data':{},'HasChildren':true,'ChildNodes':[{'ClassName':D2L.Control.Tree.TextTreeNode,'IsExpanded':false,'IsActiveNode':false,'Key':'Content|\/content\/enforced\/55363-Campus.Reference.SandboxCourses-Template\/Course Files\/','Data':{},'HasChildren':false,'OnDemand':true,'Subject':'Course Files','ImageExpanded':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.infFolderExpanded.gif?v=10.6.5.3893-10'},'Image':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.infFolderCollapsed.gif?v=10.6.5.3893-10'},'NavInfo':{'ClassName':D2L.NavInfo,'OnClick':'DoActivateFolder( \u0027Content\u0027,\u0027\\\/content\\\/enforced\\\/55363-Campus.Reference.SandboxCourses-Template\\\/Course Files\\\/\u0027 )'},'Text':{'ClassName':D2L.LP.Text.IText,'IsTrusted':false,'Value':'Course Files'},'TextFormat':1,'Alt':{'ClassName':D2L.LP.Text.IText,'IsLangTerm':true,'TermName':'ManageFiles.Main.altNavigateToFolder','Value':'Navigate to'},'HasActivation':true,'HasHighlighting':true,'AllowWrap':false},{'ClassName':D2L.Control.Tree.TextTreeNode,'IsExpanded':false,'IsActiveNode':false,'Key':'Content|\/content\/enforced\/55363-Campus.Reference.SandboxCourses-Template\/Web Files\/','Data':{},'HasChildren':false,'OnDemand':true,'Subject':'Web Files','ImageExpanded':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.infFolderExpanded.gif?v=10.6.5.3893-10'},'Image':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.infFolderCollapsed.gif?v=10.6.5.3893-10'},'NavInfo':{'ClassName':D2L.NavInfo,'OnClick':'DoActivateFolder( \u0027Content\u0027,\u0027\\\/content\\\/enforced\\\/55363-Campus.Reference.SandboxCourses-Template\\\/Web Files\\\/\u0027 )'},'Text':{'ClassName':D2L.LP.Text.IText,'IsTrusted':false,'Value':'Web Files'},'TextFormat':1,'Alt':{'ClassName':D2L.LP.Text.IText,'IsLangTerm':true,'TermName':'ManageFiles.Main.altNavigateToFolder','Value':'Navigate to'},'HasActivation':true,'HasHighlighting':true,'AllowWrap':false}],'OnDemand':false,'Subject':'\/content\/enforced\/55363-Campus.Reference.SandboxCourses-Template\/','ImageExpanded':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.infFolderExpanded.gif?v=10.6.5.3893-10'},'Image':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.infFolderCollapsed.gif?v=10.6.5.3893-10'},'NavInfo':{'ClassName':D2L.NavInfo,'OnClick':'DoActivateFolder( \u0027Content\u0027,\u0027\\\/content\\\/enforced\\\/55363-Campus.Reference.SandboxCourses-Template\\\/\u0027 )'},'Text':{'ClassName':D2L.LP.Text.IText,'IsTrusted':false,'Value':'\/content\/enforced\/55363-Campus.Reference.SandboxCourses-Template\/'},'TextFormat':1,'Alt':{'ClassName':D2L.LP.Text.IText,'IsLangTerm':true,'TermName':'ManageFiles.Main.altNavigateToFolder','Value':'Navigate to'},'HasActivation':true,'HasHighlighting':true,'AllowWrap':false},0,0,0],{},0,0],'sptl_right':['z_m','SplitLayout',['','',0,2,[[0,'',0,1,1,{'ClassName':D2L.LP.Text.IText,'IsTrusted':false,'Value':'List of contents of the selected folder'},'*',''],[0,'#EEEEEE',0,0,0,{'ClassName':D2L.LP.Text.IText,'IsTrusted':false},'Auto','']],1,['sptl_main']],{},0,0],'dg_files':['z_n','DataGrid',[],{'EmptyText':'This folder is empty.','SortDesc':'Sort Descending','SortAsc':'Sort Ascending','RowSelectionMode':1,'Columns':[{'ColumnKey':'Name','IsResizable':false,'IsSortable':true,'Label':'Name','Columns':[],'Renderer':{'ClassName':D2L.Control.DataGrid.ContextMenuColumnRenderer}},{'ColumnKey':'Size','IsResizable':false,'IsSortable':true,'Label':'Size','Columns':[],'Renderer':{'ClassName':D2L.Control.DataGrid.FileSizeColumnRenderer}},{'ColumnKey':'Type','IsResizable':false,'IsSortable':true,'Label':'Type','Columns':[],'Renderer':{'ClassName':D2L.Control.DataGrid.TextColumnRenderer}},{'ColumnKey':'LastModified','IsResizable':false,'IsSortable':true,'Label':'Last Modified Date','Columns':[],'Renderer':{'ClassName':D2L.Control.DataGrid.DateTimeColumnRenderer}}],'EntitySourceRpc':'GetGridContents','EntitySourceRpcSrc':'\/d2l\/lp\/manageFiles\/rpc\/rpc_functions.d2l','PrimaryColumnKey':'Name','ActionsControlId':{'ClassName':D2L.Control.Id,'ID':'ctl_9'},'Summary':'A sortable listing of Folders and Files.','RowHeaderColumnKey':'Name','RpcResponse':{'Rows':[{'RowKey':'d_\/content\/enforced\/55363-Campus.Reference.SandboxCourses-Template\/Course Files\/','Subject':'Course Files','IsSelectable':true,'Data':[{'ClassName':D2L.Control.DataGrid.ContextMenuColumnRendererData,'StructureControlId':{'ClassName':D2L.Control.Id,'ID':'cms_folder'},'IsEditable':true,'ValidatorControlId':{'ClassName':D2L.Control.Id,'ID':'v_folder'},'Alt':'Navigate to','NavInfo':{'ClassName':D2L.NavInfo,'OnClick':'FolderActivated( \u0027Content\u0027,\u0027\\\/content\\\/enforced\\\/55363-Campus.Reference.SandboxCourses-Template\\\/Course Files\\\/\u0027);'},'Text':{'ClassName':D2L.LP.Text.IText,'IsTrusted':false,'Value':'Course Files'},'Image':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.infFolderCollapsed.gif?v=10.6.5.3893-10'}},{'ClassName':D2L.Control.DataGrid.ColumnRendererData,'Value':-1},{'ClassName':D2L.Control.DataGrid.TextColumnRendererData,'Text':{'ClassName':D2L.LP.Text.IText,'IsLangTerm':true,'TermName':'ManageFiles.Shared.lblFolder','Value':'Folder','Subject':'Course Files'}},{'ClassName':D2L.Control.DataGrid.DateTimeColumnRendererData,'LocalDateTime':'Oct 12, 2016 2:21 PM','Value':0}],'Parameters':{'Name':'Course Files'}},{'RowKey':'d_\/content\/enforced\/55363-Campus.Reference.SandboxCourses-Template\/Web Files\/','Subject':'Web Files','IsSelectable':true,'Data':[{'ClassName':D2L.Control.DataGrid.ContextMenuColumnRendererData,'StructureControlId':{'ClassName':D2L.Control.Id,'ID':'cms_folder'},'IsEditable':true,'ValidatorControlId':{'ClassName':D2L.Control.Id,'ID':'v_folder'},'Alt':'Navigate to','NavInfo':{'ClassName':D2L.NavInfo,'OnClick':'FolderActivated( \u0027Content\u0027,\u0027\\\/content\\\/enforced\\\/55363-Campus.Reference.SandboxCourses-Template\\\/Web Files\\\/\u0027);'},'Text':{'ClassName':D2L.LP.Text.IText,'IsTrusted':false,'Value':'Web Files'},'Image':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.infFolderCollapsed.gif?v=10.6.5.3893-10'}},{'ClassName':D2L.Control.DataGrid.ColumnRendererData,'Value':-1},{'ClassName':D2L.Control.DataGrid.TextColumnRendererData,'Text':{'ClassName':D2L.LP.Text.IText,'IsLangTerm':true,'TermName':'ManageFiles.Shared.lblFolder','Value':'Folder','Subject':'Web Files'}},{'ClassName':D2L.Control.DataGrid.DateTimeColumnRendererData,'LocalDateTime':'Sep 7, 2016 8:06 AM','Value':0}],'Parameters':{'Name':'Web Files'}}],'PageCount':1,'EntityCount':2,'TotalEntityCount':2,'DataGridContext':{'ClassName':D2L.Control.DataGrid.Context,'Parameters':{'NodeType':'Content','DirectoryId':'\/content\/enforced\/55363-Campus.Reference.SandboxCourses-Template\/','IsShared':'0','NumDirectories':'2','NumFiles':'0','ErrorTypeId':'0'}}},'DefaultSort':{'SortField':'Name','IsAscending':true},'Sorting':[{'SortField':'IsDirectory','IsAscending':false}],'PagingType':2,'PageSize':100,'PageSizeLimit':200,'DragDropMode':0},0,0],'ctl_9':['z_o','Actions',[],{'Groups':[{'ClassName':D2L.Control.Actions.ItemGroup,'Items':[{'ClassName':D2L.Control.Actions.Item,'Img':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.actCut.gif?v=10.6.5.3893-10'},'ImgDisabled':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.actCut.gif?v=10.6.5.3893-10'},'Key':'cut','Text':{'ClassName':D2L.LP.Text.IText,'IsTrusted':false,'Value':'Cut'},'TextIsDisplayed':false},{'ClassName':D2L.Control.Actions.Item,'Img':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/Shared.Main.actCopy.png?v=10.6.5.3893-10'},'ImgDisabled':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/Shared.Main.actCopy.png?v=10.6.5.3893-10'},'Key':'copy','Text':{'ClassName':D2L.LP.Text.IText,'IsTrusted':false,'Value':'Copy'},'TextIsDisplayed':false},{'ClassName':D2L.Control.Actions.Item,'Img':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/Shared.Main.actDelete.png?v=10.6.5.3893-10'},'ImgDisabled':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/Shared.Main.actDeleteDisabled.png?v=10.6.5.3893-10'},'Key':'delete','Text':{'ClassName':D2L.LP.Text.IText,'IsTrusted':false,'Value':'Delete'},'TextIsDisplayed':false},{'ClassName':D2L.Control.Actions.Item,'Img':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.actDownload.gif?v=10.6.5.3893-10'},'ImgDisabled':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.actDownload.gif?v=10.6.5.3893-10'},'Key':'download','Text':{'ClassName':D2L.LP.Text.IText,'IsTrusted':false,'Value':'Download'},'TextIsDisplayed':false},{'ClassName':D2L.Control.Actions.Item,'Img':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.actZip.gif?v=10.6.5.3893-10'},'ImgDisabled':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/ManageFiles.Main.actZip.gif?v=10.6.5.3893-10'},'Key':'zip','Text':{'ClassName':D2L.LP.Text.IText,'IsTrusted':false,'Value':'Zip'},'TextIsDisplayed':false},{'ClassName':D2L.Control.Actions.Item,'Img':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/LE_PT_ManageFiles.Main.actAddContentTopics.gif?v=10.6.5.3893-10'},'ImgDisabled':{'ClassName':D2L.Images.Image,'H':16,'W':16,'F':'0\/LE_PT_ManageFiles.Main.actAddContentTopics.gif?v=10.6.5.3893-10'},'Key':'multiactioncontent','OnClick':'MultiAction_Content','Text':{'ClassName':D2L.LP.Text.IText,'IsTrusted':false,'Value':'Add Content Topics'},'TextIsDisplayed':false}]}],'OnClickItem':'HandleAction'},0,0],'lbl_selecteditemsbar':['z_p','Label',[],{},0,1],'lbl_totalitemsbar':['z_q','Label',[],{},0,1],'cms_folder':['z_r','ContextMenuStructure',[[[[],'Rename',['0\/ManageFiles.Main.actRename.gif'],null,1,1,0,[0,0,0,'Rename','',[]],'return false;'],[[],'Copy',['0\/Shared.Main.actCopy.png'],null,1,1,0,[0,0,0,'Copy','',[]],'return false;'],[[],'Cut',['0\/ManageFiles.Main.actCut.gif'],null,1,1,0,[0,0,0,'Cut','',[]],'return false;'],[[],'Delete',['0\/Shared.Main.actDelete.png'],null,1,1,1,[0,0,0,'Delete','',[]],'return false;'],[[],'PasteHere',['0\/ManageFiles.Main.actPasteHere.gif'],['0\/ManageFiles.Main.actPasteHereDisabled.gif'],1,0,0,[0,0,0,'Paste Here','',[]],'return false;']],'','','ContextMenuClick'],{},0,1],'cms_editablefile':['z_s','ContextMenuStructure',[[[[],'Edit',['0\/Shared.Main.actEdit.png'],null,1,1,0,[0,0,0,'Edit File','',[]],'return false;'],[[],'Rename',['0\/ManageFiles.Main.actRename.gif'],null,1,1,0,[0,0,0,'Rename','',[]],'return false;'],[[],'Copy',['0\/Shared.Main.actCopy.png'],null,1,1,0,[0,0,0,'Copy','',[]],'return false;'],[[],'Cut',['0\/ManageFiles.Main.actCut.gif'],null,1,1,0,[0,0,0,'Cut','',[]],'return false;'],[[],'Delete',['0\/Shared.Main.actDelete.png'],null,1,1,1,[0,0,0,'Delete','',[]],'return false;'],[[],'Download',['0\/ManageFiles.Main.actDownload.gif'],null,1,1,0,[0,0,0,'Download','',[]],'return false;'],[[],'Preview',['0\/Shared.Main.actPreview.png'],null,1,1,0,[0,0,0,'Preview','',[]],'return false;'],[[],'AddContentTopic',['0\/LE_PT_ManageFiles.Main.actAddContentTopics.gif'],null,1,1,0,[0,0,0,'Add Content Topic','',[]],'ContextMenuItem_Content( this );return false;'],[[],'PublishLOR',['0\/ManageFilesLor.Main.actPublishLOR.gif'],null,1,1,0,[0,0,0,'Publish to LOR','',[]],'ContextMenuItem_Lor( this );return false;']],'','','ContextMenuClick'],{},0,1],'cms_file':['z_t','ContextMenuStructure',[[[[],'Rename',['0\/ManageFiles.Main.actRename.gif'],null,1,1,0,[0,0,0,'Rename','',[]],'return false;'],[[],'Copy',['0\/Shared.Main.actCopy.png'],null,1,1,0,[0,0,0,'Copy','',[]],'return false;'],[[],'Cut',['0\/ManageFiles.Main.actCut.gif'],null,1,1,0,[0,0,0,'Cut','',[]],'return false;'],[[],'Delete',['0\/Shared.Main.actDelete.png'],null,1,1,1,[0,0,0,'Delete','',[]],'return false;'],[[],'Download',['0\/ManageFiles.Main.actDownload.gif'],null,1,1,0,[0,0,0,'Download','',[]],'return false;'],[[],'AddContentTopic',['0\/LE_PT_ManageFiles.Main.actAddContentTopics.gif'],null,1,1,0,[0,0,0,'Add Content Topic','',[]],'ContextMenuItem_Content( this );return false;'],[[],'PublishLOR',['0\/ManageFilesLor.Main.actPublishLOR.gif'],null,1,1,0,[0,0,0,'Publish to LOR','',[]],'ContextMenuItem_Lor( this );return false;']],'','','ContextMenuClick'],{},0,1],'cms_zipfile':['z_u','ContextMenuStructure',[[[[],'Rename',['0\/ManageFiles.Main.actRename.gif'],null,1,1,0,[0,0,0,'Rename','',[]],'return false;'],[[],'Copy',['0\/Shared.Main.actCopy.png'],null,1,1,0,[0,0,0,'Copy','',[]],'return false;'],[[],'Cut',['0\/ManageFiles.Main.actCut.gif'],null,1,1,0,[0,0,0,'Cut','',[]],'return false;'],[[],'Delete',['0\/Shared.Main.actDelete.png'],null,1,1,1,[0,0,0,'Delete','',[]],'return false;'],[[],'Unzip',['0\/ManageFiles.Main.actUnzip.gif'],null,1,1,0,[0,0,0,'Unzip','',[]],'return false;'],[[],'Download',['0\/ManageFiles.Main.actDownload.gif'],null,1,1,0,[0,0,0,'Download','',[]],'return false;'],[[],'AddContentTopic',['0\/LE_PT_ManageFiles.Main.actAddContentTopics.gif'],null,1,1,0,[0,0,0,'Add Content Topic','',[]],'ContextMenuItem_Content( this );return false;'],[[],'PublishLOR',['0\/ManageFilesLor.Main.actPublishLOR.gif'],null,1,1,0,[0,0,0,'Publish to LOR','',[]],'ContextMenuItem_Lor( this );return false;']],'','','ContextMenuClick'],{},0,1],'v_file':['z_v','ValidatorAnd',[[['ctl_10'],['ctl_11'],['ctl_12'],['ctl_13']]],{},0,1],'ctl_10':['z_w','ValidatorRequired',[],{},0,1],'ctl_11':['z_x','ValidatorFileName',[],{},0,1],'ctl_12':['z_y','Validator',[VerifyUniqueness,[],'','',''],{},0,1],'ctl_13':['z_z','Validator',[VerifyPathTooLong,[false],'','','The complete file path is too long. Try shortening the name of the file.'],{},0,1],'v_folder':['z_ba','ValidatorAnd',[[['ctl_14'],['ctl_15'],['ctl_16'],['ctl_17']]],{},0,1],'ctl_14':['z_bb','ValidatorRequired',[],{},0,1],'ctl_15':['z_bc','ValidatorFolderName',[],{},0,1],'ctl_16':['z_bd','Validator',[VerifyUniqueness,[],'','',''],{},0,1],'ctl_17':['z_be','Validator',[VerifyPathTooLong,[true],'','','The complete folder path is too long. Try shortening the name of the folder.'],{},0,1],'ctl_messagearea':['z_bf','MessageArea',['d_content_inner','d_page_header',0,[],null,null],{},0,0]},{}]" /> <input type="hidden" name="d2l_state" value="[{'3':['grid','pagesize','htmleditor','hpg'],'1':['gridpagenum','search','pagenum'],'2':['lcs']},[]]" /> <input type="hidden" name="d2l_referrer" value="Ci80j6KeUBOopkS0g0J9EdXEvFqwcTY2" /></div>
+</form></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="d2l-aria-log d2l-offscreen" role="alert" aria-live="assertive">You have new Updates</div>
+<script src="https://localhost:8000/_js/test.js"></script>
+</body></html>
