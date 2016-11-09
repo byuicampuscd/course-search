@@ -1,0 +1,78 @@
+/********************************************************
+    The purpose of course.css is to house only the css
+    specific to an individual course. The online.css
+    houses all the default template formatting.
+********************************************************/
+
+
+/* DO NOT DELETE OR MODIFY THIS IMPORT */
+
+@import url("https://content.byui.edu/integ/gen/599082e0-3e89-4fd9-ac69-2615865d63c7/0/online.css");
+
+/* Adjust/Add Course Specific css Below */
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: inline-block;
+}
+
+input {
+    padding: 4px;
+}
+
+form input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+button {
+    padding: 5px 8px;
+    color: #fff;
+    background: #427eb9;
+    border: none;
+    cursor: pointer;
+}
+
+#showAllLinksBtn {
+    margin: 0;
+}
+
+ul {
+    padding-top: 20px;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+ul li {
+    padding: 10px;
+    background: #dddddd;
+    border-bottom: 1px solid #8d8d8d;
+}
+
+ul li a {
+    font-size: 20px;
+    border-bottom: none;
+}
+
+ul li a:hover {
+    color: #2d5d94;
+    border-bottom: 2px solid #2d5d94;
+}
+
+ul li .path {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #646464;
+}
+
+ul li p {
+    margin-top: 5px;
+    padding: 10px;
+    background: #f4f4f4;
+}
+
+.highlight {
+    background: #fdf404;
+}
