@@ -10,6 +10,9 @@
 @import url("https://content.byui.edu/integ/gen/599082e0-3e89-4fd9-ac69-2615865d63c7/0/online.css");
 
 /* Adjust/Add Course Specific css Below */
+#main {
+    min-height: 310px;
+}
 
 h1 {
     margin-bottom: 20px;

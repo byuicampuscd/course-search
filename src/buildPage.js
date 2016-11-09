@@ -31,8 +31,6 @@ function init() {
     document.querySelector('#main').innerHTML = template;
     // Initiage courseSearch
     courseSearch();
-    // Get page to resize
-    window.setTimeout(function() {document.body.classList.toggle('foo');}, 1000);
 };
 
 window.addEventListener('load', init);
