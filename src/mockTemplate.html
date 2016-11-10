@@ -1,10 +1,21 @@
-var template =
-    `<div id="header">
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>BYU-Idaho</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
             <img src="https://content.byui.edu/integ/gen/be2c7d0f-ed5e-4dca-ac0b-0b2a7155a4f2/0/smallBanner.jpg" alt="Course Banner" />
         </div>
         <div id="article">
             <h1>Course Search</h1>
-
+            
             <div id="loadingMessage">
                 <div id="loader"></div>
                 <p>Gathering course files...</p>
@@ -22,7 +33,12 @@ var template =
                 <label>RegEx</label>
                 <input id="regex" type="checkbox">
             </form>
+<!--            <button id="showAllLinksBtn" class="right" type="button">Show All Links in Course</button>-->
 
             <ul id="results"></ul>
 
-        </div>`;
+        </div>
+    </div>
+</body>
+
+</html>

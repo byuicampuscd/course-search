@@ -68,29 +68,36 @@ var courseSearch = (function () {
 
         // Execute search
         for (file in files) {
-            if (includeHTML) {
-                originalText = $(files[file].document).find('html').html();
+            console.log('ran');
+            if (!files[file].document) {
+                console.log('Missing Document');
+                console.log(files[file]);
             } else {
-                originalText = $(files[file].document).find('body').text();
-            }
-            originalText = originalText.replace(/\n/g, " ");
-            originalText = originalText.replace(/\s+/g, " ").trim();
-            if (isCaseSensitive) {
-                text = originalText;
-            } else {
-                text = originalText.toLowerCase();
-                searchString = searchString.toLowerCase();
-            }
-            matchEnd = 0;
-            while (text.indexOf(searchString, matchEnd) != -1) {
-                matchStart = text.indexOf(searchString, matchEnd);
-                matchEnd = matchStart + searchString.length;
-                match = originalText.slice(matchStart, matchEnd);
-                snippetStart = (matchStart < 50) ? 0 : matchStart - 50;
-                snippetEnd = (snippetStart + 100 > text.length) ? text.length : snippetStart + 100;
-                snippet = originalText.slice(snippetStart, snippetEnd);
-                snippet = highlight(snippet, match);
-                printToScreen(file, snippet);
+                if (includeHTML) {
+                    originalText = $(files[file].document).find('html').html();
+                } else {
+                    originalText = $(files[file].document).find('body').text();
+                }
+
+                originalText = originalText.replace(/\n/g, " ");
+                originalText = originalText.replace(/\s+/g, " ").trim();
+                if (isCaseSensitive) {
+                    text = originalText;
+                } else {
+                    text = originalText.toLowerCase();
+                    searchString = searchString.toLowerCase();
+                }
+                matchEnd = 0;
+                while (text.indexOf(searchString, matchEnd) != -1) {
+                    matchStart = text.indexOf(searchString, matchEnd);
+                    matchEnd = matchStart + searchString.length;
+                    match = originalText.slice(matchStart, matchEnd);
+                    snippetStart = (matchStart < 50) ? 0 : matchStart - 50;
+                    snippetEnd = (snippetStart + 100 > text.length) ? text.length : snippetStart + 100;
+                    snippet = originalText.slice(snippetStart, snippetEnd);
+                    snippet = highlight(snippet, match);
+                    printToScreen(file, snippet);
+                }
             }
         }
     }
@@ -143,14 +150,14 @@ var courseSearch = (function () {
         if (searchString === '') {
             return;
         }
-
+        
         // Determine type of search to execute
         if ($('#regex').prop('checked')) {
             regExSearch(searchString);
         } else {
             normalSearch(searchString);
         }
-
+        
         // If no results were produced print message
         if ($('#results').html() === '') {
             $('#results').html('No Results Found');
@@ -169,6 +176,16 @@ var courseSearch = (function () {
             }
         }
     }
+    
+    function checkProgress() {
+        for (var file in files) {
+            if (!files[file].scanned) {
+                return;
+            }
+        }
+        $('#loadingMessage').hide();
+        $('#searchCourse, #results').show();
+    }
 
     function searchLinksForAdditionalFiles(file) {
         if (!files[file].links) {
@@ -177,33 +194,39 @@ var courseSearch = (function () {
         $(files[file].document).find('a').each(function (index) {
             var el = $(this).clone();
             var elAsString = $('<div />').html(el).html();
-            var href = el.attr('href');
+            var href = decodeURI(el.attr('href'));
             var newFileTitle;
+            var test = href;
             // Store link tag
             files[file].links.push(elAsString);
             // If link goes to content page make sure it is listed in files object
-            if (href && href.indexOf('.html') != -1) {
+            if (href && href.slice(-4) === 'html' && href.slice(0, 4) != 'http') {
                 if (href.indexOf('/') != -1) {
-                    newFileTitle = href.split('/');
-                    newFileTitle = newFileTitle[newFileTitle.length - 1];
+                    newFileTitle = href.split('/').pop();
                 } else {
                     newFileTitle = href;
                 }
                 newFileTitle = newFileTitle.slice(0, newFileTitle.indexOf('.html'));
                 if (!files[newFileTitle]) {
                     if (href.indexOf('/content/enforced') === -1) {
-                        href = files[file].Url.slice(0, files[file].Url.indexOf(files[file].Title)) + href;
+                        href = files[file].Url.split('/').slice(0, -1).join('/').concat('/' + href);
                     }
                     files[newFileTitle] = {
                             Title: newFileTitle,
                             TypeIdentifier: "File",
-                            Url: href
+                            Url: href,
+                            LinkedFrom: files[file].Title,
+                            scanned: false
                         }
-                        // Search this new file for additional linked files
+                    // Search this new file for additional linked files
                     getFile(newFileTitle);
                 }
             }
+            
         });
+        
+        files[file].scanned = true;
+        checkProgress();
     }
 
     function getFile(file) {
@@ -216,17 +239,23 @@ var courseSearch = (function () {
         xhr.open("GET", url);
         xhr.onreadystatechange = function () {
             if (xhr.readyState == XMLHttpRequest.DONE && xhr.status === 200) {
-                //        searchPageAsString(xhr.responseText, topic);
                 files[file].document = xhr.response;
                 searchLinksForAdditionalFiles(file);
+            } else if (xhr.readyState == XMLHttpRequest.DONE) {
+                console.log('Parent File: ' + files[file].LinkedFrom);
+                console.log('File: ' + decodeURI(files[file].Title));
+                console.log('href: ' + files[file].Url);
+                files[file].scanned = true;
+                checkProgress();
             }
         }
         xhr.send();
     }
 
     function processFile(file) {
-        if (!files[file.Title] && file.TypeIdentifier === 'File') {
+        if (!files[file.Title] && file.TypeIdentifier === 'File' && file.Url.slice(-4) === 'html') {
             files[file.Title] = file;
+            files[file.Title].scanned = false;
         }
     }
 
@@ -262,6 +291,13 @@ var courseSearch = (function () {
         $('#showAllLinksBtn').on('click', printAllLinks);
     }
     
-    return init;
+    function printFiles() {
+        console.log(files);
+    }
+    
+    return {
+        init: init,
+        printFiles: printFiles
+    };
 
 }());

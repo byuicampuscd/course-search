@@ -30,7 +30,7 @@ function init() {
     // Inject HTML
     document.querySelector('#main').innerHTML = template;
     // Initiage courseSearch
-    courseSearch();
+    courseSearch.init();
 };
 
 window.addEventListener('load', init);
