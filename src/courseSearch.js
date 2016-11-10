@@ -1,40 +1,25 @@
 var courseSearch = (function () {
     "use strict";
-    var files = {};
-    var orgUnit;
+    var orgUnit,
+        files = {};
 
     function printToScreen(file, snippet, asHTML) {
-        var id = file.replace(' ', ''),
-            snippetEl = document.createElement('p');
-
-        // Insert snippet
-        snippetEl.innerHTML = snippet;
+        var href,
+            id = file.replace(/\s/g, '');
 
         if (!document.getElementById(id)) {
-            var liEl = document.createElement('li');
-            var linkEl = document.createElement('a');
-            var pathEl = document.createElement('span');
 
             if (files[file].Identifier) {
-                linkEl.href = 'https://byui.brightspace.com/d2l/le/content/' + orgUnit + '/contentfile/' + files[file].Identifier + '/EditFile?fm=0';
+                href = 'https://byui.brightspace.com/d2l/le/content/' + orgUnit + '/contentfile/' + files[file].Identifier + '/EditFile?fm=0';
             } else {
-                linkEl.href = files[file].Url;
+                href = files[file].Url;
             }
-            linkEl.innerHTML = file;
-            linkEl.target = '_blank';
 
-            pathEl.innerHTML = files[file].Url;
-            pathEl.className = 'path';
-
-            liEl.id = id;
-            liEl.append(linkEl);
-            liEl.append(pathEl);
-            liEl.append(snippetEl);
-
-            $('#results').append(liEl);
-        } else {
-            document.getElementById(id).append(snippetEl);
+            document.getElementById('results').insertAdjacentHTML('beforeend', buildListItem(file, id, href));
         }
+        
+        document.getElementById(id).insertAdjacentHTML('beforeend', buildSnippet(snippet));
+        
 
     }
 
@@ -68,11 +53,7 @@ var courseSearch = (function () {
 
         // Execute search
         for (file in files) {
-            console.log('ran');
-            if (!files[file].document) {
-                console.log('Missing Document');
-                console.log(files[file]);
-            } else {
+            if (files[file].document) {
                 if (includeHTML) {
                     originalText = $(files[file].document).find('html').html();
                 } else {
@@ -88,7 +69,7 @@ var courseSearch = (function () {
                     searchString = searchString.toLowerCase();
                 }
                 matchEnd = 0;
-                while (text.indexOf(searchString, matchEnd) != -1) {
+                while (text.indexOf(searchString, matchEnd) !== -1) {
                     matchStart = text.indexOf(searchString, matchEnd);
                     matchEnd = matchStart + searchString.length;
                     match = originalText.slice(matchStart, matchEnd);
@@ -163,40 +144,32 @@ var courseSearch = (function () {
             $('#results').html('No Results Found');
         }
     }
-
-    function printAllLinks() {
-        var file;
-        var links;
-        var i;
-        $('#results').html('');
-        for (file in files) {
-            links = files[file].links;
-            for (i = 0; i < links.length; i++) {
-                printToScreen(file, escapeHTML(links[i]));
-            }
-        }
-    }
     
     function checkProgress() {
-        for (var file in files) {
+        var file;
+        for (file in files) {
             if (!files[file].scanned) {
                 return;
             }
         }
+        $('#main').css('min-height', 'initial');
         $('#loadingMessage').hide();
         $('#searchCourse, #results').show();
     }
 
     function searchLinksForAdditionalFiles(file) {
+        var el, elAsString, href, newFileTitle, test;
+        
         if (!files[file].links) {
             files[file].links = [];
         }
         $(files[file].document).find('a').each(function (index) {
-            var el = $(this).clone();
-            var elAsString = $('<div />').html(el).html();
-            var href = decodeURI(el.attr('href'));
-            var newFileTitle;
-            var test = href;
+            el = $(this).clone();
+            elAsString = $('<div />').html(el).html();
+            href = decodeURI(el.attr('href'));
+            newFileTitle;
+            test = href;
+            
             // Store link tag
             files[file].links.push(elAsString);
             // If link goes to content page make sure it is listed in files object
@@ -230,11 +203,13 @@ var courseSearch = (function () {
     }
 
     function getFile(file) {
+        var url, xhr;
+        
         if (files[file].document) {
             return;
         }
-        var url = "https://byui.brightspace.com" + files[file].Url;
-        var xhr = new XMLHttpRequest();
+        url = "https://byui.brightspace.com" + files[file].Url;
+        xhr = new XMLHttpRequest();
         xhr.responseType = 'document';
         xhr.open("GET", url);
         xhr.onreadystatechange = function () {
@@ -266,20 +241,21 @@ var courseSearch = (function () {
 
     // Uses Valince API to get table of contents of coures and then creates an object reprenting all the content page files linked to in the course.
     function init() {
-        var xhr = new XMLHttpRequest();
+        var children, toc, file,
+            xhr = new XMLHttpRequest();
         orgUnit = window.location.search.split('&').find(function (string) {
             return string.indexOf('ou=') != -1;
         });
         orgUnit = orgUnit.slice(3);
-        var children = "/d2l/api/le/1.5/" + orgUnit + "/content/toc";
+        children = "/d2l/api/le/1.5/" + orgUnit + "/content/toc";
         xhr.open("GET", children);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 // toc is array of objects representing a module. It contains files and any submodules
-                var toc = JSON.parse(xhr.responseText).Modules;
+                toc = JSON.parse(xhr.responseText).Modules;
                 // Extract from each module it's files and files from any sub modules
                 toc.forEach(processModule);
-                for (var file in files) {
+                for (file in files) {
                     getFile(file);
                 };
             }
@@ -288,7 +264,6 @@ var courseSearch = (function () {
 
         // Set event listeners
         $('#searchCourse button').on('click', searchCourse);
-        $('#showAllLinksBtn').on('click', printAllLinks);
     }
     
     function printFiles() {

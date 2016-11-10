@@ -15,12 +15,12 @@
         </div>
         <div id="article">
             <h1>Course Search</h1>
-            
+
             <div id="loadingMessage">
                 <div id="loader"></div>
                 <p>Gathering course files...</p>
             </div>
-            
+
             <form id="searchCourse">
                 <label>Search:</label>
                 <input id="searchBox" type="text" />
@@ -33,9 +33,13 @@
                 <label>RegEx</label>
                 <input id="regex" type="checkbox">
             </form>
-<!--            <button id="showAllLinksBtn" class="right" type="button">Show All Links in Course</button>-->
 
-            <ul id="results"></ul>
+            <ul id="results" style="display: block;">
+                <li id="ReleaseNotes"><a href="" target="_blank">Release Notes</a><span class="path">/content/enforced/16216-FHGEN111/Release Notes.html</span>
+                    <p>e course: Due dates were changed to Wednesday and <span class="highlight">Monday</span> to simplify the course experience. Lessons </p>
+                    <p>ost due Friday and a reply post due the following <span class="highlight">Monday</span>. Added a Table of Record Types component to</p>
+                </li>
+            </ul>
 
         </div>
     </div>

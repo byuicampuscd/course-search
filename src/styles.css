@@ -38,10 +38,6 @@ button {
     cursor: pointer;
 }
 
-#showAllLinksBtn {
-    margin: 0;
-}
-
 ul {
     display: none;
     padding-top: 20px;

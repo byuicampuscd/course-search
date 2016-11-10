@@ -28,7 +28,7 @@ addScript();
 // Initiate Page
 function init() {
     // Inject HTML
-    document.querySelector('#main').innerHTML = template;
+    document.querySelector('#main').innerHTML = searchFormTemplate;
     // Initiage courseSearch
     courseSearch.init();
 };
