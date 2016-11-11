@@ -1,9 +1,10 @@
 var courseSearch = (function () {
     "use strict";
     var orgUnit,
-        files = {};
+        files = {},
+        brokenLinks = {};
 
-    function printToScreen(file, snippet, asHTML) {
+    function printToScreen(file, snippet) {
         var href,
             id = file.replace(/\s/g, '');
 
@@ -17,9 +18,9 @@ var courseSearch = (function () {
 
             document.getElementById('results').insertAdjacentHTML('beforeend', buildListItem(file, id, href));
         }
-        
+
         document.getElementById(id).insertAdjacentHTML('beforeend', buildSnippet(snippet));
-        
+
 
     }
 
@@ -131,107 +132,186 @@ var courseSearch = (function () {
         if (searchString === '') {
             return;
         }
-        
+
         // Determine type of search to execute
         if ($('#regex').prop('checked')) {
             regExSearch(searchString);
         } else {
             normalSearch(searchString);
         }
-        
+
         // If no results were produced print message
         if ($('#results').html() === '') {
             $('#results').html('No Results Found');
         }
     }
     
+    function reportBrokenLinks() {
+        var file,
+            brokenLinkCount = 0,
+            brokenLinks = [];
+        
+        for (file in files) {
+            if (!files[file].isWorking) {
+                printToScreen(files[file].foundIn[0].url, files[file].foundIn[0].text);
+                brokenLinkCount += files[file].foundIn.length;
+                brokenLinks.push(files[file]);
+            }
+        }
+        console.log(brokenLinkCount);
+    }
+
     function checkProgress() {
         var file;
         for (file in files) {
-            if (!files[file].scanned) {
+            if (!files[file].checked) {
                 return;
             }
         }
+        reportBrokenLinks();
         $('#main').css('min-height', 'initial');
         $('#loadingMessage').hide();
         $('#searchCourse, #results').show();
     }
 
+    function checkLink(file) {
+        $.ajax({
+            type: 'HEAD',
+            url: 'https://byui.brightspace.com' + file,
+            success: function () {
+                files[file].checked = true;
+                files[file].isWorking = true;
+                checkProgress();
+            },
+            error: function (data) {
+                // page does not exist
+                files[file].checked = true;
+                files[file].isWorking = false;
+                checkProgress();
+            }
+        });
+    }
+
     function searchLinksForAdditionalFiles(file) {
-        var el, elAsString, href, newFileTitle, test;
-        
-        if (!files[file].links) {
-            files[file].links = [];
-        }
+        var href, newFileTitle, parentData, checked, isD2L, isHTML;
+
         $(files[file].document).find('a').each(function (index) {
-            el = $(this).clone();
-            elAsString = $('<div />').html(el).html();
-            href = decodeURI(el.attr('href'));
-            newFileTitle;
-            test = href;
-            
-            // Store link tag
-            files[file].links.push(elAsString);
-            // If link goes to content page make sure it is listed in files object
-            if (href && href.slice(-4) === 'html' && href.slice(0, 4) != 'http') {
-                if (href.indexOf('/') != -1) {
-                    newFileTitle = href.split('/').pop();
+            checked = true;
+            isD2L = false;
+            isHTML = false;
+            href = decodeURI($(this).attr('href'));
+
+            //Set parent file data
+            parentData = {
+                url: file,
+                text: $(this).text()
+            };
+
+            if (href.indexOf('/') != -1) {
+                newFileTitle = href.split('/').pop();
+            } else {
+                newFileTitle = href;
+            }
+
+            //Check if link is for a D2L resource
+            if (href && href.slice(0, 1) === '/') {
+                isD2L = true;
+                checked = false;
+
+                //Check if html file
+                if (href.slice(-4) === 'html') {
+                    isHTML = true;
                 } else {
-                    newFileTitle = href;
+//                    console.log(href);
                 }
-                newFileTitle = newFileTitle.slice(0, newFileTitle.indexOf('.html'));
-                if (!files[newFileTitle]) {
-                    if (href.indexOf('/content/enforced') === -1) {
-                        href = files[file].Url.split('/').slice(0, -1).join('/').concat('/' + href);
-                    }
-                    files[newFileTitle] = {
-                            Title: newFileTitle,
-                            TypeIdentifier: "File",
-                            Url: href,
-                            LinkedFrom: files[file].Title,
-                            scanned: false
-                        }
-                    // Search this new file for additional linked files
-                    getFile(newFileTitle);
+
+                //If needed make URL absolute
+                if (href.indexOf('quickLink') === -1 && href.indexOf('/content/enforced') === -1) {
+                    href = files[file].Url.split('/').slice(0, -1).join('/').concat('/' + href);
                 }
             }
-            
+
+            //Store in files object
+            if (!files[href]) {
+                files[href] = {
+                    Title: newFileTitle,
+                    Url: href,
+                    isD2L: isD2L,
+                    isHTML: isHTML,
+                    checked: checked,
+                    foundIn: [parentData]
+                };
+            } else {
+                files[href].foundIn.push(parentData);
+            }
+
+            //If needed check link or getFile
+            if (!files[href].checked && files[href].isD2L) {
+                if (files[href].isHTML) {
+                    getFile(href);
+                } else {
+                    checkLink(href);
+                }
+            } else {
+                files[href].isWorking = true;
+            }
         });
-        
-        files[file].scanned = true;
+
+        files[file].checked = true;
         checkProgress();
     }
 
     function getFile(file) {
         var url, xhr;
-        
-        if (files[file].document) {
-            return;
-        }
-        url = "https://byui.brightspace.com" + files[file].Url;
+
+        url = "https://byui.brightspace.com" + file;
+
         xhr = new XMLHttpRequest();
         xhr.responseType = 'document';
         xhr.open("GET", url);
         xhr.onreadystatechange = function () {
-            if (xhr.readyState == XMLHttpRequest.DONE && xhr.status === 200) {
-                files[file].document = xhr.response;
-                searchLinksForAdditionalFiles(file);
-            } else if (xhr.readyState == XMLHttpRequest.DONE) {
-                console.log('Parent File: ' + files[file].LinkedFrom);
-                console.log('File: ' + decodeURI(files[file].Title));
-                console.log('href: ' + files[file].Url);
-                files[file].scanned = true;
-                checkProgress();
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    files[file].document = xhr.response;
+                    files[file].isWorking = true;
+                    searchLinksForAdditionalFiles(file);
+                } else {
+                    // What if a broken link is used in multiple files?
+                    files[file].checked = true;
+                    files[file].isWorking = false;
+                    checkProgress();
+                }
             }
         }
         xhr.send();
     }
 
     function processFile(file) {
-        if (!files[file.Title] && file.TypeIdentifier === 'File' && file.Url.slice(-4) === 'html') {
-            files[file.Title] = file;
-            files[file.Title].scanned = false;
+        var isD2L = false,
+            isHTML = false;
+
+        if (files[file.Url]) {
+            return;
         }
+
+        // Check if internal link
+        if (file.Url.slice(0, 1) === '/') {
+            isD2L = true;
+        }
+
+        // Check if HTML file
+        if (isD2L && file.Url.slice(-4) === 'html') {
+            isHTML = true;
+        }
+
+        files[file.Url] = file;
+        files[file.Url].isD2L = isD2L;
+        files[file.Url].isHTML = isHTML;
+        files[file.Url].checked = false;
+        files[file.Url].foundIn = [{
+            url: false,
+            text: 'Course Table of Contents'
+        }]
     }
 
     function processModule(module) {
@@ -250,13 +330,20 @@ var courseSearch = (function () {
         children = "/d2l/api/le/1.5/" + orgUnit + "/content/toc";
         xhr.open("GET", children);
         xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            if (xhr.readyState === 4 && xhr.status === 200) {
                 // toc is array of objects representing a module. It contains files and any submodules
                 toc = JSON.parse(xhr.responseText).Modules;
                 // Extract from each module it's files and files from any sub modules
                 toc.forEach(processModule);
                 for (file in files) {
-                    getFile(file);
+                    if (files[file].isD2L && files[file].isHTML) {
+                        getFile(file);
+                    } else if (files[file].isD2L) {
+                        checkLink(file);
+                    } else {
+                        files[file].checked = true;
+                        files[file].isWorking = true;
+                    }
                 };
             }
         }
@@ -265,11 +352,11 @@ var courseSearch = (function () {
         // Set event listeners
         $('#searchCourse button').on('click', searchCourse);
     }
-    
-    function printFiles() {
+
+    function printFiles() {        
         console.log(files);
     }
-    
+
     return {
         init: init,
         printFiles: printFiles
