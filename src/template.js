@@ -13,7 +13,8 @@ var searchFormTemplate =
             <form id="searchCourse">
                 <label>Search:</label>
                 <input id="searchBox" type="text" />
-                <button type="submit">GO!</button>
+                <button id="btnGo" type="submit">GO!</button>
+                <a href="javascript:void(0)" onclick="courseSearch.init()">Refresh Snapshot</a>
                 <br>
                 <label>Case Sensitive</label>
                 <input id="caseSensitive" type="checkbox">

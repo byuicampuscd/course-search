@@ -23,6 +23,7 @@ form {
 }
 
 input {
+    margin-bottom: 8px;
     padding: 4px;
 }
 
@@ -36,6 +37,10 @@ button {
     background: #427eb9;
     border: none;
     cursor: pointer;
+}
+
+#btnGo {
+    margin-right: 8px;
 }
 
 ul {

@@ -1,8 +1,12 @@
 var courseSearch = (function () {
     "use strict";
-    var orgUnit,
-        files = {},
-        brokenLinks = {};
+    var orgUnit, files, changeMessageInterval, currentMessageIndex,
+        firstPageLoad = true,
+        messages = [
+            'Start Building Snapshot...',
+            'Gathering Course Files...',
+            'Checking for Broken Links...'
+        ];
 
     function printToScreen(insertInto, file, snippet) {
         var href,
@@ -166,9 +170,11 @@ var courseSearch = (function () {
         }
         
         if (brokenLinkCount > 0) {
-            $('#hideBrokenLinks, #showBrokenLinks').on('click', function() {
-                $('#brokenLinks, #hideBrokenLinks, #showBrokenLinks').toggle();
-            });
+            if (firstPageLoad) {
+                $('#hideBrokenLinks, #showBrokenLinks').on('click', function() {
+                    $('#brokenLinks, #hideBrokenLinks, #showBrokenLinks').toggle();
+                });
+            }
             $('#brokenLinks, #hideBrokenLinks').show();
         }
     }
@@ -184,6 +190,7 @@ var courseSearch = (function () {
         $('#main').css('min-height', 'initial');
         $('#loadingMessage').hide();
         $('#searchCourse, #results').show();
+        firstPageLoad = false;
     }
 
     function checkLink(file) {
@@ -330,11 +337,36 @@ var courseSearch = (function () {
         module.Topics.forEach(processFile);
         module.Modules.forEach(processModule);
     }
+    
+    function changeMessage() {
+        currentMessageIndex++;
+        $('#loadingMessage p').html(messages[currentMessageIndex]);
+        
+        if (currentMessageIndex + 1 === messages.length) {
+            clearInterval(changeMessageInterval);
+        }
+    }
+    
+    function startLoader() {
+        $('#main').css('min-height', '');
+        currentMessageIndex = 0;
+        $('#loadingMessage p').html(messages[currentMessageIndex]);
+        $('#loadingMessage').show();
+        changeMessageInterval = window.setInterval(changeMessage, 3000);
+    }
 
     // Uses Valince API to get table of contents of coures and then creates an object reprenting all the content page files linked to in the course.
     function init() {
         var children, toc, file,
             xhr = new XMLHttpRequest();
+        
+        files = {};
+        $('#results, #brokenLinks').html('');
+        
+        // Hide everything but loader
+        $('#searchCourse, #brokenLinks, #hideBrokenLinks, #showBrokenLinks, #results').hide();
+        startLoader();
+        
         orgUnit = window.location.search.split('&').find(function (string) {
             return string.indexOf('ou=') != -1;
         });
@@ -362,7 +394,9 @@ var courseSearch = (function () {
         xhr.send();
 
         // Set event listeners
-        $('#searchCourse button').on('click', searchCourse);
+        if (firstPageLoad) {
+            $('#searchCourse button').on('click', searchCourse);
+        }
     }
 
     function printFiles() {        
