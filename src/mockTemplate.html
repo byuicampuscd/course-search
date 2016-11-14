@@ -16,12 +16,12 @@
         <div id="article">
             <h1>Course Search</h1>
 
-            <div id="loadingMessage">
+            <div id="loadingMessage" style="display: none;">
                 <div id="loader"></div>
                 <p>Gathering course files...</p>
             </div>
 
-            <form id="searchCourse">
+            <form id="searchCourse" style="display: block;">
                 <label>Search:</label>
                 <input id="searchBox" type="text" />
                 <button type="submit">GO!</button>
@@ -33,6 +33,16 @@
                 <label>RegEx</label>
                 <input id="regex" type="checkbox">
             </form>
+            
+            <button id="hideBrokenLinks" onclick="toggleBrokenLinks()">Hide Broken Links</button>
+            <button id="showBrokenLinks" onclick="toggleBrokenLinks()">Show Broken Links</button>
+            
+            <ul id="brokenLinks" style="display: block;">
+                <li id="ReleaseNotes"><a href="" target="_blank">File Name</a><span class="path">/content/enforced/16216-FHGEN111/Release Notes.html</span>
+                    <p>Link: Due dates</p>
+                    <p>Link: Glossary</p>
+                </li>
+            </ul>
 
             <ul id="results" style="display: block;">
                 <li id="ReleaseNotes"><a href="" target="_blank">Release Notes</a><span class="path">/content/enforced/16216-FHGEN111/Release Notes.html</span>

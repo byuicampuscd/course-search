@@ -4,9 +4,15 @@ var courseSearch = (function () {
         files = {},
         brokenLinks = {};
 
-    function printToScreen(file, snippet) {
+    function printToScreen(insertInto, file, snippet) {
         var href,
             id = file.replace(/\s/g, '');
+        
+        if (insertInto === 'results') {
+            id = 'result-' + id;
+        } else if (insertInto === 'brokenLinks') {
+            id = 'broken-' + id;
+        }
 
         if (!document.getElementById(id)) {
 
@@ -16,7 +22,7 @@ var courseSearch = (function () {
                 href = files[file].Url;
             }
 
-            document.getElementById('results').insertAdjacentHTML('beforeend', buildListItem(file, id, href));
+            document.getElementById(insertInto).insertAdjacentHTML('beforeend', buildListItem(files[file].Title, id, href, files[file].Url));
         }
 
         document.getElementById(id).insertAdjacentHTML('beforeend', buildSnippet(snippet));
@@ -78,7 +84,7 @@ var courseSearch = (function () {
                     snippetEnd = (snippetStart + 100 > text.length) ? text.length : snippetStart + 100;
                     snippet = originalText.slice(snippetStart, snippetEnd);
                     snippet = highlight(snippet, match);
-                    printToScreen(file, snippet);
+                    printToScreen('results', file, snippet);
                 }
             }
         }
@@ -115,7 +121,7 @@ var courseSearch = (function () {
                 snippetEnd = (snippetStart + 100 > text.length) ? text.length : snippetStart + 100;
                 snippet = text.slice(snippetStart, snippetEnd);
                 snippet = highlight(snippet, match[0]);
-                printToScreen(file, snippet);
+                printToScreen('results', file, snippet);
                 // If regex is global the while loop needs to continue, otherwise break to prevent an infinite loop.
                 if (!regEx.global) {
                     break;
@@ -153,12 +159,18 @@ var courseSearch = (function () {
         
         for (file in files) {
             if (!files[file].isWorking) {
-                printToScreen(files[file].foundIn[0].url, files[file].foundIn[0].text);
+                printToScreen('brokenLinks', files[file].foundIn[0].url, 'Link: ' + files[file].foundIn[0].text);
                 brokenLinkCount += files[file].foundIn.length;
                 brokenLinks.push(files[file]);
             }
         }
-        console.log(brokenLinkCount);
+        
+        if (brokenLinkCount > 0) {
+            $('#hideBrokenLinks, #showBrokenLinks').on('click', function() {
+                $('#brokenLinks, #hideBrokenLinks, #showBrokenLinks').toggle();
+            });
+            $('#brokenLinks, #hideBrokenLinks').show();
+        }
     }
 
     function checkProgress() {

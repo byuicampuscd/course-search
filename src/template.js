@@ -23,14 +23,18 @@ var searchFormTemplate =
                 <input id="regex" type="checkbox">
             </form>
 
+            <button id="hideBrokenLinks">Hide Broken Links</button>
+            <button id="showBrokenLinks">Show Broken Links</button>
+
+            <ul id="brokenLinks"></ul>
             <ul id="results"></ul>
 
         </div>`;
 
-function buildListItem(file, id, href) {
+function buildListItem(file, id, href, path) {
     return `<li id="${id}">
                 <a href="${href}" target="_blank">${file}</a>
-                <span class="path">${href}</span>
+                <span class="path">${path}</span>
             </li>`;
 }
 
