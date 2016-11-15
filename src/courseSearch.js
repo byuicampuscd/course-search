@@ -1,17 +1,12 @@
 var courseSearch = (function () {
     "use strict";
-    var orgUnit, files, changeMessageInterval, currentMessageIndex,
-        firstPageLoad = true,
-        messages = [
-            'Start Building Snapshot...',
-            'Gathering Course Files...',
-            'Checking for Broken Links...'
-        ];
+    var orgUnit, links,
+        firstPageLoad = true;
 
-    function printToScreen(insertInto, file, snippet) {
+    function printToScreen(insertInto, link, snippet) {
         var href,
-            id = file.replace(/\s/g, '');
-        
+            id = link.replace(/\s/g, '');
+
         if (insertInto === 'results') {
             id = 'result-' + id;
         } else if (insertInto === 'brokenLinks') {
@@ -20,13 +15,13 @@ var courseSearch = (function () {
 
         if (!document.getElementById(id)) {
 
-            if (files[file].Identifier) {
-                href = 'https://byui.brightspace.com/d2l/le/content/' + orgUnit + '/contentfile/' + files[file].Identifier + '/EditFile?fm=0';
+            if (links[link].identifier) {
+                href = 'https://byui.brightspace.com/d2l/le/content/' + orgUnit + '/contentfile/' + links[link].identifier + '/EditFile?fm=0';
             } else {
-                href = files[file].Url;
+                href = links[link].url;
             }
 
-            document.getElementById(insertInto).insertAdjacentHTML('beforeend', buildListItem(files[file].Title, id, href, files[file].Url));
+            document.getElementById(insertInto).insertAdjacentHTML('beforeend', buildListItem(links[link].title, id, href, link));
         }
 
         document.getElementById(id).insertAdjacentHTML('beforeend', buildSnippet(snippet));
@@ -54,7 +49,7 @@ var courseSearch = (function () {
     }
 
     function normalSearch(searchString) {
-        var file, originalText, text, matchStart, matchEnd, snippetStart, snippetEnd, match,
+        var link, originalText, text, matchStart, matchEnd, snippetStart, snippetEnd, match,
             snippet,
             isCaseSensitive = $('#caseSensitive').prop('checked'),
             includeHTML = $('#includeHTML').prop('checked');
@@ -63,12 +58,12 @@ var courseSearch = (function () {
         $('#results').html('');
 
         // Execute search
-        for (file in files) {
-            if (files[file].document) {
+        for (link in links) {
+            if (links[link].document) {
                 if (includeHTML) {
-                    originalText = $(files[file].document).find('html').html();
+                    originalText = $(links[link].document).find('html').html();
                 } else {
-                    originalText = $(files[file].document).find('body').text();
+                    originalText = $(links[link].document).find('body').text();
                 }
 
                 originalText = originalText.replace(/\n/g, " ");
@@ -88,14 +83,14 @@ var courseSearch = (function () {
                     snippetEnd = (snippetStart + 100 > text.length) ? text.length : snippetStart + 100;
                     snippet = originalText.slice(snippetStart, snippetEnd);
                     snippet = highlight(snippet, match);
-                    printToScreen('results', file, snippet);
+                    printToScreen('results', link, snippet);
                 }
             }
         }
     }
 
     function regExSearch(searchString) {
-        var pattern, flags, file, text, regEx, match, snippetStart, snippetEnd, snippet,
+        var pattern, flags, link, text, regEx, match, snippetStart, snippetEnd, snippet,
             includeHTML = $('#includeHTML').prop('checked');
 
         // Check to make sure searchString is in regular expression form
@@ -111,11 +106,11 @@ var courseSearch = (function () {
         $('#results').html('');
 
         // Execute Search
-        for (file in files) {
+        for (link in links) {
             if (includeHTML) {
-                text = $(files[file].document).find('html').html();
+                text = $(links[link].document).find('html').html();
             } else {
-                text = $(files[file].document).find('body').text();
+                text = $(links[link].document).find('body').text();
             }
             text = text.replace(/\n/g, " ");
             text = text.replace(/\s+/g, " ").trim();
@@ -125,7 +120,7 @@ var courseSearch = (function () {
                 snippetEnd = (snippetStart + 100 > text.length) ? text.length : snippetStart + 100;
                 snippet = text.slice(snippetStart, snippetEnd);
                 snippet = highlight(snippet, match[0]);
-                printToScreen('results', file, snippet);
+                printToScreen('results', link, snippet);
                 // If regex is global the while loop needs to continue, otherwise break to prevent an infinite loop.
                 if (!regEx.global) {
                     break;
@@ -155,34 +150,37 @@ var courseSearch = (function () {
             $('#results').html('No Results Found');
         }
     }
-    
+
     function reportBrokenLinks() {
-        var file,
+        var link,
             brokenLinkCount = 0,
             brokenLinks = [];
-        
-        for (file in files) {
-            if (!files[file].isWorking) {
-                printToScreen('brokenLinks', files[file].foundIn[0].url, 'Link: ' + files[file].foundIn[0].text);
-                brokenLinkCount += files[file].foundIn.length;
-                brokenLinks.push(files[file]);
+
+        for (link in links) {
+            if (links[link].isD2L && !links[link].isWorking) {
+                printToScreen('brokenLinks', links[link].foundIn[0].url, 'Link: ' +         links[link].foundIn[0].text);
+                brokenLinkCount += links[link].foundIn.length;
+                brokenLinks.push(links[link]); 
             }
         }
         
+        console.log('Broken Links: ' + brokenLinkCount);
+
         if (brokenLinkCount > 0) {
             if (firstPageLoad) {
-                $('#hideBrokenLinks, #showBrokenLinks').on('click', function() {
+                $('#hideBrokenLinks, #showBrokenLinks').on('click', function () {
                     $('#brokenLinks, #hideBrokenLinks, #showBrokenLinks').toggle();
                 });
             }
             $('#brokenLinks, #hideBrokenLinks').show();
         }
     }
-
-    function checkProgress() {
-        var file;
-        for (file in files) {
-            if (!files[file].checked) {
+    
+    function checkLinkProgress() {
+        var link;
+        
+        for (link in links) {
+            if (links[link].isD2L && !links[link].checked) {
                 return;
             }
         }
@@ -193,97 +191,70 @@ var courseSearch = (function () {
         firstPageLoad = false;
     }
 
-    function checkLink(file) {
+    function checkLink(link) {
         $.ajax({
             type: 'HEAD',
-            url: 'https://byui.brightspace.com' + file,
+            url: 'https://byui.brightspace.com' + link,
             success: function () {
-                files[file].checked = true;
-                files[file].isWorking = true;
-                checkProgress();
+                links[link].checked = true;
+                links[link].isWorking = true;
+                checkLinkProgress();
             },
             error: function (data) {
                 // page does not exist
-                files[file].checked = true;
-                files[file].isWorking = false;
-                checkProgress();
+                links[link].checked = true;
+                links[link].isWorking = false;
+                checkLinkProgress();
             }
         });
     }
 
-    function searchLinksForAdditionalFiles(file) {
-        var href, newFileTitle, parentData, checked, isD2L, isHTML;
+    function checkProgress() {
+        var link;
+        
+        for (link in links) {
+            if (links[link].isD2L && links[link].isHTML && !links[link].checked) {
+                return;
+            }
+        }
+        $('#loadingMessage p').html('Checking for Broken Links...');
+        // Check D2L links
+        for (link in links) {
+            if (links[link].isD2L && !links[link].checked) {
+                checkLink(link);
+            }
+        }
+    }
 
-        $(files[file].document).find('a').each(function (index) {
-            checked = true;
-            isD2L = false;
-            isHTML = false;
-            href = decodeURI($(this).attr('href'));
+    function searchDocumentForAdditionalLinks(link) {
+        var title, url, parentData;
 
-            //Set parent file data
+        $(links[link].document).find('a').each(function (index) {
+            url = decodeURI($(this).attr('href'));
+
+            //Set parent link data
             parentData = {
-                url: file,
+                url: link,
                 text: $(this).text()
             };
 
-            if (href.indexOf('/') != -1) {
-                newFileTitle = href.split('/').pop();
+            if (url.indexOf('/') != -1) {
+                title = url.split('/').pop();
             } else {
-                newFileTitle = href;
+                title = url;
             }
 
-            //Check if link is for a D2L resource
-            if (href && href.slice(0, 1) === '/') {
-                isD2L = true;
-                checked = false;
-
-                //Check if html file
-                if (href.slice(-4) === 'html') {
-                    isHTML = true;
-                } else {
-//                    console.log(href);
-                }
-
-                //If needed make URL absolute
-                if (href.indexOf('quickLink') === -1 && href.indexOf('/content/enforced') === -1) {
-                    href = files[file].Url.split('/').slice(0, -1).join('/').concat('/' + href);
-                }
-            }
-
-            //Store in files object
-            if (!files[href]) {
-                files[href] = {
-                    Title: newFileTitle,
-                    Url: href,
-                    isD2L: isD2L,
-                    isHTML: isHTML,
-                    checked: checked,
-                    foundIn: [parentData]
-                };
-            } else {
-                files[href].foundIn.push(parentData);
-            }
-
-            //If needed check link or getFile
-            if (!files[href].checked && files[href].isD2L) {
-                if (files[href].isHTML) {
-                    getFile(href);
-                } else {
-                    checkLink(href);
-                }
-            } else {
-                files[href].isWorking = true;
-            }
+            processFile(title, url, parentData);
         });
 
-        files[file].checked = true;
+        links[link].checked = true;
         checkProgress();
     }
 
-    function getFile(file) {
+    function getFile(link) {
         var url, xhr;
 
-        url = "https://byui.brightspace.com" + file;
+        url = "https://byui.brightspace.com" + link;
 
         xhr = new XMLHttpRequest();
         xhr.responseType = 'document';
@@ -291,13 +262,12 @@ var courseSearch = (function () {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
-                    files[file].document = xhr.response;
-                    files[file].isWorking = true;
-                    searchLinksForAdditionalFiles(file);
+                    links[link].document = xhr.response;
+                    links[link].isWorking = true;
+                    searchDocumentForAdditionalLinks(link);
                 } else {
-                    // What if a broken link is used in multiple files?
-                    files[file].checked = true;
-                    files[file].isWorking = false;
+                    links[link].checked = true;
+                    links[link].isWorking = false;
                     checkProgress();
                 }
             }
@@ -305,68 +275,79 @@ var courseSearch = (function () {
         xhr.send();
     }
 
-    function processFile(file) {
+    function processFile(title, url, parentData, identifier) {
         var isD2L = false,
             isHTML = false;
-
-        if (files[file.Url]) {
+        
+        // Make sure url is defined
+        if (!url || url.search(/^(javascript|undefined)/) !== -1) {
             return;
         }
-
+        
         // Check if internal link
-        if (file.Url.slice(0, 1) === '/') {
+        if (url.search(/^http/) === -1) {
             isD2L = true;
+            
+            //If needed make URL absolute
+            if (url.indexOf('quickLink') === -1 && url.indexOf('/content/enforced') === -1) {
+                url = parentData.url.split('/').slice(0, -1).join('/').concat('/' + url);
+            }
         }
 
         // Check if HTML file
-        if (isD2L && file.Url.slice(-4) === 'html') {
+        if (isD2L && url.slice(-4) === 'html') {
             isHTML = true;
         }
 
-        files[file.Url] = file;
-        files[file.Url].isD2L = isD2L;
-        files[file.Url].isHTML = isHTML;
-        files[file.Url].checked = false;
-        files[file.Url].foundIn = [{
-            url: false,
-            text: 'Course Table of Contents'
-        }]
+        // Check if already stored
+        if (links[url]) {
+            if (parentData.text !== 'Course Table of Contents') {
+                links[url].foundIn.push(parentData);
+            }
+        } else {
+
+            // Store in links object
+            links[url] = {
+                title: title,
+                isD2L: isD2L,
+                isHTML: isHTML,
+                identifier: (identifier) ? identifier : false,
+                checked: false,
+                foundIn: [parentData]
+            };
+            
+            // If able get the file
+            if (isD2L && isHTML) {
+                getFile(url);
+            }
+        }
     }
 
     function processModule(module) {
-        module.Topics.forEach(processFile);
+        var parentData = {
+            url: 'Table of Contents',
+            text: 'Course Table of Contents'
+        };
+        module.Topics.forEach(function (file) {
+            processFile(file.Title, file.Url, parentData, file.Identifier);
+        });
         module.Modules.forEach(processModule);
-    }
-    
-    function changeMessage() {
-        currentMessageIndex++;
-        $('#loadingMessage p').html(messages[currentMessageIndex]);
-        
-        if (currentMessageIndex + 1 === messages.length) {
-            clearInterval(changeMessageInterval);
-        }
-    }
-    
-    function startLoader() {
-        $('#main').css('min-height', '');
-        currentMessageIndex = 0;
-        $('#loadingMessage p').html(messages[currentMessageIndex]);
-        $('#loadingMessage').show();
-        changeMessageInterval = window.setInterval(changeMessage, 3000);
     }
 
     // Uses Valince API to get table of contents of coures and then creates an object reprenting all the content page files linked to in the course.
     function init() {
-        var children, toc, file,
+        var children, toc, link,
             xhr = new XMLHttpRequest();
-        
-        files = {};
+
+        links = {};
         $('#results, #brokenLinks').html('');
-        
+
         // Hide everything but loader
         $('#searchCourse, #brokenLinks, #hideBrokenLinks, #showBrokenLinks, #results').hide();
-        startLoader();
-        
+        $('#main').css('min-height', '');
+        $('#loadingMessage p').html('Building Snapshot: Gathering Files...');
+        $('#loadingMessage').show();
+
         orgUnit = window.location.search.split('&').find(function (string) {
             return string.indexOf('ou=') != -1;
         });
@@ -379,16 +360,6 @@ var courseSearch = (function () {
                 toc = JSON.parse(xhr.responseText).Modules;
                 // Extract from each module it's files and files from any sub modules
                 toc.forEach(processModule);
-                for (file in files) {
-                    if (files[file].isD2L && files[file].isHTML) {
-                        getFile(file);
-                    } else if (files[file].isD2L) {
-                        checkLink(file);
-                    } else {
-                        files[file].checked = true;
-                        files[file].isWorking = true;
-                    }
-                };
             }
         }
         xhr.send();
@@ -399,13 +370,13 @@ var courseSearch = (function () {
         }
     }
 
-    function printFiles() {        
-        console.log(files);
+    function printLinks() {
+        console.log(links);
     }
 
     return {
         init: init,
-        printFiles: printFiles
+        printLinks: printLinks
     };
 
 }());
