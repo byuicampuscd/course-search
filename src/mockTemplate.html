@@ -38,13 +38,16 @@
             <button id="hideBrokenLinks" onclick="toggleBrokenLinks()">Hide Broken Links</button>
             <button id="showBrokenLinks" onclick="toggleBrokenLinks()">Show Broken Links</button>
             
-            <ul id="brokenLinks" style="display: block;">
-                <li id="ReleaseNotes"><a href="" target="_blank">File Name</a><span class="path">/content/enforced/16216-FHGEN111/Release Notes.html</span>
-                    <p>Link: Due dates</p>
-                    <p>Link: Glossary</p>
-                </li>
-            </ul>
-
+            <div id="brokenLinksWrapper" style="display: block;">
+                <p><span id="brokenLinkCount">55</span> Broken Links Detected</p>
+                <ul id="brokenLinks" style="display: block;">
+                    <li id="ReleaseNotes"><a href="" target="_blank">File Name</a><span class="path">/content/enforced/16216-FHGEN111/Release Notes.html</span>
+                        <p>Link: Due dates</p>
+                        <p>Link: Glossary</p>
+                    </li>
+                </ul>
+            </div>
+            
             <ul id="results" style="display: block;">
                 <li id="ReleaseNotes"><a href="" target="_blank">Release Notes</a><span class="path">/content/enforced/16216-FHGEN111/Release Notes.html</span>
                     <p>e course: Due dates were changed to Wednesday and <span class="highlight">Monday</span> to simplify the course experience. Lessons </p>

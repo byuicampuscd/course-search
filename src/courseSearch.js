@@ -18,7 +18,7 @@ var courseSearch = (function () {
             if (links[link].identifier) {
                 href = 'https://byui.brightspace.com/d2l/le/content/' + orgUnit + '/contentfile/' + links[link].identifier + '/EditFile?fm=0';
             } else {
-                href = links[link].url;
+                href = link;
             }
 
             document.getElementById(insertInto).insertAdjacentHTML('beforeend', buildListItem(links[link].title, id, href, link));
@@ -153,26 +153,21 @@ var courseSearch = (function () {
 
     function reportBrokenLinks() {
         var link,
-            brokenLinkCount = 0,
-            brokenLinks = [];
+            brokenLinkCount = 0;
 
         for (link in links) {
             if (links[link].isD2L && !links[link].isWorking) {
-                printToScreen('brokenLinks', links[link].foundIn[0].url, 'Link: ' +         links[link].foundIn[0].text);
-                brokenLinkCount += links[link].foundIn.length;
-                brokenLinks.push(links[link]); 
-            }
-        }
-        
-        console.log('Broken Links: ' + brokenLinkCount);
-
-        if (brokenLinkCount > 0) {
-            if (firstPageLoad) {
-                $('#hideBrokenLinks, #showBrokenLinks').on('click', function () {
-                    $('#brokenLinks, #hideBrokenLinks, #showBrokenLinks').toggle();
+                
+                links[link].foundIn.forEach(function(data) {
+                    printToScreen('brokenLinks', data.url, data.text);
+                    brokenLinkCount += 1;
                 });
             }
-            $('#brokenLinks, #hideBrokenLinks').show();
+        }
+
+        if (brokenLinkCount > 0) {
+            $('#brokenLinkCount').html(brokenLinkCount);
+            $('#brokenLinksWrapper, #hideBrokenLinks').show();
         }
     }
     
@@ -217,7 +212,7 @@ var courseSearch = (function () {
                 return;
             }
         }
-        $('#loadingMessage p').html('Checking for Broken Links...');
+        $('#loadingMessage p').html('Checking for Broken D2L Links...');
         // Check D2L links
         for (link in links) {
             if (links[link].isD2L && !links[link].checked) {
@@ -243,6 +238,9 @@ var courseSearch = (function () {
             } else {
                 title = url;
             }
+            if (title.lastIndexOf('.') !== -1) {
+                title = title.slice(0, title.lastIndexOf('.'));
+            }
 
             processFile(title, url, parentData);
         });
@@ -254,7 +252,11 @@ var courseSearch = (function () {
     function getFile(link) {
         var url, xhr;
 
-        url = "https://byui.brightspace.com" + link;
+        if (link.search(/^http/) === -1) {
+            url = "https://byui.brightspace.com" + link;
+        } else {
+            url = link;
+        }
 
         xhr = new XMLHttpRequest();
         xhr.responseType = 'document';
@@ -280,8 +282,13 @@ var courseSearch = (function () {
             isHTML = false;
         
         // Make sure url is defined
-        if (!url || url.search(/^(javascript|undefined)/) !== -1) {
+        if (!url || url.search(/^(javascript|undefined|#)/) !== -1) {
             return;
+        }
+        
+        // Check if file is directly linked to in the table of contents
+        if (parentData.text.search(/^Module/) !== -1) {
+            parentData.text = parentData.text + ' File: ' + title;
         }
         
         // Check if internal link
@@ -301,9 +308,7 @@ var courseSearch = (function () {
 
         // Check if already stored
         if (links[url]) {
-            if (parentData.text !== 'Course Table of Contents') {
-                links[url].foundIn.push(parentData);
-            }
+            links[url].foundIn.push(parentData);
         } else {
 
             // Store in links object
@@ -325,8 +330,8 @@ var courseSearch = (function () {
 
     function processModule(module) {
         var parentData = {
-            url: 'Table of Contents',
-            text: 'Course Table of Contents'
+            url: 'https://byui.brightspace.com/d2l/le/content/' + orgUnit +'/Home',
+            text: 'Module: ' + module.Title
         };
         module.Topics.forEach(function (file) {
             processFile(file.Title, file.Url, parentData, file.Identifier);
@@ -336,37 +341,50 @@ var courseSearch = (function () {
 
     // Uses Valince API to get table of contents of coures and then creates an object reprenting all the content page files linked to in the course.
     function init() {
-        var children, toc, link,
+        var api, toc, link,
             xhr = new XMLHttpRequest();
 
         links = {};
         $('#results, #brokenLinks').html('');
 
         // Hide everything but loader
-        $('#searchCourse, #brokenLinks, #hideBrokenLinks, #showBrokenLinks, #results').hide();
+        $('#searchCourse, #brokenLinksWrapper, #hideBrokenLinks, #showBrokenLinks, #results').hide();
         $('#main').css('min-height', '');
-        $('#loadingMessage p').html('Building Snapshot: Gathering Files...');
+        $('#loadingMessage p').html('Building Snapshot: Gathering Content Pages...');
         $('#loadingMessage').show();
 
         orgUnit = window.location.search.split('&').find(function (string) {
             return string.indexOf('ou=') != -1;
         });
         orgUnit = orgUnit.slice(3);
-        children = "/d2l/api/le/1.5/" + orgUnit + "/content/toc";
-        xhr.open("GET", children);
+        api = "/d2l/api/le/1.5/" + orgUnit + "/content/toc";
+        xhr.open("GET", api);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 // toc is array of objects representing a module. It contains files and any submodules
                 toc = JSON.parse(xhr.responseText).Modules;
+                // Create table of contents link
+                links['https://byui.brightspace.com/d2l/le/content/' + orgUnit +'/Home'] = {
+                    title: 'Course Table of Contents',
+                    isD2L: true,
+                    isHTML: false,
+                    identifier: false,
+                    checked: true,
+                    isWorking: true,
+                    foundIn: []
+                }
                 // Extract from each module it's files and files from any sub modules
                 toc.forEach(processModule);
             }
         }
         xhr.send();
 
-        // Set event listeners
+        // Set event listeners only the first time the page loads
         if (firstPageLoad) {
             $('#searchCourse button').on('click', searchCourse);
+            $('#hideBrokenLinks, #showBrokenLinks').on('click', function () {
+                $('#brokenLinksWrapper, #hideBrokenLinks, #showBrokenLinks').toggle();
+            });
         }
     }
 

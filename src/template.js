@@ -7,7 +7,7 @@ var searchFormTemplate =
 
             <div id="loadingMessage">
                 <div id="loader"></div>
-                <p>Gathering course files...</p>
+                <p></p>
             </div>
             
             <form id="searchCourse">
@@ -26,8 +26,11 @@ var searchFormTemplate =
 
             <button id="hideBrokenLinks">Hide Broken Links</button>
             <button id="showBrokenLinks">Show Broken Links</button>
-
-            <ul id="brokenLinks"></ul>
+            
+            <div id="brokenLinksWrapper">
+                <p><span id="brokenLinkCount"></span> Broken Links Detected</p>
+                <ul id="brokenLinks"></ul>
+            </div>
             <ul id="results"></ul>
 
         </div>`;
