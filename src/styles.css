@@ -12,15 +12,15 @@
 /* Adjust/Add Course Specific css Below */
 
 #main {
-    min-height: 355px;
+    min-height: 460px;
 }
 
 h1 {
-    margin-bottom: 20px;
+    border-bottom: 1px solid #000;
 }
 
-form {
-    display: none;
+#content {
+    margin-top: 20px;
 }
 
 input {
@@ -38,10 +38,6 @@ button {
     background: #427eb9;
     border: none;
     cursor: pointer;
-}
-
-#btnGo {
-    margin-right: 8px;
 }
 
 ul {
@@ -84,35 +80,6 @@ ul li p {
 
 .highlight {
     background: #fdf404;
-}
-
-/* Results */
-#results {
-    display: none;
-}
-
-/* Broken Links */
-#hideBrokenLinks,
-#showBrokenLinks {
-    display: none;
-    margin-top: 15px;
-    background: #d94242;
-}
-
-#brokenLinksWrapper {
-    position: relative;
-    margin-top: 20px;
-    display: none;
-    padding: 0 15px 15px;
-    border: 2px solid #ff0000;
-}
-
-#brokenLinksWrapper > p {
-    position: absolute;
-    top: -12px;
-    background: #f0f0f0;
-    padding: 0 8px;
-    color: #ff0000;
 }
 
 /* Loader */
