@@ -82,6 +82,7 @@ var search = (function () {
                     snippet = originalText.slice(snippetStart, snippetEnd);
                     snippet = highlight(snippet, match);
                     results.push({
+                        title: links[link].title,
                         link: link,
                         snippet: snippet
                     });
@@ -119,6 +120,7 @@ var search = (function () {
                     snippet = text.slice(snippetStart, snippetEnd);
                     snippet = highlight(snippet, match[0]);
                     results.push({
+                        title: links[link].title,
                         link: link,
                         snippet: snippet
                     });
@@ -293,7 +295,7 @@ var courseSnapshot = (function () {
     }
     
     // Start building a snapshot of a course
-    function build(ou, callback) {
+    function build(ou, callback, errorCallback) {
         
         // Make orgUnit accessible
         orgUnit = ou;
@@ -321,9 +323,11 @@ var courseSnapshot = (function () {
                 
                 // Extract from each module it's files and files from any sub modules
                 data.Modules.forEach(processModule);
+                checkProgress();
             },
-            error: function () {
+            error: function (err) {
                 // Add Error Handling logic
+                errorCallback(err);
             }
         });
     }
