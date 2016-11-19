@@ -1,8 +1,12 @@
 /*jslint browser: true*/
-/*global $, singeCourseTemplate, printer, loader, search, courseSnapshot*/
+/*global $, singleCourseTemplate, printer, loader, search, courseSnapshot*/
 var singleCourseSearch = (function () {
     'use strict';
     var orgUnit, snapshot;
+    
+    function getSnapshot() {
+        console.log(snapshot);
+    }
     
     function prepareForPrint(results) {
         var href, html,
@@ -16,11 +20,11 @@ var singleCourseSearch = (function () {
             }
 
             // Print new list item
-            printer.print('results', singeCourseTemplate.buildListItem(snapshot[results.link].title, id, href, results.link));
+            printer.print('results', singleCourseTemplate.buildListItem(snapshot[results.link].title, id, href, results.link));
         }
 
         // Insert snippet to correct list item
-        printer.print(id, singeCourseTemplate.buildSnippet(results.snippet), true);
+        printer.print(id, singleCourseTemplate.buildSnippet(results.snippet), true);
     }
     
     function reportBrokenLinks() {
@@ -30,13 +34,7 @@ var singleCourseSearch = (function () {
 
         for (link in snapshot) {
             if (snapshot[link].isD2L && !snapshot[link].isWorking) {
-                
-                snapshot[link].foundIn.forEach(function (data) {
-                    prepareForPrint({
-                        link: data.url,
-                        snippet: data.text
-                    });
-                });
+                snapshot[link].foundIn.forEach(prepareForPrint);
             }
         }
         
@@ -93,6 +91,7 @@ var singleCourseSearch = (function () {
 
     function searchCourse(e) {
         e.preventDefault();
+        
         var results, isCaseSensitive, includeHMTL, isRegEx,
             searchString = $('#searchBox').val();
 
@@ -106,6 +105,7 @@ var singleCourseSearch = (function () {
         includeHMTL = $('#includeHTML').prop('checked');
         isRegEx = $('#regex').prop('checked');
 
+        // Run search
         results = search(searchString, snapshot, isCaseSensitive, includeHMTL, isRegEx);
         
         printer.reset('results');
@@ -125,21 +125,21 @@ var singleCourseSearch = (function () {
     }
 
     function requestSnapshot() {
-        // Clear screen except loader
-        $('#results, #printMessage').html('');
-        $('#main').css('min-height', '');
+        // Clear results
+        $('#results').html('');
+        $('#printMessage').html('');
 
         // Activate loader and update message
         loader.activate();
         loader.updateMessage('Building Snapshot: Gathering Content Pages...');
 
-        // Start the build
+        // Start the build and pass processSnapshot as callback
         courseSnapshot.build(orgUnit, processSnapshot);
     }
 
     function init() {
         // Inject HTML
-        $('#main').html(singeCourseTemplate.template);
+        $('#main').html(singleCourseTemplate.mainTemplate);
         
         // Pull orgUnit from iframe
         orgUnit = window.location.search.split('&').find(function (string) {
@@ -163,6 +163,7 @@ var singleCourseSearch = (function () {
     }
 
     return {
-        init: init
+        init: init,
+        getSnapshot: getSnapshot
     };
 }());

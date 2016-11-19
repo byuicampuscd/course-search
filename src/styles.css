@@ -8,29 +8,97 @@ h1 {
     border-bottom: 1px solid #000;
 }
 
+h4 {
+    margin-bottom: 0;
+}
+
+#note {
+    font-size: 15px;
+}
+
 #content {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-input {
-    margin-bottom: 8px;
-    padding: 4px;
+form {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
 }
 
-form input[type="checkbox"] {
-    margin-right: 8px;
+#searchBox,
+#btnGo {
+    padding: 8px;
+    font-size: 15px;
+}
+
+#searchBox {
+    margin-bottom: 10px;
+    width: calc(100% - 40px);
+    border: 1px solid #c9c9c9;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+#searchBox:focus {
+    box-sizing: border-box;
+    outline: none;
+    border-color: #427eb9;
+}
+
+#btnGo {
+    position: relative;
+    margin-left: -5px;
+    width: 40px;
+    border: 1px solid #427eb9;
+    background: #427eb9;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+/* Search Icon */
+#btnGo:before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: calc(50% - 9px);
+    width: 18px;
+    height: 18px;
+    background-image: url(searchIcon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+form label:nth-of-type(-n+2) {
+    margin-right: 25px;
 }
 
 button {
-    padding: 5px 8px;
     color: #fff;
-    background: #427eb9;
+    background: #3987ad;
     border: none;
     cursor: pointer;
 }
 
+.tools {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.tools button:first-child {
+    margin-right: 10px;
+}
+
+.tools button {
+    padding: 5px 15px;
+    letter-spacing: .5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
 ul {
-    margin-top: 20px;
+    margin-top: 10px;
     padding-left: 0;
     list-style-type: none;
 }

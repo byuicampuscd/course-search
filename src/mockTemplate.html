@@ -16,47 +16,39 @@
         <div id="article">
             <h1>Course Search</h1>
 
-            <div id="loadingMessage" style="display: none;">
-                <div id="loader"></div>
-                <p>Gathering course files...</p>
-            </div>
+            <p id="note">NOTE: Course search is only able to search content pages that are directly or <span class="popup">indirectly<span>An example of an indirectly linked course page is one that doesn't appear directly in the table of contents but is linked to from a page that is in the table of contents.</span></span> linked to from the course table of contents. This means that any content pages that exist in the manage files that isn't ever linked to will not be searched. Also, the check for broken links feature is only able to check if links to other D2L files is working but can't check links to external resources.</p>
 
-            <form id="searchCourse" style="display: block;">
-                <label>Search:</label>
-                <input id="searchBox" type="text" />
-                <button id="btnGo" type="submit">GO!</button>
-                <a href="javascript:void(0)" onclick="courseSearch.init()">Refresh Snapshot</a>
-                <br>
-                <label>Case Sensitive</label>
-                <input id="caseSensitive" type="checkbox">
-                <label>Include HTML</label>
-                <input id="includeHTML" type="checkbox">
-                <label>RegEx</label>
-                <input id="regex" type="checkbox">
-            </form>
-            
-            <button id="hideBrokenLinks" onclick="toggleBrokenLinks()">Hide Broken Links</button>
-            <button id="showBrokenLinks" onclick="toggleBrokenLinks()">Show Broken Links</button>
-            
-            <div id="brokenLinksWrapper" style="display: block;">
-                <p><span id="brokenLinkCount">55</span> Broken Links Detected</p>
-                <ul id="brokenLinks" style="display: block;">
-                    <li id="ReleaseNotes"><a href="" target="_blank">File Name</a><span class="path">/content/enforced/16216-FHGEN111/Release Notes.html</span>
-                        <p>Link: Due dates</p>
-                        <p>Link: Glossary</p>
+            <div id="content">
+                
+                <form id="searchCourse">
+                    <input id="searchBox" type="text" placeholder="Search..." />
+                    <button id="btnGo" type="submit">&nbsp;</button>
+                    <br>
+                    <input id="caseSensitive" type="checkbox">
+                    <label>Case Sensitive</label>
+                    <input id="includeHTML" type="checkbox">
+                    <label>Include HTML</label>
+                    <input id="regex" type="checkbox">
+                    <label>JavaScript RegEx</label>
+                    <div class="tools">
+                        <button id="refreshSnapshot" type="button">Refresh Snapshot</button>
+                        <button id="checkLinks" type="button">Check Links</button>
+                    </div>
+                </form>
+                
+                <h4>2 Results</h4>
+
+                <ul id="results" style="display: block;">
+                    <li id="ReleaseNotes"><a href="" target="_blank">Release Notes</a><span class="path">/content/enforced/16216-FHGEN111/Release Notes.html</span>
+                        <p>e course: Due dates were changed to Wednesday and <span class="highlight">Monday</span> to simplify the course experience. Lessons </p>
+                        <p>ost due Friday and a reply post due the following <span class="highlight">Monday</span>. Added a Table of Record Types component to</p>
                     </li>
                 </ul>
             </div>
-            
-            <ul id="results" style="display: block;">
-                <li id="ReleaseNotes"><a href="" target="_blank">Release Notes</a><span class="path">/content/enforced/16216-FHGEN111/Release Notes.html</span>
-                    <p>e course: Due dates were changed to Wednesday and <span class="highlight">Monday</span> to simplify the course experience. Lessons </p>
-                    <p>ost due Friday and a reply post due the following <span class="highlight">Monday</span>. Added a Table of Record Types component to</p>
-                </li>
-            </ul>
 
         </div>
     </div>
+    <script src="https://content.byui.edu/integ/gen/00134d04-34d1-47b8-9242-c29059c522ee/0/online.js"></script>
 </body>
 
 </html>

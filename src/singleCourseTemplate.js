@@ -1,9 +1,9 @@
 /*jslint browser: true*/
 /*global $, singleCourseSearch*/
-var singeCourseTemplate = (function () {
+var singleCourseTemplate = (function () {
     'use strict';
     
-    var template =
+    var mainTemplate =
         `<div id="header">
                 <img src="https://content.byui.edu/integ/gen/be2c7d0f-ed5e-4dca-ac0b-0b2a7155a4f2/0/smallBanner.jpg" alt="Course Banner" />
             </div>
@@ -15,22 +15,22 @@ var singeCourseTemplate = (function () {
                 <div id="content">
 
                     <form id="searchCourse">
-                        <label>Search:</label>
-                        <input id="searchBox" type="text" />
-                        <button id="btnGo" type="submit">GO!</button>
+                        <input id="searchBox" type="text" placeholder="Search..." />
+                        <button id="btnGo" type="submit">&nbsp;</button>
                         <br>
-                        <label>Case Sensitive</label>
                         <input id="caseSensitive" type="checkbox">
-                        <label>Include HTML</label>
+                        <label>Case Sensitive</label>
                         <input id="includeHTML" type="checkbox">
-                        <label>JavaScript RegEx</label>
+                        <label>Include HTML</label>
                         <input id="regex" type="checkbox">
-                        <br>
-                        <button id="refreshSnapshot" type="button">Refresh Snapshot</button>
-                        <button id="checkLinks" type="button">Check for Broken D2L Links</button>
+                        <label>JavaScript RegEx</label>
+                        <div class="tools">
+                            <button id="refreshSnapshot" type="button">Refresh Snapshot</button>
+                            <button id="checkLinks" type="button">Check Links</button>
+                        </div>
                     </form>
 
-                    <h2 id="printMessage"></h2>
+                    <h4 id="printMessage"></h4>
 
                     <ul id="results"></ul>
 
@@ -50,7 +50,7 @@ var singeCourseTemplate = (function () {
     }
     
     return {
-        template: template,
+        mainTemplate: mainTemplate,
         buildListItem: buildListItem,
         buildSnippet: buildSnippet
     }

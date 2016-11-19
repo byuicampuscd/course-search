@@ -102,7 +102,14 @@ var search = (function () {
             window.alert("Regular expression pattern must be wrapped with '/' and must only be followed by valid flags.");
             return;
         }
-
+        try {
+            // Create Regular Expression Object
+            regEx = new RegExp(pattern, flags);
+        } catch(ex) {
+            window.alert(ex.message);
+            return;
+        }
+        
         // Execute Search
         for (link in links) {
             if (links[link].document) {
@@ -113,7 +120,6 @@ var search = (function () {
                 }
                 text = text.replace(/\n/g, " ");
                 text = text.replace(/\s+/g, " ").trim();
-                regEx = new RegExp(pattern, flags);
                 while ((match = regEx.exec(text)) !== null) {
                     snippetStart = (match.index < 50) ? 0 : match.index - 50;
                     snippetEnd = (snippetStart + 100 > text.length) ? text.length : snippetStart + 100;
@@ -179,8 +185,9 @@ var courseSnapshot = (function () {
 
             //Set parent link data
             parentData = {
-                url: link,
-                text: $(this).text()
+                title: links[link].title,
+                link: link,
+                snippet: $(this).text()
             };
 
             if (url.indexOf('/') !== -1) {
@@ -241,8 +248,8 @@ var courseSnapshot = (function () {
         }
         
         // Check if file is directly linked to in the table of contents
-        if (parentData.text.search(/^Module/) !== -1) {
-            parentData.text = parentData.text + ' File: ' + title;
+        if (parentData.snippet.search(/^Module/) !== -1) {
+            parentData.snippet = parentData.snippet + ' File: ' + title;
         }
         
         // Check if internal link
@@ -251,7 +258,7 @@ var courseSnapshot = (function () {
             
             //If needed make URL absolute
             if (url.indexOf('quickLink') === -1 && url.indexOf('/content/enforced') === -1) {
-                url = parentData.url.split('/').slice(0, -1).join('/').concat('/' + url);
+                url = parentData.link.split('/').slice(0, -1).join('/').concat('/' + url);
             }
         }
 
@@ -285,8 +292,9 @@ var courseSnapshot = (function () {
     // Process a module
     function processModule(module) {
         var parentData = {
-            url: 'https://byui.brightspace.com/d2l/le/content/' + orgUnit + '/Home',
-            text: 'Module: ' + module.Title
+            title: 'Course Table of Contents',
+            link: 'https://byui.brightspace.com/d2l/le/content/' + orgUnit + '/Home',
+            snippet: 'Module: ' + module.Title
         };
         module.Topics.forEach(function (file) {
             processFile(file.Title, file.Url, parentData, file.Identifier);

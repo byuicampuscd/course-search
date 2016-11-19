@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global $, singeCourseTemplate, printer, loader, search, courseSnapshot*/
+/*global $, singleCourseTemplate, printer, loader, search, courseSnapshot*/
 var courseSearch = (function () {
     'use strict';
     var snapshot, currentCourse, currentSearch,

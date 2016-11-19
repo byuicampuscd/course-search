@@ -3,12 +3,13 @@
 (function () {
     'use strict';
     //Inject Needed Scripts
-    //var scriptSrcs = [
-    //    "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js",
-    //    "https://content.byui.edu/integ/gen/00134d04-34d1-47b8-9242-c29059c522ee/0/online.js",
-    //    "https://content.byui.edu/integ/gen/2291aecd-be53-49eb-beff-9222931c76d1/0/template.js",
-    //    "https://content.byui.edu/integ/gen/2291aecd-be53-49eb-beff-9222931c76d1/0/courseSearch.js"
-    //];
+//    var scriptSrcs = [
+//        "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js",
+//        "https://content.byui.edu/integ/gen/00134d04-34d1-47b8-9242-c29059c522ee/0/online.js",
+//        "https://content.byui.edu/integ/gen/2291aecd-be53-49eb-beff-9222931c76d1/0/singleCourseTemplate.js",
+//        "https://content.byui.edu/integ/gen/2291aecd-be53-49eb-beff-9222931c76d1/0/courseSearchTools.js",
+//        "https://content.byui.edu/integ/gen/2291aecd-be53-49eb-beff-9222931c76d1/0/singleCourseSearch.js"
+//    ];
 
     var scriptSrcs = [
         "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js",
