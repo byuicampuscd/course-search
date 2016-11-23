@@ -104,6 +104,7 @@ ul {
 }
 
 ul li {
+    position: relative;
     padding: 10px;
     background: #dddddd;
     border-bottom: 1px solid #8d8d8d;
@@ -130,13 +131,31 @@ ul li .path {
 }
 
 ul li p {
+    position: relative;
     margin-top: 5px;
-    padding: 10px;
+    padding: 15px 10px 10px;
     background: #f4f4f4;
 }
 
 .highlight {
     background: #fdf404;
+}
+
+.dismiss {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    width: 13px;
+    height: 13px;
+    background-image: url(close.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: .7;
+}
+
+ul li a.dismiss:hover {
+    border-bottom: none;
 }
 
 /* Loader */

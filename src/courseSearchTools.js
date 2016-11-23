@@ -1,32 +1,5 @@
 /*jslint browser: true */
 /*global $ */
-var printer = (function () {
-    'use strict';
-    var numOfPrints = 0;
-    
-    function reset(id) {
-        numOfPrints = 0;
-        document.getElementById(id).innerHTML = '';
-    }
-    
-    function done(id, message) {
-        // Update print count to screen
-        document.getElementById(id).innerHTML = numOfPrints + ' ' + message;
-    }
-    
-    function print(id, data, countAsPrint) {
-        document.getElementById(id).insertAdjacentHTML('beforeend', data);
-        if (countAsPrint) {
-            numOfPrints += 1;
-        }
-    }
-    
-    return {
-        print: print,
-        done: done,
-        reset: reset
-    };
-}());
 
 var search = (function () {
     'use strict';

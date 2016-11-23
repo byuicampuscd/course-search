@@ -40,13 +40,14 @@ var singleCourseTemplate = (function () {
 
     function buildListItem(file, id, href, path) {
         return `<li id="${id}">
+                    <a href="javascript:void(0)" class="dismiss"></a>
                     <a href="${href}" target="_blank">${file}</a>
                     <span class="path">${path}</span>
                 </li>`;
     }
 
     function buildSnippet(snippet) {
-        return `<p>${snippet}</p>`;
+        return `<p>${snippet}<a href="javascript:void(0)" class="dismiss"></a></p>`;
     }
     
     return {

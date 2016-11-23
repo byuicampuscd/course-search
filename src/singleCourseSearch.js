@@ -1,11 +1,41 @@
 /*jslint browser: true*/
-/*global $, singleCourseTemplate, printer, loader, search, courseSnapshot*/
+/*global $, singleCourseTemplate, loader, search, courseSnapshot*/
 var singleCourseSearch = (function () {
     'use strict';
-    var orgUnit, snapshot;
+    var orgUnit, snapshot,
+        numOfPrints = 0;
     
     function getSnapshot() {
         console.log(snapshot);
+    }
+    
+    function dismiss(e) {
+        $(e.target.parentElement).animate({ height: '0', paddingTop: '0', paddingBottom: '0'}, 100, function() {
+            $(this).hide();
+        });
+    }
+    
+    function reset(id) {
+        numOfPrints = 0;
+        document.getElementById(id).innerHTML = '';
+    }
+    
+    function done(id, message) {
+        var dismissLinks = document.querySelectorAll('.dismiss');
+        // Update print count to screen
+        document.getElementById(id).innerHTML = numOfPrints + ' ' + message;
+        
+        // Add listeners to dismiss links
+        dismissLinks.forEach(function(link) {
+            link.addEventListener('click', dismiss);
+        });
+    }
+    
+    function print(id, data, countAsPrint) {
+        document.getElementById(id).insertAdjacentHTML('beforeend', data);
+        if (countAsPrint) {
+            numOfPrints += 1;
+        }
     }
     
     function prepareForPrint(results) {
@@ -20,17 +50,17 @@ var singleCourseSearch = (function () {
             }
 
             // Print new list item
-            printer.print('results', singleCourseTemplate.buildListItem(snapshot[results.link].title, id, href, results.link));
+            print('results', singleCourseTemplate.buildListItem(snapshot[results.link].title, id, href, results.link));
         }
 
         // Insert snippet to correct list item
-        printer.print(id, singleCourseTemplate.buildSnippet(results.snippet), true);
+        print(id, singleCourseTemplate.buildSnippet(results.snippet), true);
     }
     
     function reportBrokenLinks() {
         var link;
         
-        printer.reset('results');
+        reset('results');
 
         for (link in snapshot) {
             if (snapshot[link].isD2L && !snapshot[link].isWorking) {
@@ -38,7 +68,7 @@ var singleCourseSearch = (function () {
             }
         }
         
-        printer.done('printMessage', 'Broken Links Detected');
+        done('printMessage', 'Broken Links Detected');
         loader.deactivate();
     }
     
@@ -108,13 +138,13 @@ var singleCourseSearch = (function () {
         // Run search
         results = search(searchString, snapshot, isCaseSensitive, includeHMTL, isRegEx);
         
-        printer.reset('results');
+        reset('results');
         
         if (results.length > 0) {
             results.forEach(prepareForPrint);
         }
         
-        printer.done('printMessage', 'Results');
+        done('printMessage', 'Results');
     }
 
     function processSnapshot(data) {
