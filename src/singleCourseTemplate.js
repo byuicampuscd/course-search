@@ -27,6 +27,7 @@ var singleCourseTemplate = (function () {
                         <div class="tools">
                             <button id="refreshSnapshot" type="button">Refresh Snapshot</button>
                             <button id="checkLinks" type="button">Check Links</button>
+                            <a id="saveResults" download="Course Search results.csv">Download CSV</a>
                         </div>
                     </form>
 

@@ -74,7 +74,7 @@ form label:nth-of-type(-n+2) {
     margin-right: 25px;
 }
 
-button {
+button, .tools a {
     color: #fff;
     background: #3987ad;
     border: none;
@@ -84,17 +84,22 @@ button {
 .tools {
     margin-top: 10px;
     text-align: left;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
-.tools button:first-child {
-    margin-right: 10px;
-}
-
-.tools button {
-    padding: 5px 15px;
+.tools button, .tools a {
+    padding: 5px 10px;
     letter-spacing: .5px;
     border-radius: 3px;
     text-transform: uppercase;
+}
+
+.tools a {
+    font-size: 10.5pt;
+    padding-top: 4px;
+    padding-bottom: 5px;
 }
 
 ul {

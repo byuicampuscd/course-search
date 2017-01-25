@@ -119,6 +119,12 @@ var singleCourseSearch = (function () {
         }
     }
 
+    function updateDownloadLink(results){
+        var csvList = d3.csvFormat(results);
+        document.getElementById('saveResults').href = "data:text/csv;charset=utf-8," + encodeURIComponent(csvList);
+    }
+    
+    
     function searchCourse(e) {
         e.preventDefault();
         
@@ -142,6 +148,7 @@ var singleCourseSearch = (function () {
         
         if (results.length > 0) {
             results.forEach(prepareForPrint);
+            updateDownloadLink(results);
         }
         
         done('printMessage', 'Results');
