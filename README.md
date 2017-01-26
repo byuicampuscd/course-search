@@ -29,3 +29,6 @@ In the following pop-up box select the following values:
 
 The Search button and the Check Links button run 2 different functions. Check links searches the course & finds all links with empty or invalid link locations. The Search button looks for whatever criteria you specify
 
+##Change Log
+V1.0 - Course Search described above.
+V2.0 - Course Search with "Download CSV" button added.
