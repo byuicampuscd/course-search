@@ -66,13 +66,20 @@ var singleCourseSearch = (function () {
     function reportBrokenLinks() {
         var link;
 
+        var linkResults = [];
         reset('results');
 
         for (link in snapshot) {
             if (snapshot[link].isD2L && !snapshot[link].isWorking) {
                 snapshot[link].foundIn.forEach(prepareForPrint);
+                linkResults.push(snapshot[link].foundIn[0]);
             }
         }
+
+        if (linkResults.length > 0)
+            enableDownloadLink(linkResults);
+        else
+            resetDownloadLink();
 
         done('printMessage', 'Broken Links Detected');
         loader.deactivate();
@@ -125,15 +132,13 @@ var singleCourseSearch = (function () {
         }
     }
 
-    function updateDownloadLink(results) {
+    function enableDownloadLink(results) {
         var resultsMod = results.map(function (result) {
             return {
                 link: window.origin + result.link,
                 match: result.snippet,
                 title: result.title
             };
-
-
         });
         var csvList = d3.csvFormat(resultsMod, ['title', 'link', 'match']);
         document.getElementById('saveResults').href = "data:text/csv;charset=utf-8," + encodeURIComponent(csvList);
@@ -169,7 +174,7 @@ var singleCourseSearch = (function () {
 
         if (results.length > 0) {
             results.forEach(prepareForPrint);
-            updateDownloadLink(results);
+            enableDownloadLink(results);
         } else {
             resetDownloadLink();
         }
