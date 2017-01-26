@@ -2,7 +2,7 @@
 /*global $, singleCourseSearch*/
 var singleCourseTemplate = (function () {
     'use strict';
-    
+
     var mainTemplate =
         `<div id="header">
                 <img src="https://content.byui.edu/integ/gen/be2c7d0f-ed5e-4dca-ac0b-0b2a7155a4f2/0/smallBanner.jpg" alt="Course Banner" />
@@ -27,7 +27,7 @@ var singleCourseTemplate = (function () {
                         <div class="tools">
                             <button id="refreshSnapshot" type="button">Refresh Snapshot</button>
                             <button id="checkLinks" type="button">Check Links</button>
-                            <a id="saveResults" download="Course Search results.csv">Download CSV</a>
+                            <a id="saveResults" class="disabled" download="Course Search results.csv">Download Results</a>
                         </div>
                     </form>
 
@@ -50,7 +50,7 @@ var singleCourseTemplate = (function () {
     function buildSnippet(snippet) {
         return `<p>${snippet}<a href="javascript:void(0)" class="dismiss"></a></p>`;
     }
-    
+
     return {
         mainTemplate: mainTemplate,
         buildListItem: buildListItem,

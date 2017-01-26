@@ -1,5 +1,4 @@
 @import url("https://content.byui.edu/integ/gen/599082e0-3e89-4fd9-ac69-2615865d63c7/0/online.css");
-
 #main {
     min-height: 460px;
 }
@@ -57,7 +56,9 @@ form {
     border-bottom-right-radius: 3px;
 }
 
+
 /* Search Icon */
+
 #btnGo:before {
     content: "";
     position: absolute;
@@ -74,7 +75,8 @@ form label:nth-of-type(-n+2) {
     margin-right: 25px;
 }
 
-button, .tools a {
+button,
+.tools a {
     color: #fff;
     background: #3987ad;
     border: none;
@@ -89,8 +91,9 @@ button, .tools a {
     justify-content: space-between;
 }
 
-.tools button, .tools a {
-    padding: 5px 10px;
+.tools button,
+.tools a {
+    padding: 5px 6px;
     letter-spacing: .5px;
     border-radius: 3px;
     text-transform: uppercase;
@@ -100,6 +103,10 @@ button, .tools a {
     font-size: 10.5pt;
     padding-top: 4px;
     padding-bottom: 5px;
+}
+
+.disabled {
+    background-color: grey !important;
 }
 
 ul {
@@ -163,7 +170,9 @@ ul li a.dismiss:hover {
     border-bottom: none;
 }
 
+
 /* Loader */
+
 #loadingMessage {
     margin-top: 50px;
     text-align: center;
