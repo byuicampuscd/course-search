@@ -4,7 +4,7 @@
 var search = (function () {
     'use strict';
     var links, results;
-    
+
     function escapeHTML(string) {
         return string.replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
     }
@@ -23,7 +23,7 @@ var search = (function () {
         temp = '<span class="highlight">' + temp + '</span>';
         return snippet.slice(0, startIndex) + temp + snippet.slice(endIndex);
     }
-    
+
     function normalSearch(searchString, isCaseSensitive, includeHTML) {
         var link, originalText, text, matchStart, matchEnd, snippetStart, snippetEnd, match,
             snippet;
@@ -63,7 +63,7 @@ var search = (function () {
             }
         }
     }
-    
+
     function regExSearch(searchString, includeHTML) {
         var pattern, flags, link, text, regEx, match, snippetStart, snippetEnd, snippet;
 
@@ -78,11 +78,11 @@ var search = (function () {
         try {
             // Create Regular Expression Object
             regEx = new RegExp(pattern, flags);
-        } catch(ex) {
+        } catch (ex) {
             window.alert(ex.message);
             return;
         }
-        
+
         // Execute Search
         for (link in links) {
             if (links[link].document) {
@@ -111,50 +111,54 @@ var search = (function () {
             }
         }
     }
-    
+
     function search(searchString, snapshot, isCaseSensitive, includeHTML, isRegEx) {
         // Reset results
         results = [];
-        
+
         // Save snapshot as links
         links = snapshot;
-        
+
         if (isRegEx) {
             regExSearch(searchString, includeHTML);
         } else {
             normalSearch(searchString, isCaseSensitive, includeHTML);
         }
-        
+
         return results;
     }
-    
+
     return search;
 }());
 
 var courseSnapshot = (function () {
     'use strict';
     var links, complete, orgUnit;
-    
+
     // Check progress of snapshot
     function checkProgress() {
         var link;
-        
+
         for (link in links) {
             if (links[link].isD2L && links[link].isHTML && !links[link].checked) {
                 return;
             }
         }
-        
+
         // Execute callback
         complete(links);
     }
-    
+
     // Search document for additional links
     function searchDocumentForAdditionalLinks(link) {
         var title, url, parentData;
 
         $(links[link].document).find('a').each(function (index) {
-            url = decodeURI($(this).attr('href'));
+            try {
+                url = decodeURI($(this).attr('href'));
+            } catch (err) {
+                url = $(this).attr('href');
+            }
 
             //Set parent link data
             parentData = {
@@ -178,7 +182,7 @@ var courseSnapshot = (function () {
         links[link].checked = true;
         checkProgress();
     }
-    
+
     // Get File
     function getFile(link) {
         var url, xhr;
@@ -189,7 +193,7 @@ var courseSnapshot = (function () {
         } else {
             url = link;
         }
-        
+
         xhr = new XMLHttpRequest();
         xhr.responseType = 'document';
         xhr.open("GET", url);
@@ -206,29 +210,29 @@ var courseSnapshot = (function () {
                 }
             }
         };
-        
+
         xhr.send();
     }
-    
+
     // Process a file
     function processFile(title, url, parentData, identifier) {
         var isD2L = false,
             isHTML = false;
-        
+
         // Make sure url is defined
         if (!url || url.search(/^(javascript|undefined|#)/) !== -1) {
             return;
         }
-        
+
         // Check if file is directly linked to in the table of contents
         if (parentData.snippet.search(/^Module/) !== -1) {
             parentData.snippet = parentData.snippet + ' File: ' + title;
         }
-        
+
         // Check if internal link
         if (url.search(/^http/) === -1) {
             isD2L = true;
-            
+
             //If needed make URL absolute
             if (url.indexOf('quickLink') === -1 && url.indexOf('/content/enforced') === -1) {
                 url = parentData.link.split('/').slice(0, -1).join('/').concat('/' + url);
@@ -254,14 +258,14 @@ var courseSnapshot = (function () {
                 checked: false,
                 foundIn: [parentData]
             };
-            
+
             // If able get the file
             if (isD2L && isHTML) {
                 getFile(url);
             }
         }
     }
-    
+
     // Process a module
     function processModule(module) {
         var parentData = {
@@ -274,16 +278,16 @@ var courseSnapshot = (function () {
         });
         module.Modules.forEach(processModule);
     }
-    
+
     // Start building a snapshot of a course
     function build(ou, callback, errorCallback) {
-        
+
         // Make orgUnit accessible
         orgUnit = ou;
-        
+
         // Set callback
         complete = callback;
-        
+
         // Reset links object
         links = {};
 
@@ -301,7 +305,7 @@ var courseSnapshot = (function () {
                     isWorking: true,
                     foundIn: []
                 };
-                
+
                 // Extract from each module it's files and files from any sub modules
                 data.Modules.forEach(processModule);
                 checkProgress();
@@ -326,16 +330,16 @@ var loader = (function () {
             <div id="loader"></div>
             <p></p>
         </div>`;
-    
+
     function updateMessage(message) {
         $('#loadingMessage p').html(message);
     }
-    
+
     function deactivate() {
         $('#loadingMessage').hide();
         $('#content').show();
     }
-    
+
     function activate() {
         if (!document.getElementById('loadingMessage')) {
             $('#article').append(loaderHTML);
@@ -343,7 +347,7 @@ var loader = (function () {
         $('#content').hide();
         $('#loadingMessage').show();
     }
-    
+
     return {
         activate: activate,
         deactivate: deactivate,
