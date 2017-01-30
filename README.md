@@ -2,7 +2,7 @@
 The course search is installed is used to search through all the content of a course. You can search for just content or content and html. It supports searching with regular expressions. 
 
 In order to search a course you first add the course search page to a course. Go to the Content tab of the course you would like to search & create a new file anywhere in the page. Name the file Course Search. Open the HTML editor for Course Search and paste the following code (index.html) into the page:
-```
+```html
 <!DOCTYPE html>
 <html lang="en-us">
 
