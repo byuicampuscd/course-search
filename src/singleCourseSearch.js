@@ -48,19 +48,21 @@ var singleCourseSearch = (function () {
         var href, html,
             id = results.link.replace(/\s/g, '');
 
-        if (!document.getElementById(id)) {
-            if (snapshot[results.link].identifier) {
-                href = 'https://byui.brightspace.com/d2l/le/content/' + orgUnit + '/contentfile/' + snapshot[results.link].identifier + '/EditFile?fm=0';
-            } else {
-                href = results.link;
+        if (snapshot[results.link].title !== "Course Table of Contents") {
+            if (!document.getElementById(id)) {
+                if (snapshot[results.link].identifier) {
+                    href = 'https://byui.brightspace.com/d2l/le/content/' + orgUnit + '/contentfile/' + snapshot[results.link].identifier + '/EditFile?fm=0';
+                } else {
+                    href = results.link;
+                }
+
+                // Print new list item
+                print('results', singleCourseTemplate.buildListItem(snapshot[results.link].title, id, href, results.link));
             }
 
-            // Print new list item
-            print('results', singleCourseTemplate.buildListItem(snapshot[results.link].title, id, href, results.link));
+            // Insert snippet to correct list item
+            print(id, singleCourseTemplate.buildSnippet(results.snippet), true);
         }
-
-        // Insert snippet to correct list item
-        print(id, singleCourseTemplate.buildSnippet(results.snippet), true);
     }
 
     function reportBrokenLinks() {
@@ -70,15 +72,22 @@ var singleCourseSearch = (function () {
         reset('results');
 
         for (link in snapshot) {
-            if (snapshot[link].isD2L && !snapshot[link].isWorking) {
+            if (snapshot[link].isD2L && !snapshot[link].isWorking && snapshot[link].checked == true) {
                 snapshot[link].foundIn.forEach(prepareForPrint);
                 linkResults.push(snapshot[link].foundIn[0]);
             }
         }
 
-        if (linkResults.length > 0)
-            enableDownloadLink(linkResults);
-        else
+        if (linkResults.length > 0) {
+            // remove links from the Course Table of Contents page from linkResults
+            for (var i = 0; i < linkResults.length; i++) {
+                if (linkResults[i].title === "Course Table of Contents") {
+                    linkResults.splice(i, 1);
+                    i--;
+                }
+                enableDownloadLink(linkResults);
+            }
+        } else
             resetDownloadLink();
 
         done('printMessage', 'Broken Links Detected');
@@ -108,8 +117,9 @@ var singleCourseSearch = (function () {
             },
             error: function (data) {
                 // page does not exist
-                snapshot[link].checked = true;
                 snapshot[link].isWorking = false;
+                snapshot[link].checked = true;
+
                 checkLinkProgress();
             }
         });
@@ -140,6 +150,7 @@ var singleCourseSearch = (function () {
                 title: result.title
             };
         });
+        // format results & enablel download link
         var csvList = d3.csvFormat(resultsMod, ['title', 'link', 'match']);
         document.getElementById('saveResults').href = "data:text/csv;charset=utf-8," + encodeURIComponent(csvList);
         document.getElementById('saveResults').classList.remove('disabled');
@@ -198,7 +209,7 @@ var singleCourseSearch = (function () {
         loader.updateMessage('Building Snapshot: Gathering Content Pages...');
 
         // Start the build and pass processSnapshot as callback
-        courseSnapshot.build(orgUnit, processSnapshot);
+        courseSnapshot.build(orgUnit, processSnapshot); //add error handling here
     }
 
     function init() {

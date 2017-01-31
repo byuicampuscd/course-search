@@ -210,8 +210,11 @@ var courseSnapshot = (function () {
                 }
             }
         };
-
-        xhr.send();
+        try {
+            xhr.send();
+        } catch (err) {
+            console.error(err);
+        }
     }
 
     // Process a file
@@ -275,6 +278,7 @@ var courseSnapshot = (function () {
         };
         module.Topics.forEach(function (file) {
             processFile(file.Title, file.Url, parentData, file.Identifier);
+            // check progress here ??
         });
         module.Modules.forEach(processModule);
     }
