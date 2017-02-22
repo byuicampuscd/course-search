@@ -3,7 +3,7 @@
 (function () {
     'use strict';
     //Inject Needed Scripts
-       var scriptSrcs = [
+    var scriptSrcs = [
            "https://d3js.org/d3-dsv.v1.min.js",
            "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js",
            "https://content.byui.edu/integ/gen/00134d04-34d1-47b8-9242-c29059c522ee/0/online.js",
@@ -13,14 +13,14 @@
        ];
 
     //For testing on local server only
-  /*  var scriptSrcs = [
-        "https://d3js.org/d3-dsv.v1.min.js",
-        "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js",
-        "https://content.byui.edu/integ/gen/00134d04-34d1-47b8-9242-c29059c522ee/0/online.js",
-        "https://localhost:8000/src/singleCourseTemplate.js",
-        "https://localhost:8000/src/courseSearchTools.js",
-        "https://localhost:8000/src/singleCourseSearch.js"
-    ];*/
+    /* var scriptSrcs = [
+         "https://d3js.org/d3-dsv.v1.min.js",
+         "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js",
+         "https://content.byui.edu/integ/gen/00134d04-34d1-47b8-9242-c29059c522ee/0/online.js",
+         "https://localhost:8000/src/singleCourseTemplate.js",
+         "https://localhost:8000/src/courseSearchTools.js",
+         "https://localhost:8000/src/singleCourseSearch.js"
+     ];*/
 
     function addScript() {
         var src = scriptSrcs.shift(),

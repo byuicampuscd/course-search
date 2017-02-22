@@ -219,6 +219,13 @@ var courseSnapshot = (function () {
 
     // Process a file
     function processFile(title, url, parentData, identifier) {
+
+        //filter out mailto links
+        var reg = new RegExp(/^mailto/);
+        if (reg.test(url)) {
+            return;
+        }
+
         var isD2L = false,
             isHTML = false;
 
@@ -251,6 +258,8 @@ var courseSnapshot = (function () {
         if (links[url]) {
             links[url].foundIn.push(parentData);
         } else {
+
+            console.log('hello');
 
             // Store in links object
             links[url] = {
