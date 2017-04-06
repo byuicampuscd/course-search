@@ -145,7 +145,7 @@ var singleCourseSearch = (function () {
     function enableDownloadLink(results) {
         var resultsMod = results.map(function (result) {
             return {
-                link: window.origin + result.link,
+                link: window.location.origin + result.link,
                 match: result.snippet,
                 title: result.title
             };
