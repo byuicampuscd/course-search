@@ -51,7 +51,7 @@ var singleCourseSearch = (function () {
         if (snapshot[results.link].title !== "Course Table of Contents") {
             if (!document.getElementById(id)) {
                 if (snapshot[results.link].identifier) {
-                    href = 'https://byui.brightspace.com/d2l/le/content/' + orgUnit + '/contentfile/' + snapshot[results.link].identifier + '/EditFile?fm=0';
+                    href = window.location.origin + '/d2l/le/content/' + orgUnit + '/contentfile/' + snapshot[results.link].identifier + '/EditFile?fm=0';
                 } else {
                     href = results.link;
                 }
@@ -109,7 +109,7 @@ var singleCourseSearch = (function () {
     function checkLink(link) {
         $.ajax({
             type: 'HEAD',
-            url: 'https://byui.brightspace.com' + link,
+            url: window.location.origin + link,
             success: function () {
                 snapshot[link].checked = true;
                 snapshot[link].isWorking = true;

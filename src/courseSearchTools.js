@@ -189,7 +189,7 @@ var courseSnapshot = (function () {
 
         // Check if link needs adjusting
         if (link.search(/^http/) === -1) {
-            url = "https://byui.brightspace.com" + link;
+            url = window.location.origin + link;
         } else {
             url = link;
         }
@@ -282,7 +282,7 @@ var courseSnapshot = (function () {
     function processModule(module) {
         var parentData = {
             title: 'Course Table of Contents',
-            link: 'https://byui.brightspace.com/d2l/le/content/' + orgUnit + '/Home',
+            link: window.location.origin + '/d2l/le/content/' + orgUnit + '/Home',
             snippet: 'Module: ' + module.Title
         };
         module.Topics.forEach(function (file) {
@@ -309,7 +309,7 @@ var courseSnapshot = (function () {
             url: "/d2l/api/le/1.5/" + orgUnit + "/content/toc",
             success: function (data) {
                 // Create object for table of contents
-                links['https://byui.brightspace.com/d2l/le/content/' + orgUnit + '/Home'] = {
+                links[window.location.origin + '/d2l/le/content/' + orgUnit + '/Home'] = {
                     title: 'Course Table of Contents',
                     isD2L: true,
                     isHTML: false,

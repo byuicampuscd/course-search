@@ -2,6 +2,7 @@
 /*global $, courseSearch*/
 (function () {
     'use strict';
+
     //Inject Needed Scripts
     //var scriptSrcs = [
     //    "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js",
@@ -38,4 +39,6 @@
     }
 
     window.addEventListener('load', start);
+
+
 }());
