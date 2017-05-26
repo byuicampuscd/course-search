@@ -1,0 +1,16 @@
+{
+  "name": "course-search",
+  "version": "1.0.0",
+  "description": "The course search is installed is used to search through all the content of a course.",
+  "main": "",
+  "scripts": {
+    "test": "NA"
+  },
+  "author": "Hanson-Jay",
+  "contributors": [{
+    "name": "Daniel Green"
+  }, {
+    "name": "Joshua McKinney"
+  }],
+  "license": "UNLICENSED"
+}
